@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FootballDataApi.Domain
+namespace FootballDataApi.Request.Models
 {
     public class CompetitionRoot
     {
