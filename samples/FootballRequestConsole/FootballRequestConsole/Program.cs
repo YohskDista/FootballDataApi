@@ -21,17 +21,17 @@ namespace FootballRequestConsole
             if (!string.IsNullOrEmpty(apiKey))
                 httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
 
-            GetCompetitions(httpClient);
-            GetCompetitionsWithFilter(httpClient);
-            GetCompetitionById(httpClient, 2019);
+            var competitionController = new CompetitionController(httpClient);
+
+            GetCompetitions(competitionController);
+            GetCompetitionsWithFilter(competitionController);
+            GetCompetitionById(competitionController, 2019);
 
             Console.ReadKey();
         }
 
-        private static async void GetCompetitionById(HttpClient httpClient, int id)
+        private static async void GetCompetitionById(CompetitionController competitionController, int id)
         {
-            var competitionController = new CompetitionController(httpClient);
-
             var competition = await competitionController.GetCompetition(id);
 
             lock (lockWrite)
@@ -42,10 +42,8 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetCompetitions(HttpClient httpClient)
+        private static async void GetCompetitions(CompetitionController competitionController)
         {
-            var competitionController = new CompetitionController(httpClient);
-
             var competitions = await competitionController.GetAvailableCompetition();
 
             lock (lockWrite)
@@ -56,10 +54,8 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetCompetitionsWithFilter(HttpClient httpClient)
+        private static async void GetCompetitionsWithFilter(CompetitionController competitionController)
         {
-            var competitionController = new CompetitionController(httpClient);
-
             var competitions = await competitionController.GetAvailableCompetition("areas", "2114");
 
             lock (lockWrite)
