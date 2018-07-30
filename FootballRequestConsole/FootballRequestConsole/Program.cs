@@ -11,6 +11,8 @@ namespace FootballRequestConsole
 {
     public class Program
     {
+        private static object lockWrite = new object();
+
         public static void Main(string[] args)
         {
             var httpClient = new HttpClient();
@@ -19,7 +21,8 @@ namespace FootballRequestConsole
             if (!string.IsNullOrEmpty(apiKey))
                 httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
 
-            //GetCompetitions(httpClient);
+            GetCompetitions(httpClient);
+            GetCompetitionsWithFilter(httpClient);
             GetCompetitionById(httpClient, 2019);
 
             Console.ReadKey();
@@ -31,7 +34,12 @@ namespace FootballRequestConsole
 
             var competition = await competitionController.GetCompetition(id);
 
-            Console.WriteLine(JsonConvert.SerializeObject(competition));
+            lock (lockWrite)
+            {
+                Console.WriteLine("### One particular competition ###");
+                Console.WriteLine(JsonConvert.SerializeObject(competition));
+                Console.WriteLine(); 
+            }
         }
 
         private static async void GetCompetitions(HttpClient httpClient)
@@ -40,7 +48,26 @@ namespace FootballRequestConsole
 
             var competitions = await competitionController.GetAvailableCompetition();
 
-            Console.WriteLine(JsonConvert.SerializeObject(competitions));
+            lock (lockWrite)
+            {
+                Console.WriteLine("### All available competitions ###");
+                Console.WriteLine(JsonConvert.SerializeObject(competitions));
+                Console.WriteLine(); 
+            }
+        }
+
+        private static async void GetCompetitionsWithFilter(HttpClient httpClient)
+        {
+            var competitionController = new CompetitionController(httpClient);
+
+            var competitions = await competitionController.GetAvailableCompetition("areas", "2114");
+
+            lock (lockWrite)
+            {
+                Console.WriteLine("### Competition of the area X ###");
+                Console.WriteLine(JsonConvert.SerializeObject(competitions));
+                Console.WriteLine(); 
+            }
         }
     }
 }
