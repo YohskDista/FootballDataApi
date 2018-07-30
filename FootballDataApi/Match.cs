@@ -20,10 +20,10 @@ namespace FootballDataApi.Domain
         public MatchTeam HomeTeam { get; set; }
         public MatchTeam AwayTeam { get; set; }
         public Score Score { get; set; }
-        public Goal[] Goals { get; set; }
-        public Booking[] Bookings { get; set; }
-        public Substitution[] Substitutions { get; set; }
-        public Referee[] Referees { get; set; }
+        public IEnumerable<Goal> Goals { get; set; }
+        public IEnumerable<Booking> Bookings { get; set; }
+        public IEnumerable<Substitution> Substitutions { get; set; }
+        public IEnumerable<Referee> Referees { get; set; }
     }
 
     public class Coach
@@ -52,49 +52,25 @@ namespace FootballDataApi.Domain
         public string Name { get; set; }
         public Coach Coach { get; set; }
         public Player Captain { get; set; }
-        public Player[] Lineup { get; set; }
-        public Player[] Bench { get; set; }
+        public IEnumerable<Player> Lineup { get; set; }
+        public IEnumerable<Player> Bench { get; set; }
     }
 
     public class Score
     {
         public string Winner { get; set; }
         public string Duration { get; set; }
-        public Halftime HalfTime { get; set; }
-        public Fulltime FullTime { get; set; }
-        public Extratime ExtraTime { get; set; }
-        public Penalties Penalties { get; set; }
-    }
-
-    public class Halftime
-    {
-        public int HomeTeam { get; set; }
-        public int AwayTeam { get; set; }
-    }
-
-    public class Fulltime
-    {
-        public int HomeTeam { get; set; }
-        public int AwayTeam { get; set; }
-    }
-
-    public class Extratime
-    {
-        public object HomeTeam { get; set; }
-        public object AwayTeam { get; set; }
-    }
-
-    public class Penalties
-    {
-        public object HomeTeam { get; set; }
-        public object AwayTeam { get; set; }
+        public Tuple<int, int> HalfTime { get; set; }
+        public Tuple<int, int> FullTime { get; set; }
+        public Tuple<int, int> ExtraTime { get; set; }
+        public Tuple<int, int> Penalties { get; set; }
     }
 
     public class Goal
     {
-        public int minute { get; set; }
-        public Player scorer { get; set; }
-        public Player[] assist { get; set; }
+        public int Minute { get; set; }
+        public Player Scorer { get; set; }
+        public IEnumerable<Player> Assist { get; set; }
     }
 
     public class Booking
