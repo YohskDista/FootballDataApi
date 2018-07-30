@@ -3,6 +3,7 @@ using FootballDataApi.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -19,9 +20,25 @@ namespace FootballDataApi
             _competitionDataSource = competitionDataSource;
         }
 
-        public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
+        public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
         {
-            throw new NotImplementedException();
+            var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
+
+            if (idCompetition < 0)
+                throw new IndexOutOfRangeException("Id competition cannot be negative");
+
+            if(filters != null)
+            {
+                var parametersNotPresent = filters
+                    .Where((filter, index) => index % 2 == 0 && 
+                        !authorizedFilters.Contains(filter))
+                    .ToList();
+
+                if (parametersNotPresent.Count > 0)
+                    throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
+            }
+
+            return await _competitionDataSource.GetAllMatchOfCompetition(idCompetition, filters);
         }
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
