@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace FootballDataApi.DataSources
 {
@@ -21,9 +22,25 @@ namespace FootballDataApi.DataSources
             _httpClient = httpClient;
         }
 
-        public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
+        public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
         {
-            throw new NotImplementedException();
+            if (filters.Length > 0 && filters.Length % 2 != 0)
+                throw new ArgumentException("Respect key value parameters.");
+
+            var urlAreas = BaseAddress;
+
+            if (filters.Length > 0)
+            {
+                urlAreas = $"{urlAreas}/?";
+                for (int i = 0; i < filters.Length; i += 2)
+                {
+                    urlAreas = $"{urlAreas}{filters[i]}={filters[i + 1]}&";
+                }
+                urlAreas = urlAreas.Remove(urlAreas.Length - 1);
+            }
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
+            return await Get<IEnumerable<Match>>(_httpClient, request);
         }
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
