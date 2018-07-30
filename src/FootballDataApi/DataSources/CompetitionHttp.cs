@@ -21,6 +21,11 @@ namespace FootballDataApi.DataSources
             _httpClient = httpClient;
         }
 
+        public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);
@@ -39,9 +44,9 @@ namespace FootballDataApi.DataSources
             return competitionRoot.Competitions;
         }
 
-        public async Task<Competition> GetCompetition(int id)
+        public async Task<Competition> GetCompetition(int idCompetition)
         {
-            var url = $"{BaseAddress}/{id}";
+            var url = $"{BaseAddress}/{idCompetition}";
             var request = new HttpRequestMessage(HttpMethod.Get, url);
 
             return await Get<Competition>(_httpClient, request);

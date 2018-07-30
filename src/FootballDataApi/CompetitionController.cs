@@ -19,6 +19,11 @@ namespace FootballDataApi
             _competitionDataSource = competitionDataSource;
         }
 
+        public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             return await _competitionDataSource.GetAvailableCompetition();
