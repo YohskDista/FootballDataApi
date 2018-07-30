@@ -1,4 +1,5 @@
 ﻿using FootballDataApi;
+using FootballDataApi.DataSources;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,8 @@ namespace FootballRequestConsole
             if (!string.IsNullOrEmpty(apiKey))
                 httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
 
-            var competitionController = new CompetitionController(httpClient);
+            var competitionSource = new CompetitionHttp(httpClient);
+            var competitionController = new CompetitionController(competitionSource);
 
             GetCompetitions(competitionController);
             GetCompetitionsWithFilter(competitionController);
@@ -56,7 +58,7 @@ namespace FootballRequestConsole
 
         private static async void GetCompetitionsWithFilter(CompetitionController competitionController)
         {
-            var competitions = await competitionController.GetAvailableCompetition(2114);
+            var competitions = await competitionController.GetAvailableCompetitionByArea(2114);
 
             lock (lockWrite)
             {
