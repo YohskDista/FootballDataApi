@@ -6,7 +6,7 @@ namespace FootballDataApi.Request.Interfaces
 {
     public interface ICompetition
     {
-        Task<IEnumerable<Competition>> GetAvailableCompetition();
+        Task<IEnumerable<Competition>> GetAvailableCompetition(params string[] filters);
 
         Task<Competition> GetCompetition(int id);
     }

@@ -19,9 +19,17 @@ namespace FootballDataApi.Request
             _httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<Competition>> GetAvailableCompetition()
+        public async Task<IEnumerable<Competition>> GetAvailableCompetition(params string[] filters)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://api.football-data.org/v2/competitions");
+            if (filters.Length > 2)
+                throw new ArgumentOutOfRangeException();
+
+            var url = $"http://api.football-data.org/v2/competitions";
+
+            if (filters.Length > 0)
+                url = $"{url}/?{ string.Join("=", filters) }";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
             var competitionRoot = await Get<CompetitionRoot>(_httpClient, request);
 
             return competitionRoot.Competitions;
