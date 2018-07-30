@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FootballDataApi.Request.Models
+namespace FootballDataApi.Models
 {
     public class Match
     {

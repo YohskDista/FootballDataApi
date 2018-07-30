@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\FootballDataApi.Request\FootballDataApi.Request.csproj" />
+    <ProjectReference Include="..\..\src\FootballDataApi\FootballDataApi.csproj" />
   </ItemGroup>
 
 </Project>

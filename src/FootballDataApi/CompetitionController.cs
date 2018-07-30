@@ -1,5 +1,5 @@
-﻿using FootballDataApi.Domain;
-using FootballDataApi.Request.Interfaces;
+﻿using FootballDataApi.Interfaces;
+using FootballDataApi.Models;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Request
+namespace FootballDataApi
 {
     public class CompetitionController : ICompetition
     {

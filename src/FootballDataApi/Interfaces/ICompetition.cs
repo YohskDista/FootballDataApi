@@ -1,8 +1,8 @@
-﻿using FootballDataApi.Domain;
+﻿using FootballDataApi.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Request.Interfaces
+namespace FootballDataApi.Interfaces
 {
     public interface ICompetition
     {
