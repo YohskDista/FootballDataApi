@@ -56,7 +56,7 @@ namespace FootballRequestConsole
 
         private static async void GetCompetitionsWithFilter(CompetitionController competitionController)
         {
-            var competitions = await competitionController.GetAvailableCompetition("areas", "2114");
+            var competitions = await competitionController.GetAvailableCompetition(2114);
 
             lock (lockWrite)
             {
