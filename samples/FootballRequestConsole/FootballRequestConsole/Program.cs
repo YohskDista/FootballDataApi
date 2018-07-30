@@ -25,11 +25,24 @@ namespace FootballRequestConsole
             var competitionSource = new CompetitionHttp(httpClient);
             var competitionController = new CompetitionController(competitionSource);
 
-            GetCompetitions(competitionController);
-            GetCompetitionsWithFilter(competitionController);
-            GetCompetitionById(competitionController, 2019);
+            //GetCompetitions(competitionController);
+            //GetCompetitionsWithFilter(competitionController);
+            //GetCompetitionById(competitionController, 2019);
+            GetAllMatchOfCompetition(competitionController, 2019);
 
             Console.ReadKey();
+        }
+
+        private static async void GetAllMatchOfCompetition(CompetitionController competitionController, int id)
+        {
+            var matches = await competitionController.GetAllMatchOfCompetition(id);
+
+            lock (lockWrite)
+            {
+                Console.WriteLine("### All matches of competition ###");
+                Console.WriteLine(JsonConvert.SerializeObject(matches));
+                Console.WriteLine();
+            }
         }
 
         private static async void GetCompetitionById(CompetitionController competitionController, int id)

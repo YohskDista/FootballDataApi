@@ -27,7 +27,7 @@ namespace FootballDataApi.DataSources
             if (filters.Length > 0 && filters.Length % 2 != 0)
                 throw new ArgumentException("Respect key value parameters.");
 
-            var urlAreas = BaseAddress;
+            var urlAreas = $"{BaseAddress}/{idCompetition}/matches";
 
             if (filters.Length > 0)
             {
@@ -40,7 +40,9 @@ namespace FootballDataApi.DataSources
             }
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-            return await Get<IEnumerable<Match>>(_httpClient, request);
+            var competitionMatches = await Get<CompetitionMatches>(_httpClient, request);
+
+            return competitionMatches.Matches;
         }
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
