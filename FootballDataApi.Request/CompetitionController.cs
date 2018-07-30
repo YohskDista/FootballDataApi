@@ -22,7 +22,9 @@ namespace FootballDataApi.Request
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, "http://api.football-data.org/v2/competitions");
-            return await Get<IEnumerable<Competition>>(_httpClient, request);
+            var competitionRoot = await Get<CompetitionRoot>(_httpClient, request);
+
+            return competitionRoot.Competitions;
         }
 
         public async Task<Competition> GetCompetition(int id)

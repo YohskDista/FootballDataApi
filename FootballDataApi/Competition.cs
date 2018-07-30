@@ -4,6 +4,13 @@ using System.Text;
 
 namespace FootballDataApi.Domain
 {
+    public class CompetitionRoot
+    {
+        public int Count { get; set; }
+        public object Filters { get; set; }
+        public IEnumerable<Competition> Competitions { get; set; }
+    }
+
     public class Competition
     {
         public int Id { get; set; }
@@ -26,9 +33,9 @@ namespace FootballDataApi.Domain
     public class Season
     {
         public int Id { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public int CurrentMatchday { get; set; }
+        public DateTime? StartDate { get; set; }
+        public DateTime? EndDate { get; set; }
+        public int? CurrentMatchday { get; set; }
         public string[] AvailableStages { get; set; }
     }
 }
