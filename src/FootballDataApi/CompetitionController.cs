@@ -10,42 +10,28 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class CompetitionController : ICompetition
+    public class CompetitionController
     {
-        private readonly HttpClient _httpClient;
+        private readonly ICompetition _competitionDataSource;
 
-        public CompetitionController(HttpClient httpClient)
+        public CompetitionController(ICompetition competitionDataSource)
         {
-            _httpClient = httpClient;
+            _competitionDataSource = competitionDataSource;
         }
 
-        public async Task<IEnumerable<Competition>> GetAvailableCompetition(int? areaId = null)
+        public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
-            var url = $"http://api.football-data.org/v2/competitions";
+            return await _competitionDataSource.GetAvailableCompetition();
+        }
 
-            if (areaId != null)
-                url = $"{url}/?areas={ areaId }";
-
-            var request = new HttpRequestMessage(HttpMethod.Get, url);
-            var competitionRoot = await Get<CompetitionRoot>(_httpClient, request);
-
-            return competitionRoot.Competitions;
+        public async Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
+        {
+            return await _competitionDataSource.GetAvailableCompetitionByArea(areaId);
         }
 
         public async Task<Competition> GetCompetition(int id)
         {
-            var request = new HttpRequestMessage(HttpMethod.Get, $"http://api.football-data.org/v2/competitions/{id}");
-            return await Get<Competition>(_httpClient, request);
-        }
-
-        private async Task<T> Get<T>(HttpClient httpClient, HttpRequestMessage request)
-        {
-            using (var response = await httpClient.SendAsync(request, new CancellationToken()))
-            {
-                response.EnsureSuccessStatusCode();
-                var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(content);
-            }
+            return await _competitionDataSource.GetCompetition(id);
         }
     }
 }
