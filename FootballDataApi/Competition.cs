@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace FootballDataApi
+namespace FootballDataApi.Domain
 {
     public class Competition
     {
