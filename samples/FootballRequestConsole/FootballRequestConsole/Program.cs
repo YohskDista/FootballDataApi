@@ -23,12 +23,16 @@ namespace FootballRequestConsole
                 httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
 
             var competitionSource = new CompetitionHttp(httpClient);
+            var matchSource = new MatchHttp(httpClient);
+
             var competitionController = new CompetitionController(competitionSource);
+            var matchController = new MatchController(matchSource);
 
             //GetCompetitions(competitionController);
             //GetCompetitionsWithFilter(competitionController);
             //GetCompetitionById(competitionController, 2019);
-            GetAllMatchOfCompetition(competitionController, 2019);
+            //GetAllMatchOfCompetition(competitionController, 2019);
+            GetAllMatch(matchController);
 
             Console.ReadKey();
         }
@@ -39,7 +43,7 @@ namespace FootballRequestConsole
 
             lock (lockWrite)
             {
-                Console.WriteLine("### All matches of competition ###");
+                Console.WriteLine("### All available matches ###");
                 Console.WriteLine(JsonConvert.SerializeObject(matches));
                 Console.WriteLine();
             }
