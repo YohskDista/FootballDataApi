@@ -1,0 +1,696 @@
+﻿{
+  "count": 3,
+  "filters": {
+    "competitions": [
+      "2000"
+    ],
+    "dateFrom": "2018-06-24",
+    "dateTo": "2018-06-24"
+  },
+  "matches": [
+    {
+      "id": 200045,
+      "competition": {
+        "id": 2000,
+        "name": "FIFA World Cup"
+      },
+      "season": {
+        "id": 1,
+        "startDate": "2018-06-14T17:00:00Z",
+        "endDate": "2018-07-15T17:00:00Z",
+        "currentMatchday": 3,
+        "availableStages": [
+          "GROUP_STAGE"
+        ]
+      },
+      "utcDate": "2018-06-24T18:00:00Z",
+      "status": "FINISHED",
+      "minute": null,
+      "attendance": null,
+      "matchday": 2,
+      "stage": "GROUP_STAGE",
+      "group": "Group H",
+      "lastUpdated": "2018-06-24T21:55:19Z",
+      "referees": [
+        {
+          "id": 56408,
+          "name": "César Arturo Ramos",
+          "nationality": null
+        },
+        {
+          "id": 56008,
+          "name": "Marvin Torrentera",
+          "nationality": null
+        },
+        {
+          "id": 56009,
+          "name": "Miguel Ángel Hernández",
+          "nationality": null
+        },
+        {
+          "id": 23895,
+          "name": "Julio Bascuñán",
+          "nationality": null
+        }
+      ],
+      "homeTeam": {
+        "id": 794,
+        "name": "Poland",
+        "coach": {
+          "id": 10204,
+          "name": "Adam Nawałka",
+          "countryOfBirth": "Poland",
+          "nationality": "Poland"
+        },
+        "captain": {
+          "id": 371,
+          "name": "Robert Lewandowski",
+          "shirtNumber": 9
+        },
+        "lineup": [
+          {
+            "id": 2022,
+            "name": "Wojciech Szczęsny",
+            "position": "Goalkeeper",
+            "shirtNumber": 1
+          },
+          {
+            "id": 136,
+            "name": "Łukasz Piszczek",
+            "position": "Defender",
+            "shirtNumber": 20
+          },
+          {
+            "id": 371,
+            "name": "Robert Lewandowski",
+            "position": "Attacker",
+            "shirtNumber": 9
+          },
+          {
+            "id": 2097,
+            "name": "Piotr Zieliński",
+            "position": "Midfielder",
+            "shirtNumber": 19
+          },
+          {
+            "id": 2249,
+            "name": "Bartosz Bereszyński",
+            "position": "Defender",
+            "shirtNumber": 18
+          },
+          {
+            "id": 3534,
+            "name": "Grzegorz Krychowiak",
+            "position": "Midfielder",
+            "shirtNumber": 10
+          },
+          {
+            "id": 3530,
+            "name": "Michał Pazdan",
+            "position": "Defender",
+            "shirtNumber": 2
+          },
+          {
+            "id": 2263,
+            "name": "Dawid Kownacki",
+            "position": "Midfielder",
+            "shirtNumber": 23
+          },
+          {
+            "id": 8086,
+            "name": "Jan Bednarek",
+            "position": "Defender",
+            "shirtNumber": 5
+          },
+          {
+            "id": 3536,
+            "name": "Maciej Rybus",
+            "position": "Midfielder",
+            "shirtNumber": 13
+          },
+          {
+            "id": 3538,
+            "name": "Jacek Góralski",
+            "position": "Midfielder",
+            "shirtNumber": 6
+          }
+        ],
+        "bench": [
+          {
+            "id": 3526,
+            "name": "Łukasz Fabiański",
+            "position": "Goalkeeper",
+            "shirtNumber": 22
+          },
+          {
+            "id": 3533,
+            "name": "Sławomir Peszko",
+            "position": "Midfielder",
+            "shirtNumber": 17
+          },
+          {
+            "id": 3529,
+            "name": "Kamil Glik",
+            "position": "Defender",
+            "shirtNumber": 15
+          },
+          {
+            "id": 3542,
+            "name": "Kamil Grosicki",
+            "position": "Attacker",
+            "shirtNumber": 11
+          },
+          {
+            "id": 3537,
+            "name": "Jakub Błaszczykowski",
+            "position": "Midfielder",
+            "shirtNumber": 16
+          },
+          {
+            "id": 3545,
+            "name": "Rafał Kurzawa",
+            "position": "Attacker",
+            "shirtNumber": 21
+          },
+          {
+            "id": 2258,
+            "name": "Karol Linetty",
+            "position": "Midfielder",
+            "shirtNumber": 8
+          },
+          {
+            "id": 3543,
+            "name": "Łukasz Teodorczyk",
+            "position": "Attacker",
+            "shirtNumber": 14
+          },
+          {
+            "id": 3528,
+            "name": "Artur Jędrzejczyk",
+            "position": "Defender",
+            "shirtNumber": 3
+          },
+          {
+            "id": 2105,
+            "name": "Arkadiusz Milik",
+            "position": "Attacker",
+            "shirtNumber": 7
+          },
+          {
+            "id": 3527,
+            "name": "Bartosz Białkowski",
+            "position": "Goalkeeper",
+            "shirtNumber": 12
+          },
+          {
+            "id": 2356,
+            "name": "Thiago Cionek",
+            "position": "Defender",
+            "shirtNumber": 4
+          }
+        ]
+      },
+      "awayTeam": {
+        "id": 818,
+        "name": "Colombia",
+        "coach": {
+          "id": 33668,
+          "name": "José Pekerman",
+          "countryOfBirth": "Argentina",
+          "nationality": "Argentina"
+        },
+        "captain": {
+          "id": 3739,
+          "name": "Radamel Falcao",
+          "shirtNumber": 9
+        },
+        "lineup": [
+          {
+            "id": 3722,
+            "name": "David Ospina",
+            "position": "Goalkeeper",
+            "shirtNumber": 1
+          },
+          {
+            "id": 2037,
+            "name": "Juan Cuadrado",
+            "position": "Midfielder",
+            "shirtNumber": 11
+          },
+          {
+            "id": 3723,
+            "name": "Santiago Arias",
+            "position": "Defender",
+            "shirtNumber": 4
+          },
+          {
+            "id": 3730,
+            "name": "Juan Fernando Quintero",
+            "position": "Midfielder",
+            "shirtNumber": 20
+          },
+          {
+            "id": 3731,
+            "name": "Abel Aguilar",
+            "position": "Midfielder",
+            "shirtNumber": 8
+          },
+          {
+            "id": 365,
+            "name": "James Rodríguez",
+            "position": "Midfielder",
+            "shirtNumber": 10
+          },
+          {
+            "id": 3739,
+            "name": "Radamel Falcao",
+            "position": "Attacker",
+            "shirtNumber": 9
+          },
+          {
+            "id": 3724,
+            "name": "Johan Mojica",
+            "position": "Defender",
+            "shirtNumber": 17
+          },
+          {
+            "id": 3728,
+            "name": "Yerry Mina",
+            "position": "Defender",
+            "shirtNumber": 13
+          },
+          {
+            "id": 3732,
+            "name": "Wílmar Barrios",
+            "position": "Midfielder",
+            "shirtNumber": 5
+          },
+          {
+            "id": 3733,
+            "name": "Davinson Sánchez",
+            "position": "Midfielder",
+            "shirtNumber": 23
+          }
+        ],
+        "bench": [
+          {
+            "id": 1195,
+            "name": "Miguel Borja",
+            "position": "Attacker",
+            "shirtNumber": 19
+          },
+          {
+            "id": 57,
+            "name": "Luis Fernando Muriel",
+            "position": "Attacker",
+            "shirtNumber": 14
+          },
+          {
+            "id": 3721,
+            "name": "Camilo Vargas",
+            "position": "Goalkeeper",
+            "shirtNumber": 12
+          },
+          {
+            "id": 1737,
+            "name": "Cristián Zapata",
+            "position": "Defender",
+            "shirtNumber": 2
+          },
+          {
+            "id": 3740,
+            "name": "Carlos Bacca",
+            "position": "Attacker",
+            "shirtNumber": 7
+          },
+          {
+            "id": 3735,
+            "name": "José Izquierdo",
+            "position": "Midfielder",
+            "shirtNumber": 21
+          },
+          {
+            "id": 22036,
+            "name": "José Cuadrado",
+            "position": "Goalkeeper",
+            "shirtNumber": 22
+          },
+          {
+            "id": 3734,
+            "name": "Mateus Uribe",
+            "position": "Midfielder",
+            "shirtNumber": 15
+          },
+          {
+            "id": 3737,
+            "name": "Jefferson Lerma",
+            "position": "Midfielder",
+            "shirtNumber": 16
+          },
+          {
+            "id": 33662,
+            "name": "Farid Díaz",
+            "position": "Defender",
+            "shirtNumber": 18
+          },
+          {
+            "id": 3727,
+            "name": "Óscar Murillo",
+            "position": "Defender",
+            "shirtNumber": 3
+          }
+        ]
+      },
+      "score": {
+        "winner": "AWAY_TEAM",
+        "duration": "REGULAR",
+        "halfTime": {
+          "homeTeam": 0,
+          "awayTeam": 1
+        },
+        "fullTime": {
+          "homeTeam": 0,
+          "awayTeam": 3
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "goals": [
+        {
+          "minute": 40,
+          "scorer": {
+            "id": 3728,
+            "name": "Yerry Mina"
+          },
+          "assist": [
+            {
+              "id": 365,
+              "name": "James Rodríguez"
+            }
+          ]
+        },
+        {
+          "minute": 70,
+          "scorer": {
+            "id": 3739,
+            "name": "Radamel Falcao"
+          },
+          "assist": [
+            {
+              "id": 3730,
+              "name": "Juan Fernando Quintero"
+            }
+          ]
+        }
+      ],
+      "bookings": [
+        {
+          "minute": 61,
+          "team": {
+            "id": 794,
+            "name": "Poland"
+          },
+          "player": {
+            "id": 8086,
+            "name": "Jan Bednarek"
+          },
+          "card": "YELLOW_CARD"
+        },
+        {
+          "minute": 85,
+          "team": {
+            "id": 794,
+            "name": "Poland"
+          },
+          "player": {
+            "id": 3538,
+            "name": "Jacek Góralski"
+          },
+          "card": "YELLOW_CARD"
+        }
+      ],
+      "substitutions": [
+        {
+          "minute": 32,
+          "team": {
+            "id": 818,
+            "name": "Colombia"
+          },
+          "playerOut": {
+            "id": 3731,
+            "name": "Abel Aguilar"
+          },
+          "playerIn": {
+            "id": 3734,
+            "name": "Mateus Uribe"
+          }
+        },
+        {
+          "minute": 57,
+          "team": {
+            "id": 794,
+            "name": "Poland"
+          },
+          "playerOut": {
+            "id": 2263,
+            "name": "Dawid Kownacki"
+          },
+          "playerIn": {
+            "id": 3542,
+            "name": "Kamil Grosicki"
+          }
+        },
+        {
+          "minute": 72,
+          "team": {
+            "id": 794,
+            "name": "Poland"
+          },
+          "playerOut": {
+            "id": 2249,
+            "name": "Bartosz Bereszyński"
+          },
+          "playerIn": {
+            "id": 3543,
+            "name": "Łukasz Teodorczyk"
+          }
+        },
+        {
+          "minute": 73,
+          "team": {
+            "id": 818,
+            "name": "Colombia"
+          },
+          "playerOut": {
+            "id": 3730,
+            "name": "Juan Fernando Quintero"
+          },
+          "playerIn": {
+            "id": 3737,
+            "name": "Jefferson Lerma"
+          }
+        },
+        {
+          "minute": 78,
+          "team": {
+            "id": 818,
+            "name": "Colombia"
+          },
+          "playerOut": {
+            "id": 3739,
+            "name": "Radamel Falcao"
+          },
+          "playerIn": {
+            "id": 3740,
+            "name": "Carlos Bacca"
+          }
+        },
+        {
+          "minute": 80,
+          "team": {
+            "id": 794,
+            "name": "Poland"
+          },
+          "playerOut": {
+            "id": 3530,
+            "name": "Michał Pazdan"
+          },
+          "playerIn": {
+            "id": 3529,
+            "name": "Kamil Glik"
+          }
+        }
+      ]
+    },
+    {
+      "id": 200004,
+      "competition": {
+        "id": 2000,
+        "name": "FIFA World Cup"
+      },
+      "season": {
+        "id": 1,
+        "startDate": "2018-06-14T17:00:00Z",
+        "endDate": "2018-07-15T17:00:00Z",
+        "currentMatchday": 3,
+        "availableStages": [
+          "GROUP_STAGE"
+        ]
+      },
+      "utcDate": "2018-06-25T14:00:00Z",
+      "status": "SCHEDULED",
+      "minute": null,
+      "attendance": null,
+      "matchday": 3,
+      "stage": "GROUP_STAGE",
+      "group": "Group A",
+      "lastUpdated": "2018-06-22T10:00:01Z",
+      "referees": [],
+      "homeTeam": {
+        "id": 801,
+        "name": "Saudi Arabia",
+        "coach": {
+          "id": null,
+          "name": null,
+          "countryOfBirth": null,
+          "nationality": null
+        },
+        "captain": {
+          "id": null,
+          "name": null,
+          "shirtNumber": null
+        },
+        "lineup": [],
+        "bench": []
+      },
+      "awayTeam": {
+        "id": 825,
+        "name": "Egypt",
+        "coach": {
+          "id": null,
+          "name": null,
+          "countryOfBirth": null,
+          "nationality": null
+        },
+        "captain": {
+          "id": null,
+          "name": null,
+          "shirtNumber": null
+        },
+        "lineup": [],
+        "bench": []
+      },
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "goals": [],
+      "bookings": [],
+      "substitutions": []
+    },
+    {
+      "id": 200005,
+      "competition": {
+        "id": 2000,
+        "name": "FIFA World Cup"
+      },
+      "season": {
+        "id": 1,
+        "startDate": "2018-06-14T17:00:00Z",
+        "endDate": "2018-07-15T17:00:00Z",
+        "currentMatchday": 3,
+        "availableStages": [
+          "GROUP_STAGE"
+        ]
+      },
+      "utcDate": "2018-06-25T14:00:00Z",
+      "status": "SCHEDULED",
+      "minute": null,
+      "attendance": null,
+      "matchday": 3,
+      "stage": "GROUP_STAGE",
+      "group": "Group A",
+      "lastUpdated": "2018-06-22T10:00:01Z",
+      "referees": [],
+      "homeTeam": {
+        "id": 758,
+        "name": "Uruguay",
+        "coach": {
+          "id": null,
+          "name": null,
+          "countryOfBirth": null,
+          "nationality": null
+        },
+        "captain": {
+          "id": null,
+          "name": null,
+          "shirtNumber": null
+        },
+        "lineup": [],
+        "bench": []
+      },
+      "awayTeam": {
+        "id": 808,
+        "name": "Russia",
+        "coach": {
+          "id": null,
+          "name": null,
+          "countryOfBirth": null,
+          "nationality": null
+        },
+        "captain": {
+          "id": null,
+          "name": null,
+          "shirtNumber": null
+        },
+        "lineup": [],
+        "bench": []
+      },
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "halfTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "fullTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "extraTime": {
+          "homeTeam": null,
+          "awayTeam": null
+        },
+        "penalties": {
+          "homeTeam": null,
+          "awayTeam": null
+        }
+      },
+      "goals": [],
+      "bookings": [],
+      "substitutions": []
+    }
+  ]
+}
