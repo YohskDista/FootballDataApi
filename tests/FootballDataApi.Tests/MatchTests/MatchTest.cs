@@ -46,5 +46,17 @@ namespace FootballDataApi.Tests.MatchTests
         {
             Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetMatchById(-1));
         }
+
+        [Test]
+        public void GetAllMatchByTeam_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
+        {
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetAllMatchOfTeam(-1));
+        }
+
+        [Test]
+        public void GetAllMatchOfCompetition_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
+        {
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetAllMatchOfCompetition(-1));
+        }
     }
 }

@@ -41,10 +41,7 @@ namespace FootballDataApi
 
             if (filters != null)
             {
-                var parametersNotPresent = filters
-                    .Where((filter, index) => index % 2 == 0 &&
-                        !authorizedFilters.Contains(filter))
-                    .ToList();
+                var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
 
                 if (parametersNotPresent.Count > 0)
                     throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
