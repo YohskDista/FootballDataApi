@@ -40,5 +40,11 @@ namespace FootballDataApi.Tests.MatchTests
             
             Assert.Throws<ArgumentException>(() => HttpExtensions.AddFiltersToUrl(baseUrl, filters));
         }
+
+        [Test]
+        public void GetMatchById_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
+        {
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetMatchById(-1));
+        }
     }
 }
