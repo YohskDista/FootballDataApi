@@ -32,9 +32,22 @@ namespace FootballRequestConsole
             //GetCompetitionsWithFilter(competitionController);
             //GetCompetitionById(competitionController, 2019);
             //GetAllMatchOfCompetition(competitionController, 2019);
-            GetAllMatch(matchController);
+            //GetAllMatch(matchController);
+            GetMatchById(matchController, 200033);
 
             Console.ReadKey();
+        }
+
+        private static async void GetMatchById(MatchController matchController, int idMatch)
+        {
+            var match = await matchController.GetMatchById(idMatch);
+
+            lock (lockWrite)
+            {
+                Console.WriteLine("### Get match by ID ###");
+                Console.WriteLine(JsonConvert.SerializeObject(match));
+                Console.WriteLine();
+            }
         }
 
         private static async void GetAllMatch(MatchController matchController)
