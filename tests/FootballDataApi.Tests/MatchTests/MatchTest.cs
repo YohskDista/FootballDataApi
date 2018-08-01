@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FootballDataApi.Tests.MatchTests
 {
     [TestFixture]
-    public class MatchTests
+    public class MatchTest
     {
         [Test]
         [TestCase("http://test-url.ch", new string[] { "name", "hello", "surname", "world" }, "http://test-url.ch/?name=hello&surname=world")]
