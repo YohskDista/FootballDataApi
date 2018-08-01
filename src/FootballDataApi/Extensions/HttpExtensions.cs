@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -27,6 +30,16 @@ namespace FootballDataApi.Extensions
             urlWithFilters = urlWithFilters.Remove(urlWithFilters.Length - 1);
 
             return urlWithFilters;
+        }
+
+        internal static IEnumerable<string> IsFilterPresentInList(this string[] authorizedFilters, string[] filters)
+        {
+            var parametersNotPresent = filters
+                .Where((filter, index) => index % 2 == 0 &&
+                    !authorizedFilters.Contains(filter))
+                .ToList();
+
+            return parametersNotPresent;
         }
     }
 }
