@@ -92,12 +92,21 @@ namespace FootballDataApi.Tests.MatchTests
         }
 
         [Test]
-        public void GetMatchesByTeam_Must_Return_OneResults()
+        public void GetMatchesByTeam_Must_Return_OneResult()
         {
             var result = _matchController.GetAllMatchOfTeam(794).Result;
 
             Assert.NotZero(result.Count());
             Assert.AreEqual(result.Count(), 1);
+        }
+
+        [Test]
+        public void GetMatchesById_Must_Return_OneResultOnly()
+        {
+            var result = _matchController.GetMatchById(200045).Result;
+
+            Assert.NotNull(result);
+            Assert.AreEqual(result.HomeTeam.Name, "Poland");
         }
     }
 }
