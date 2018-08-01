@@ -37,6 +37,8 @@ namespace FootballDataApi
 
         public async Task<IEnumerable<Match>> GetAllMatchOfTeam(int idTeam, params string[] filters)
         {
+            var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
+
             if (idTeam < 0)
                 throw new IndexOutOfRangeException("ID of the team cannot be negative");
 
