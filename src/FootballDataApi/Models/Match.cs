@@ -14,13 +14,13 @@ namespace FootballDataApi.Models
 
     public class Match
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public Competition Competition { get; set; }
         public Season Season { get; set; }
         public DateTime UtcDate { get; set; }
         public string Status { get; set; }
         public object Minute { get; set; }
-        public int Attendance { get; set; }
+        public int? Attendance { get; set; }
         public int? Matchday { get; set; }
         public string Stage { get; set; }
         public string Group { get; set; }
@@ -36,7 +36,7 @@ namespace FootballDataApi.Models
 
     public class Coach
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public string CountryOfBirth { get; set; }
         public string Nationality { get; set; }
@@ -44,10 +44,10 @@ namespace FootballDataApi.Models
 
     public class Player
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
-        public int ShirtNumber { get; set; }
+        public int? ShirtNumber { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string CountryOfBirth { get; set; }
         public string Nationality { get; set; }
@@ -56,7 +56,7 @@ namespace FootballDataApi.Models
 
     public class MatchTeam
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public Coach Coach { get; set; }
         public Player Captain { get; set; }
@@ -68,22 +68,22 @@ namespace FootballDataApi.Models
     {
         public string Winner { get; set; }
         public string Duration { get; set; }
-        public Tuple<int, int> HalfTime { get; set; }
-        public Tuple<int, int> FullTime { get; set; }
-        public Tuple<int, int> ExtraTime { get; set; }
-        public Tuple<int, int> Penalties { get; set; }
+        public Tuple<int?, int?> HalfTime { get; set; }
+        public Tuple<int?, int?> FullTime { get; set; }
+        public Tuple<int?, int?> ExtraTime { get; set; }
+        public Tuple<int?, int?> Penalties { get; set; }
     }
 
     public class Goal
     {
-        public int Minute { get; set; }
+        public int? Minute { get; set; }
         public Player Scorer { get; set; }
         public IEnumerable<Player> Assist { get; set; }
     }
 
     public class Booking
     {
-        public int Minute { get; set; }
+        public int? Minute { get; set; }
         public MatchTeam Team { get; set; }
         public Player Player { get; set; }
         public string Card { get; set; }
@@ -91,7 +91,7 @@ namespace FootballDataApi.Models
 
     public class Substitution
     {
-        public int Minute { get; set; }
+        public int? Minute { get; set; }
         public MatchTeam Team { get; set; }
         public Player PlayerOut { get; set; }
         public Player PlayerIn { get; set; }
@@ -99,7 +99,7 @@ namespace FootballDataApi.Models
 
     public class Referee
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string Name { get; set; }
         public object Nationality { get; set; }
     }
