@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace FootballDataApi.Extensions
 {
-    public static class HttpExtensioncs
+    public static class HttpExtensions
     {
         public static async Task<T> Get<T>(this HttpClient httpClient, HttpRequestMessage request)
         {
