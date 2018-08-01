@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Tests
+namespace FootballDataApi.Tests.MatchTests
 {
     [TestFixture]
     public class MatchTests
