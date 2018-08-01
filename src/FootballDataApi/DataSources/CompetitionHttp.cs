@@ -23,26 +23,6 @@ namespace FootballDataApi.DataSources
             _httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
-        {
-            var urlAreas = $"{BaseAddress}/{idCompetition}/matches";
-
-            if (filters.Length > 0)
-            {
-                urlAreas = $"{urlAreas}/?";
-                for (int i = 0; i < filters.Length; i += 2)
-                {
-                    urlAreas = $"{urlAreas}{filters[i]}={filters[i + 1]}&";
-                }
-                urlAreas = urlAreas.Remove(urlAreas.Length - 1);
-            }
-
-            var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-            var competitionMatches = await _httpClient.Get<CompetitionMatches>(request);
-
-            return competitionMatches.Matches;
-        }
-
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);

@@ -11,7 +11,5 @@ namespace FootballDataApi.Interfaces
         Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId);
 
         Task<Competition> GetCompetition(int idCompetition);
-
-        Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters);
     }
 }

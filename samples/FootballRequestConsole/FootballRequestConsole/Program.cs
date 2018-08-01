@@ -31,7 +31,7 @@ namespace FootballRequestConsole
             //GetCompetitions(competitionController);
             //GetCompetitionsWithFilter(competitionController);
             //GetCompetitionById(competitionController, 2019);
-            //GetAllMatchOfCompetition(competitionController, 2019);
+            //GetAllMatchOfCompetition(matchController, 2019);
             //GetAllMatch(matchController);
             GetMatchById(matchController, 200033);
 
@@ -62,9 +62,9 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetAllMatchOfCompetition(CompetitionController competitionController, int id)
+        private static async void GetAllMatchOfCompetition(MatchController matchController, int id)
         {
-            var matches = await competitionController.GetAllMatchOfCompetition(id);
+            var matches = await matchController.GetAllMatchOfCompetition(id);
 
             lock (lockWrite)
             {
