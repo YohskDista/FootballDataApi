@@ -22,6 +22,9 @@ namespace FootballDataApi.Extensions
 
         public static string AddFiltersToUrl(string baseUrl, string[] filters)
         {
+            if (filters.Length == 0)
+                return baseUrl;
+
             var urlWithFilters = $"{baseUrl}/?";
             for (int i = 0; i < filters.Length; i += 2)
             {

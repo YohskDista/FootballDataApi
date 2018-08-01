@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FootballDataApi.Extensions;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +12,14 @@ namespace FootballDataApi.Tests
     public class MatchTests
     {
         [Test]
-        public void AddFiltersToUrl_With_GivenFilters_MustReturn_CorrectUrl()
+        [TestCase("http://test-url.ch", new string[] { "name", "hello", "surname", "world" }, "http://test-url.ch/?name=hello&surname=world")]
+        [TestCase("http://test-url.ch", new string[] { "name", "hello" }, "http://test-url.ch/?name=hello")]
+        [TestCase("http://test-url.ch", new string[] { }, "http://test-url.ch")]
+        public void AddFiltersToUrl_With_GivenFilters_MustReturn_CorrectUrl(string baseUrl, string[] filters, string expectedUrl)
         {
-            
+            var urlWithFilters = HttpExtensions.AddFiltersToUrl(baseUrl, filters);
+
+            Assert.AreEqual(expectedUrl, urlWithFilters);
         }
     }
 }
