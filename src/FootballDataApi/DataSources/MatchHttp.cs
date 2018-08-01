@@ -7,6 +7,7 @@ using FootballDataApi.Models;
 using System.Threading.Tasks;
 using System.Linq;
 using FootballDataApi.Extensions;
+using FootballDataApi.Utilities;
 
 namespace FootballDataApi.DataSources
 {
@@ -66,13 +67,6 @@ namespace FootballDataApi.DataSources
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlMatch);
             return await _httpClient.Get<Match>(request);
-        }
-
-        internal sealed class RootMatches
-        {
-            public int Count { get; set; }
-            public object Filters { get; set; }
-            public IEnumerable<Match> Matches { get; set; }
         }
     }
 }
