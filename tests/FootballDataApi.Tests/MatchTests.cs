@@ -21,5 +21,14 @@ namespace FootballDataApi.Tests
 
             Assert.AreEqual(expectedUrl, urlWithFilters);
         }
+
+        [Test]
+        public void AddFiltersToUrl_With_GivenFilter_MustThrow_ArgumentException()
+        {
+            var baseUrl = "http://test-url.ch";
+            var filters = new string[] { "test" };
+            
+            Assert.Throws<ArgumentException>(() => HttpExtensions.AddFiltersToUrl(baseUrl, filters));
+        }
     }
 }

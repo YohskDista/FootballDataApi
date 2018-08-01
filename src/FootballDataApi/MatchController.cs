@@ -21,9 +21,6 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
 
-            if (filters.Length % 2 != 0)
-                throw new ArgumentException("Respect key / value parameters.");
-
             if (filters != null)
             {
                 var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
@@ -38,9 +35,6 @@ namespace FootballDataApi
         public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
         {
             var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
-
-            if (filters.Length % 2 != 0)
-                throw new ArgumentException("Respect key value parameters.");
 
             if (idCompetition < 0)
                 throw new IndexOutOfRangeException("Id competition cannot be negative");
@@ -65,9 +59,6 @@ namespace FootballDataApi
 
             if (idTeam < 0)
                 throw new IndexOutOfRangeException("ID of the team cannot be negative");
-
-            if (filters.Length % 2 != 0)
-                throw new ArgumentException("Respect the key / value in filters (args=value)");
 
             if (filters != null)
             {

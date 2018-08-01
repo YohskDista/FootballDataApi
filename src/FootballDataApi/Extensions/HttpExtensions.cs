@@ -25,6 +25,9 @@ namespace FootballDataApi.Extensions
             if (filters.Length == 0)
                 return baseUrl;
 
+            if(filters.Length % 2 != 0)
+                throw new ArgumentException("Respect the key / value in filters (args=value)");
+
             var urlWithFilters = $"{baseUrl}/?";
             for (int i = 0; i < filters.Length; i += 2)
             {
