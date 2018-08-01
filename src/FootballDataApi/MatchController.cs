@@ -21,13 +21,7 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
 
-            if (filters != null)
-            {
-                var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
-
-                if(parametersNotPresent.Count > 0)
-                    throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
-            }
+            HttpExtensions.VerifyFilters(filters, authorizedFilters);
 
             return await _matchCommands.GetAllMatches(filters);
         }
@@ -36,16 +30,7 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
-            if (idCompetition < 0)
-                throw new IndexOutOfRangeException("Id competition cannot be negative");
-
-            if (filters != null)
-            {
-                var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
-
-                if (parametersNotPresent.Count > 0)
-                    throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
-            }
+            HttpExtensions.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
             return await _matchCommands.GetAllMatchOfCompetition(idCompetition, filters);
         }
@@ -54,24 +39,14 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
 
-            if (idTeam < 0)
-                throw new IndexOutOfRangeException("ID of the team cannot be negative");
-
-            if (filters != null)
-            {
-                var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
-
-                if (parametersNotPresent.Count > 0)
-                    throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
-            }
+            HttpExtensions.VerifyActionParameters(idTeam, filters, authorizedFilters);
 
             return await _matchCommands.GetAllMatchOfTeam(idTeam, filters);
         }
 
         public async Task<Match> GetMatchById(int idMatch)
         {
-            if (idMatch < 0)
-                throw new IndexOutOfRangeException("ID of the match cannot be negative");
+            HttpExtensions.VerifyActionParameters(idMatch, null, null);
 
             return await _matchCommands.GetMatchById(idMatch);
         }

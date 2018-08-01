@@ -64,7 +64,8 @@ namespace FootballDataApi.Extensions
             if (id < 0)
                 throw new IndexOutOfRangeException("ID cannot be negative");
 
-            VerifyFilters(givenFilters, authorizedFilters);
+            if(givenFilters?.Length > 0)
+                VerifyFilters(givenFilters, authorizedFilters);
         }
     }
 }
