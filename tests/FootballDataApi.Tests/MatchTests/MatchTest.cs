@@ -58,5 +58,46 @@ namespace FootballDataApi.Tests.MatchTests
         {
             Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetAllMatchOfCompetition(-1));
         }
+
+        [Test]
+        public void AllMatchesMethods_WhoHaveFilters_MustVerifyThat_TheFilters_AreValid()
+        {
+            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatches("test"), "Respect key value parameters.");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatches("test", "value"), "This filters are not supported: \n test");
+
+            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfCompetition(1, "test"), "Respect key value parameters.");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfCompetition(1, "test", "value"), "This filters are not supported: \n test");
+
+
+            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfTeam(1, "test"), "Respect key value parameters.");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfTeam(1, "test", "value", "hello", "world"), "This filters are not supported: \n test\nworld");
+        }
+
+        [Test]
+        public void GetAllMatches_Must_Return_ThreeResults()
+        {
+            var result = _matchController.GetAllMatches().Result;
+
+            Assert.NotZero(result.Count());
+            Assert.AreEqual(result.Count(), 3);
+        }
+
+        [Test]
+        public void GetMatchesByCompetition_Must_Return_ThreeResults()
+        {
+            var result = _matchController.GetAllMatchOfCompetition(2000).Result;
+
+            Assert.NotZero(result.Count());
+            Assert.AreEqual(result.Count(), 3);
+        }
+
+        [Test]
+        public void GetMatchesByTeam_Must_Return_OneResults()
+        {
+            var result = _matchController.GetAllMatchOfTeam(794).Result;
+
+            Assert.NotZero(result.Count());
+            Assert.AreEqual(result.Count(), 1);
+        }
     }
 }

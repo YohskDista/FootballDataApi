@@ -37,39 +37,7 @@ namespace FootballDataApi.Tests.MatchTests
 
         public Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
         {
-            var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
-
-            var intermediateList = listMatchMockup;
-
-            if(filters.Contains("competitions"))
-            {
-                var indexCompetitionValue = Array.IndexOf(filters, "competitions") + 1;
-                intermediateList = intermediateList
-                    .Where(T => T.Competition.Id == int.Parse(filters.ElementAt(indexCompetitionValue)));
-            }
-
-            if (filters.Contains("dateFrom"))
-            {
-                var indexDateFromValue = Array.IndexOf(filters, "dateFrom") + 1;
-                intermediateList = intermediateList
-                    .Where(T => T.UtcDate >= DateTime.Parse(filters.ElementAt(indexDateFromValue)));
-            }
-
-            if (filters.Contains("dateTo"))
-            {
-                var indexDateToValue = Array.IndexOf(filters, "dateTo") + 1;
-                intermediateList = intermediateList
-                    .Where(T => T.UtcDate <= DateTime.Parse(filters.ElementAt(indexDateToValue)));
-            }
-
-            if (filters.Contains("status"))
-            {
-                var indexStatusValue = Array.IndexOf(filters, "status") + 1;
-                intermediateList = intermediateList
-                    .Where(T => T.Status == filters.ElementAt(indexStatusValue));
-            }
-
-            return Task.Run(() => intermediateList);
+            return Task.Run(() => listMatchMockup);
         }
 
         public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
