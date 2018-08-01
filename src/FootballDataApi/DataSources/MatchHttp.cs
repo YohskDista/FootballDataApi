@@ -39,9 +39,12 @@ namespace FootballDataApi.DataSources
             throw new NotImplementedException();
         }
 
-        public Task<Match> GetMatchById(int idMatch)
+        public async Task<Match> GetMatchById(int idMatch)
         {
-            throw new NotImplementedException();
+            var urlMatch = $"{BaseAddress}/{idMatch}";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlMatch);
+            return await _httpClient.Get<Match>(request);
         }
 
         internal sealed class RootMatches
