@@ -53,7 +53,7 @@ namespace FootballDataApi
                     throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
             }
 
-            throw new NotImplementedException();
+            return await _matchCommands.GetAllMatchOfTeam(idTeam, filters);
         }
 
         public async Task<Match> GetMatchById(int idMatch)
