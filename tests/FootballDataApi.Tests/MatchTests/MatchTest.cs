@@ -1,4 +1,5 @@
 ﻿using FootballDataApi.Extensions;
+using FootballDataApi.Interfaces;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,15 @@ namespace FootballDataApi.Tests.MatchTests
     [TestFixture]
     public class MatchTest
     {
+        private MatchController _matchController;
+
+        [SetUp]
+        public void MatchTestSetUp()
+        {
+            IMatch match = new MatchSource();
+            _matchController = new MatchController(match);
+        }
+
         [Test]
         [TestCase("http://test-url.ch", new string[] { "name", "hello", "surname", "world" }, "http://test-url.ch/?name=hello&surname=world")]
         [TestCase("http://test-url.ch", new string[] { "name", "hello" }, "http://test-url.ch/?name=hello")]
