@@ -8,7 +8,7 @@ namespace FootballDataApi.Interfaces
 {
     public interface IMatch
     {
-        Task<IEnumerable<Match>> GetAllMatchFrom(int idCompetition, params string[] filters);
+        Task<IEnumerable<Match>> GetAllMatches(params string[] filters);
 
         Task<IEnumerable<Match>> GetAllMatchOfTeam(int idTeam, params string[] filters);
 

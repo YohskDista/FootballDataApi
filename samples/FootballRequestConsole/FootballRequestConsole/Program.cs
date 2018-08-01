@@ -33,6 +33,18 @@ namespace FootballRequestConsole
             Console.ReadKey();
         }
 
+        private static async void GetAllMatch(MatchController matchController)
+        {
+            var matches = await matchController.GetAllMatches();
+
+            lock (lockWrite)
+            {
+                Console.WriteLine("### All matches of competition ###");
+                Console.WriteLine(JsonConvert.SerializeObject(matches));
+                Console.WriteLine();
+            }
+        }
+
         private static async void GetAllMatchOfCompetition(CompetitionController competitionController, int id)
         {
             var matches = await competitionController.GetAllMatchOfCompetition(id);
