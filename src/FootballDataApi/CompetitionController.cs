@@ -24,6 +24,9 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
+            if (filters.Length > 0 && filters.Length % 2 != 0)
+                throw new ArgumentException("Respect key value parameters.");
+
             if (idCompetition < 0)
                 throw new IndexOutOfRangeException("Id competition cannot be negative");
 

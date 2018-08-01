@@ -25,9 +25,6 @@ namespace FootballDataApi.DataSources
 
         public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
         {
-            if (filters.Length > 0 && filters.Length % 2 != 0)
-                throw new ArgumentException("Respect key value parameters.");
-
             var urlAreas = $"{BaseAddress}/{idCompetition}/matches";
 
             if (filters.Length > 0)
