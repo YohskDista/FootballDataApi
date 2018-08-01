@@ -21,7 +21,7 @@ namespace FootballDataApi.Models
         public string Status { get; set; }
         public object Minute { get; set; }
         public int Attendance { get; set; }
-        public int Matchday { get; set; }
+        public int? Matchday { get; set; }
         public string Stage { get; set; }
         public string Group { get; set; }
         public DateTime LastUpdated { get; set; }
