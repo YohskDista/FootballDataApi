@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
+using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -40,7 +41,7 @@ namespace FootballDataApi.DataSources
             }
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-            var competitionMatches = await Get<CompetitionMatches>(_httpClient, request);
+            var competitionMatches = await _httpClient.Get<CompetitionMatches>(request);
 
             return competitionMatches.Matches;
         }
@@ -48,7 +49,7 @@ namespace FootballDataApi.DataSources
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);
-            var competitionRoot = await Get<CompetitionRoot>(_httpClient, request);
+            var competitionRoot = await _httpClient.Get<CompetitionRoot>(request);
 
             return competitionRoot.Competitions;
         }
@@ -58,7 +59,7 @@ namespace FootballDataApi.DataSources
             var urlAreas = $"{BaseAddress}/?areas={ areaId }";
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-            var competitionRoot = await Get<CompetitionRoot>(_httpClient, request);
+            var competitionRoot = await _httpClient.Get<CompetitionRoot>(request);
 
             return competitionRoot.Competitions;
         }
@@ -68,17 +69,7 @@ namespace FootballDataApi.DataSources
             var url = $"{BaseAddress}/{idCompetition}";
             var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-            return await Get<Competition>(_httpClient, request);
-        }
-
-        private async Task<T> Get<T>(HttpClient httpClient, HttpRequestMessage request)
-        {
-            using (var response = await httpClient.SendAsync(request, new CancellationToken()))
-            {
-                response.EnsureSuccessStatusCode();
-                var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<T>(content);
-            }
+            return await _httpClient.Get<Competition>(request);
         }
     }
 }
