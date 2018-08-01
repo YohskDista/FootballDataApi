@@ -1,8 +1,12 @@
 ﻿using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Utilities;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,57 +14,62 @@ namespace FootballDataApi.Tests.MatchTests
 {
     public class MatchSource : IMatch
     {
-        private readonly List<Match> listMatchMockup;
+        private IEnumerable<Match> listMatchMockup;
 
         public MatchSource()
         {
-            listMatchMockup = new List<Match>
+            InitializeData();
+        }
+
+        private void InitializeData()
+        {
+            var assembly = Assembly.GetExecutingAssembly();
+            var resourceName = "FootballDataApi.Tests.Data.MatchData.json";
+
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
             {
-                new Match {
-                    Id = 1,
-                    Attendance = 1000,
-                    HomeTeam = new MatchTeam
-                    {
-                        Id = 100
-                    },
-                    AwayTeam = new MatchTeam
-                    {
-                        Id = 101
-                    },
-                    Competition = new Competition { Id = 1 }
-                },
-                new Match {
-                    Id = 2,
-                    Attendance = 1000,
-                    HomeTeam = new MatchTeam
-                    {
-                        Id = 101
-                    },
-                    AwayTeam = new MatchTeam
-                    {
-                        Id = 102
-                    },
-                    Competition = new Competition { Id = 2 }
-                },
-                new Match {
-                    Id = 3,
-                    Attendance = 5000,
-                    HomeTeam = new MatchTeam
-                    {
-                        Id = 100
-                    },
-                    AwayTeam = new MatchTeam
-                    {
-                        Id = 103
-                    },
-                    Competition = new Competition { Id = 2 }
-                }
-            };
+                string matches = reader.ReadToEnd();
+                var rootMatches = JsonConvert.DeserializeObject<RootMatches>(matches);
+                listMatchMockup = rootMatches.Matches;
+            }
         }
 
         public Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
         {
-            return Task.Run(() => listMatchMockup.AsEnumerable());
+            var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
+
+            var intermediateList = listMatchMockup;
+
+            if(filters.Contains("competitions"))
+            {
+                var indexCompetitionValue = Array.IndexOf(filters, "competitions") + 1;
+                intermediateList = intermediateList
+                    .Where(T => T.Competition.Id == int.Parse(filters.ElementAt(indexCompetitionValue)));
+            }
+
+            if (filters.Contains("dateFrom"))
+            {
+                var indexDateFromValue = Array.IndexOf(filters, "dateFrom") + 1;
+                intermediateList = intermediateList
+                    .Where(T => T.UtcDate >= DateTime.Parse(filters.ElementAt(indexDateFromValue)));
+            }
+
+            if (filters.Contains("dateTo"))
+            {
+                var indexDateToValue = Array.IndexOf(filters, "dateTo") + 1;
+                intermediateList = intermediateList
+                    .Where(T => T.UtcDate <= DateTime.Parse(filters.ElementAt(indexDateToValue)));
+            }
+
+            if (filters.Contains("status"))
+            {
+                var indexStatusValue = Array.IndexOf(filters, "status") + 1;
+                intermediateList = intermediateList
+                    .Where(T => T.Status == filters.ElementAt(indexStatusValue));
+            }
+
+            return Task.Run(() => intermediateList);
         }
 
         public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
