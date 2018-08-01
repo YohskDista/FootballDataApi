@@ -32,7 +32,7 @@ namespace FootballDataApi.Extensions
             return urlWithFilters;
         }
 
-        internal static IEnumerable<string> IsFilterPresentInList(this string[] authorizedFilters, string[] filters)
+        internal static IEnumerable<string> FilterNotPresentInList(this string[] authorizedFilters, string[] filters)
         {
             var parametersNotPresent = filters
                 .Where((filter, index) => index % 2 == 0 &&
@@ -40,6 +40,25 @@ namespace FootballDataApi.Extensions
                 .ToList();
 
             return parametersNotPresent;
+        }
+
+        internal static void VerifyFilters(string[] givenFilters, string[] authorizedFilters)
+        {
+            if (givenFilters.Length % 2 != 0)
+                throw new ArgumentException("Respect key value parameters.");
+
+            var parametersNotPresent = FilterNotPresentInList(authorizedFilters, givenFilters);
+
+            if(parametersNotPresent.Count() > 0)
+                throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
+        }
+
+        internal static void VerifyActionParameters(int id, string[] givenFilters, string[] authorizedFilters)
+        {
+            if (id < 0)
+                throw new IndexOutOfRangeException("ID cannot be negative");
+
+            VerifyFilters(givenFilters, authorizedFilters);
         }
     }
 }

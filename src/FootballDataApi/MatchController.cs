@@ -26,7 +26,7 @@ namespace FootballDataApi
 
             if (filters != null)
             {
-                var parametersNotPresent = authorizedFilters.IsFilterPresentInList(filters).ToList();
+                var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
 
                 if(parametersNotPresent.Count > 0)
                     throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
@@ -39,7 +39,7 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
-            if (filters.Length > 0 && filters.Length % 2 != 0)
+            if (filters.Length % 2 != 0)
                 throw new ArgumentException("Respect key value parameters.");
 
             if (idCompetition < 0)
@@ -71,7 +71,7 @@ namespace FootballDataApi
 
             if (filters != null)
             {
-                var parametersNotPresent = authorizedFilters.IsFilterPresentInList(filters).ToList();
+                var parametersNotPresent = authorizedFilters.FilterNotPresentInList(filters).ToList();
 
                 if (parametersNotPresent.Count > 0)
                     throw new ArgumentException($"This filters are not supported : \n { string.Join("\n", parametersNotPresent) }");
