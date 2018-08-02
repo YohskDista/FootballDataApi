@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
+using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -27,12 +28,14 @@ namespace FootballDataApi
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
         {
+            HttpExtensions.VerifyActionParameters(areaId, null, null);
             return await _competitionDataSource.GetAvailableCompetitionByArea(areaId);
         }
 
-        public async Task<Competition> GetCompetition(int id)
+        public async Task<Competition> GetCompetition(int idCompetition)
         {
-            return await _competitionDataSource.GetCompetition(id);
+            HttpExtensions.VerifyActionParameters(idCompetition, null, null);
+            return await _competitionDataSource.GetCompetition(idCompetition);
         }
     }
 }

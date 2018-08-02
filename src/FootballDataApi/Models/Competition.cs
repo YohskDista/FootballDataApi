@@ -4,13 +4,6 @@ using System.Text;
 
 namespace FootballDataApi.Models
 {
-    public class CompetitionRoot
-    {
-        public int Count { get; set; }
-        public object Filters { get; set; }
-        public IEnumerable<Competition> Competitions { get; set; }
-    }
-
     public class Competition
     {
         public int Id { get; set; }

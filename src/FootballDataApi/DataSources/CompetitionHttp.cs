@@ -1,6 +1,7 @@
 ﻿using FootballDataApi.Extensions;
 using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace FootballDataApi.DataSources
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);
-            var competitionRoot = await _httpClient.Get<CompetitionRoot>(request);
+            var competitionRoot = await _httpClient.Get<RootCompetitions>(request);
 
             return competitionRoot.Competitions;
         }
@@ -36,7 +37,7 @@ namespace FootballDataApi.DataSources
             var urlAreas = $"{BaseAddress}/?areas={ areaId }";
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-            var competitionRoot = await _httpClient.Get<CompetitionRoot>(request);
+            var competitionRoot = await _httpClient.Get<RootCompetitions>(request);
 
             return competitionRoot.Competitions;
         }
