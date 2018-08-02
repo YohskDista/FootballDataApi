@@ -5,8 +5,10 @@
   <ItemGroup>
     <None Remove="Data\CompetitionData.json" />
     <None Remove="Data\MatchData.json" />
+    <None Remove="Data\TeamData.json" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Data\TeamData.json" />
     <EmbeddedResource Include="Data\CompetitionData.json" />
     <EmbeddedResource Include="Data\MatchData.json">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

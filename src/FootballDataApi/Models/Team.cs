@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FootballDataApi.Models
 {
-    public class Club
+    public class Team
     {
         public int Id { get; set; }
         public Area Area { get; set; }

@@ -1,0 +1,108 @@
+﻿{
+  "count": 4,
+  "filters": {
+    "stages": "SEMI_FINALS"
+  },
+  "competition": {
+    "id": 2001,
+    "area": {
+      "id": 2077,
+      "name": "Europe"
+    },
+    "name": "UEFA Champions League",
+    "code": null,
+    "plan": "TIER_ONE",
+    "lastUpdated": "2018-06-05T00:06:27Z"
+  },
+  "season": {
+    "id": 2,
+    "startDate": "2017-06-27T18:00:00Z",
+    "endDate": "2018-05-26T20:45:00Z",
+    "currentMatchday": 6,
+    "availableStages": [
+      "1ST_QUALIFYING_ROUND",
+      "2ND_QUALIFYING_ROUND",
+      "3RD_QUALIFYING_ROUND",
+      "PLAY_OFF_ROUND",
+      "GROUP_STAGE",
+      "ROUND_OF_16",
+      "QUARTER_FINALS",
+      "SEMI_FINALS",
+      "FINAL"
+    ]
+  },
+  "teams": [
+    {
+      "id": 5,
+      "area": {
+        "id": 2088,
+        "name": "Germany"
+      },
+      "name": "FC Bayern München",
+      "shortName": "Bayern M",
+      "tla": "FCB",
+      "address": "Säbenerstr. 51 München 81547",
+      "phone": "+49 (089) 699310",
+      "website": "http://www.fcbayern.de",
+      "email": "service-team@fcb.de",
+      "founded": 1900,
+      "clubColors": "Red / White / Blue",
+      "venue": null,
+      "lastUpdated": "2018-06-02T15:09:07Z"
+    },
+    {
+      "id": 64,
+      "area": {
+        "id": 2257,
+        "name": "Uruguay"
+      },
+      "name": "Liverpool FC",
+      "shortName": "Liverpool",
+      "tla": "LFC",
+      "address": "Avenida Agraciada 4186 Montevideo 11200",
+      "phone": "+598 (02) 3094357",
+      "website": "http://www.liverpoolfc.com.uy",
+      "email": "info@liverpoolfc.com.uy",
+      "founded": 1915,
+      "clubColors": "Dark Blue / Black",
+      "venue": null,
+      "lastUpdated": "2018-06-02T15:13:31Z"
+    },
+    {
+      "id": 86,
+      "area": {
+        "id": 2224,
+        "name": "Spain"
+      },
+      "name": "Real Madrid CF",
+      "shortName": "Real Madrid",
+      "tla": "MAD",
+      "address": "Avenida Concha Espina, 1 Madrid 28036",
+      "phone": "+34 (913) 984300",
+      "website": "http://www.realmadrid.com",
+      "email": "atencionpublico@corp.realmadrid.com",
+      "founded": 1902,
+      "clubColors": "White / Purple",
+      "venue": null,
+      "lastUpdated": "2018-06-02T12:58:10Z"
+    },
+    {
+      "id": 100,
+      "area": {
+        "id": 2114,
+        "name": "Italy"
+      },
+      "name": "AS Roma",
+      "shortName": "Roma",
+      "tla": "ROM",
+      "address": "Via di Trigoria km. 3,600 Roma 00128",
+      "phone": "+39 (06) 501911",
+      "website": "http://www.asroma.it",
+      "email": "info@asromaweb.com",
+      "founded": 1927,
+      "clubColors": "Maroon / Orange / White",
+      "venue": null,
+      "lastUpdated": "2018-06-02T14:56:20Z"
+    }
+  ]
+}

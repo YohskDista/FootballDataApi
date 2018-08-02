@@ -22,7 +22,7 @@ namespace FootballDataApi.Models
     public class Ranking
     {
         public int Position { get; set; }
-        public Club Team { get; set; }
+        public Team Team { get; set; }
         public int PlayedGames { get; set; }
         public int Won { get; set; }
         public int Draw { get; set; }
