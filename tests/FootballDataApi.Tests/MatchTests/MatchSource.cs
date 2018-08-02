@@ -30,7 +30,7 @@ namespace FootballDataApi.Tests.MatchTests
             using (StreamReader reader = new StreamReader(stream))
             {
                 string matches = reader.ReadToEnd();
-                var rootMatches = JsonConvert.DeserializeObject<RootMatches>(matches);
+                var rootMatches = JsonConvert.DeserializeObject<RootMatch>(matches);
                 listMatchMockup = rootMatches.Matches;
             }
         }

@@ -30,7 +30,7 @@ namespace FootballDataApi.DataSources
                 urlMatches = HttpExtensions.AddFiltersToUrl(urlMatches, filters);
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
-            var rootMatches = await _httpClient.Get<RootMatches>(request);
+            var rootMatches = await _httpClient.Get<RootMatch>(request);
 
             return rootMatches.Matches;
         }
@@ -56,7 +56,7 @@ namespace FootballDataApi.DataSources
                 urlMatches = HttpExtensions.AddFiltersToUrl(urlMatches, filters);
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
-            var rootMatches = await _httpClient.Get<RootMatches>(request);
+            var rootMatches = await _httpClient.Get<RootMatch>(request);
 
             return rootMatches.Matches;
         }

@@ -1,0 +1,41 @@
+﻿{
+  "count": 273,
+  "filters": {},
+  "areas": [
+    {
+      "id": 2000,
+      "name": "Afghanistan",
+      "countryCode": "AFG",
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2001,
+      "name": "Africa",
+      "countryCode": "AFR",
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2002,
+      "name": "Albania",
+      "countryCode": "ALB",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2003,
+      "name": "Alderney",
+      "countryCode": "ALD",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2004,
+      "name": "Algeria",
+      "countryCode": "ALG",
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    }
+  ]
+}

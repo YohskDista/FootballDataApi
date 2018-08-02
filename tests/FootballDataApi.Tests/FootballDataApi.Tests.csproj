@@ -3,11 +3,13 @@
     <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Data\AreaData.json" />
     <None Remove="Data\CompetitionData.json" />
     <None Remove="Data\MatchData.json" />
     <None Remove="Data\TeamData.json" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Data\AreaData.json" />
     <EmbeddedResource Include="Data\TeamData.json" />
     <EmbeddedResource Include="Data\CompetitionData.json" />
     <EmbeddedResource Include="Data\MatchData.json">

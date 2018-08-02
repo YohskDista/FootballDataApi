@@ -27,7 +27,7 @@ namespace FootballDataApi.DataSources
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
             var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);
-            var competitionRoot = await _httpClient.Get<RootCompetitions>(request);
+            var competitionRoot = await _httpClient.Get<RootCompetition>(request);
 
             return competitionRoot.Competitions;
         }
@@ -37,7 +37,7 @@ namespace FootballDataApi.DataSources
             var urlAreas = $"{BaseAddress}/?areas={ areaId }";
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-            var competitionRoot = await _httpClient.Get<RootCompetitions>(request);
+            var competitionRoot = await _httpClient.Get<RootCompetition>(request);
 
             return competitionRoot.Competitions;
         }

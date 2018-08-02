@@ -5,10 +5,8 @@ using System.Text;
 
 namespace FootballDataApi.Utilities
 {
-    public sealed class RootMatches
+    public class RootMatch : RootApi
     {
-        public int Count { get; set; }
-        public object Filters { get; set; }
         public IEnumerable<Match> Matches { get; set; }
     }
 }
