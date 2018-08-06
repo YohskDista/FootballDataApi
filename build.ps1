@@ -56,6 +56,9 @@ if (Test-Path .\artifacts) {
 
 Assert-PsBuildInstalled
 
+$env:APPVEYOR_REPO_TAG
+$env:APPVEYOR_REPO_TAG_NAME
+
 'Starting dotnet restore' | Write-Verbose
 exec {& dotnet restore .\src\FootballDataApi}
 exec {& dotnet restore .\tests\FootballDataApi.Tests}
