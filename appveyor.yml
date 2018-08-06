@@ -8,14 +8,11 @@ branches:
   - master
 nuget:  
   disable_publish_on_pr: true
-before_build:
-  - nuget restore
-test:
-  assemblies:
-    only:
-    - FootballDataApi.Tests*
+build_script:  
+- ps: .\Build.ps1
+test: off
 artifacts:  
-  - path: '**\FootballDataApi*.nupkg'
+  - path: '.\src\FootballDataApi\artifacts\*.nupkg'
     name: NuGet
 deploy:  
 - provider: NuGet
