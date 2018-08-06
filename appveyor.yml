@@ -1,0 +1,23 @@
+version: '{build}'
+image: Visual Studio 2017
+pull_requests:  
+  do_not_increment_build_number: true
+branches:  
+  only:
+  - master
+nuget:  
+  disable_publish_on_pr: true
+before_build:
+  - nuget restore
+test: off
+artifacts:  
+  - path: '**\*.nupkg'
+    name: NuGet
+deploy:  
+- provider: NuGet
+  name: production
+  api_key:
+    secure: oy2lolnwvfhe47lska4q22s3mq7rsvre5ashv2de5gkcou
+  on:
+    branch: master
+    appveyor_repo_tag: true
