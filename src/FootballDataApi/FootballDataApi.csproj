@@ -3,6 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Company>YohskSoftware</Company>
+    <Authors>Leonardo Di Stasio</Authors>
+    <Version>1.0.0-beta</Version>
+    <Description>Simplify access to the football-data.org API in C#.
+The library is in .NetStandard2.0 and can be used on each platform (Windows, Linux, Android, iOS, etc.)</Description>
+    <PackageTags>football;data;api;footballdata</PackageTags>
+    <PackageReleaseNotes />
   </PropertyGroup>
 
   <ItemGroup>
