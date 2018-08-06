@@ -57,7 +57,7 @@ if (Test-Path .\artifacts) {
 Assert-PsBuildInstalled
 
 'Starting dotnet restore' | Write-Verbose
-exec {& dotnet restore .\src\FootballDataApi.csproj}
+exec {& dotnet restore .\src\FootballDataApi}
 exec {& dotnet restore .\tests\FootballDataApi.Tests}
 
 'Starting dotnet build' | Write-Verbose
