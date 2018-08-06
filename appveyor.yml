@@ -8,8 +8,14 @@ branches:
   - master
 nuget:  
   disable_publish_on_pr: true
+init:
+  - ps: >-
+      if ($env:APPVEYOR_REPO_TAG -eq "true")
+      {
+          Update-AppveyorBuild -Version "$($env:APPVEYOR_REPO_TAG_NAME.TrimStart("v"))"
+      }
 build_script:  
-- ps: .\Build.ps1
+  - ps: .\Build.ps1
 test: off
 artifacts:  
   - path: '.\src\FootballDataApi\artifacts\*.nupkg'
@@ -20,5 +26,4 @@ deploy:
   api_key:
     secure: oy2lolnwvfhe47lska4q22s3mq7rsvre5ashv2de5gkcou
   on:
-    branch: master
     appveyor_repo_tag: true
