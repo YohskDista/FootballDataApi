@@ -21,7 +21,7 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
 
-            HttpExtensions.VerifyFilters(filters, authorizedFilters);
+            HttpHelpers.VerifyFilters(filters, authorizedFilters);
 
             return await _matchCommands.GetAllMatches(filters);
         }
@@ -30,7 +30,7 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
-            HttpExtensions.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+            HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
             return await _matchCommands.GetAllMatchOfCompetition(idCompetition, filters);
         }
@@ -39,14 +39,14 @@ namespace FootballDataApi
         {
             var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
 
-            HttpExtensions.VerifyActionParameters(idTeam, filters, authorizedFilters);
+            HttpHelpers.VerifyActionParameters(idTeam, filters, authorizedFilters);
 
             return await _matchCommands.GetAllMatchOfTeam(idTeam, filters);
         }
 
         public async Task<Match> GetMatchById(int idMatch)
         {
-            HttpExtensions.VerifyActionParameters(idMatch, null, null);
+            HttpHelpers.VerifyActionParameters(idMatch, null, null);
 
             return await _matchCommands.GetMatchById(idMatch);
         }

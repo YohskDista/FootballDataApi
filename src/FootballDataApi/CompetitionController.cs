@@ -28,13 +28,13 @@ namespace FootballDataApi
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
         {
-            HttpExtensions.VerifyActionParameters(areaId, null, null);
+            HttpHelpers.VerifyActionParameters(areaId, null, null);
             return await _competitionDataSource.GetAvailableCompetitionByArea(areaId);
         }
 
         public async Task<Competition> GetCompetition(int idCompetition)
         {
-            HttpExtensions.VerifyActionParameters(idCompetition, null, null);
+            HttpHelpers.VerifyActionParameters(idCompetition, null, null);
             return await _competitionDataSource.GetCompetition(idCompetition);
         }
     }

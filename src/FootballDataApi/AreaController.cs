@@ -24,7 +24,7 @@ namespace FootballDataApi
 
         public async Task<Area> GetAreaById(int idArea)
         {
-            HttpExtensions.VerifyActionParameters(idArea, null, null);
+            HttpHelpers.VerifyActionParameters(idArea, null, null);
 
             return await _areaDataSource.GetAreaById(idArea);
         }

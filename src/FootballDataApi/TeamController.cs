@@ -21,14 +21,14 @@ namespace FootballDataApi
         {
             string[] authorizedFilters = new string[] { "stage" };
 
-            HttpExtensions.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+            HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
             return await _teamSource.GetTeamByCompetition(idCompetition, filters);
         }
 
         public async Task<Team> GetTeamById(int idTeam)
         {
-            HttpExtensions.VerifyActionParameters(idTeam, null, null);
+            HttpHelpers.VerifyActionParameters(idTeam, null, null);
 
             return await _teamSource.GetTeamById(idTeam);
         }

@@ -19,7 +19,7 @@ namespace FootballDataApi
 
         public async Task<SeasonStanding> GetStandingOfCompetition(int idCompetition)
         {
-            HttpExtensions.VerifyActionParameters(idCompetition, null, null);
+            HttpHelpers.VerifyActionParameters(idCompetition, null, null);
 
             return await _standingDataSource.GetStandingOfCompetition(idCompetition);
         }

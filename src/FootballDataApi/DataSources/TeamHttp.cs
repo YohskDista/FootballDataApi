@@ -23,7 +23,7 @@ namespace FootballDataApi.DataSources
         {
             var urlTeamByCompetition = $"http://api.football-data.org/v2/competitions/{idCompetition}/teams";
 
-            urlTeamByCompetition = HttpExtensions.AddFiltersToUrl(urlTeamByCompetition, filters);
+            urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
             var TeamRoot = await _httpClient.Get<RootTeam>(request);
@@ -33,7 +33,7 @@ namespace FootballDataApi.DataSources
 
         public async Task<Team> GetTeamById(int idTeam)
         {
-            HttpExtensions.VerifyActionParameters(idTeam, null, null);
+            HttpHelpers.VerifyActionParameters(idTeam, null, null);
 
             var urlTeamByCompetition = $"http://api.football-data.org/v2/teams{idTeam}";
 

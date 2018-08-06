@@ -22,26 +22,6 @@ namespace FootballDataApi.Tests.MatchTests
         }
 
         [Test]
-        [TestCase("http://test-url.ch", new string[] { "name", "hello", "surname", "world" }, "http://test-url.ch/?name=hello&surname=world")]
-        [TestCase("http://test-url.ch", new string[] { "name", "hello" }, "http://test-url.ch/?name=hello")]
-        [TestCase("http://test-url.ch", new string[] { }, "http://test-url.ch")]
-        public void AddFiltersToUrl_With_GivenFilters_MustReturn_CorrectUrl(string baseUrl, string[] filters, string expectedUrl)
-        {
-            var urlWithFilters = HttpExtensions.AddFiltersToUrl(baseUrl, filters);
-
-            Assert.AreEqual(expectedUrl, urlWithFilters);
-        }
-
-        [Test]
-        public void AddFiltersToUrl_With_GivenFilter_MustThrow_ArgumentException()
-        {
-            var baseUrl = "http://test-url.ch";
-            var filters = new string[] { "test" };
-            
-            Assert.Throws<ArgumentException>(() => HttpExtensions.AddFiltersToUrl(baseUrl, filters));
-        }
-
-        [Test]
         public void GetMatchById_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
         {
             Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetMatchById(-1));

@@ -27,7 +27,7 @@ namespace FootballDataApi.DataSources
             var urlMatches = BaseAddress;
 
             if (filters.Length > 0)
-                urlMatches = HttpExtensions.AddFiltersToUrl(urlMatches, filters);
+                urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
             var rootMatches = await _httpClient.Get<RootMatch>(request);
@@ -40,7 +40,7 @@ namespace FootballDataApi.DataSources
             var urlAreas = $"http://api.football-data.org/v2/competitions/{idCompetition}/matches";
 
             if (filters.Length > 0)
-                urlAreas = HttpExtensions.AddFiltersToUrl(urlAreas, filters);
+                urlAreas = HttpHelpers.AddFiltersToUrl(urlAreas, filters);
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
             var competitionMatches = await _httpClient.Get<CompetitionMatches>(request);
@@ -53,7 +53,7 @@ namespace FootballDataApi.DataSources
             var urlMatches = $"http://api.football-data.org/v2/teams/{idTeam}/matches";
 
             if (filters.Length > 0)
-                urlMatches = HttpExtensions.AddFiltersToUrl(urlMatches, filters);
+                urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
 
             var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
             var rootMatches = await _httpClient.Get<RootMatch>(request);
