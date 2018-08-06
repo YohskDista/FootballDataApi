@@ -12,13 +12,13 @@ namespace FootballDataApi.Tests.MatchTests
     [TestFixture]
     public class MatchTest
     {
-        private MatchController _matchController;
+        private MatchProvider _matchController;
 
         [SetUp]
         public void MatchTestSetUp()
         {
             IMatch match = new MatchSource();
-            _matchController = new MatchController(match);
+            _matchController = new MatchProvider(match);
         }
 
         [Test]
@@ -87,6 +87,32 @@ namespace FootballDataApi.Tests.MatchTests
 
             Assert.NotNull(result);
             Assert.AreEqual(result.HomeTeam.Name, "Poland");
+        }
+
+        [Test]
+        public void VerifyThatNoData_IsNull_InTheFirstMatch()
+        {
+            var result = _matchController.GetMatchById(200045).Result;
+
+            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Referees);
+
+            Assert.IsNotNull(result.HomeTeam);
+            Assert.IsNotNull(result.HomeTeam.Captain);
+            Assert.IsNotNull(result.HomeTeam.Lineup);
+            Assert.IsNotNull(result.HomeTeam.Bench);
+
+            Assert.IsNotNull(result.AwayTeam);
+            Assert.IsNotNull(result.AwayTeam.Captain);
+            Assert.IsNotNull(result.AwayTeam.Lineup);
+            Assert.IsNotNull(result.AwayTeam.Bench);
+
+            Assert.AreEqual(result.Referees.Count(), 4);
+            Assert.AreEqual(result.HomeTeam.Lineup.Count(), 11);
+            Assert.AreEqual(result.AwayTeam.Lineup.Count(), 11);
+
+            Assert.AreEqual(result.HomeTeam.Bench.Count(), 12);
+            Assert.AreEqual(result.AwayTeam.Bench.Count(), 11);
         }
     }
 }

@@ -11,13 +11,13 @@ namespace FootballDataApi.Tests.TeamTests
     [TestFixture]
     public class TeamTest
     {
-        private TeamController _teamController;
+        private TeamProvider _teamController;
 
         [SetUp]
         public void TeamTestSetUp()
         {
             var teamSource = new TeamSource();
-            _teamController = new TeamController(teamSource);
+            _teamController = new TeamProvider(teamSource);
         }
 
         [Test]

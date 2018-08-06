@@ -10,13 +10,13 @@ namespace FootballDataApi.Tests.CompetitionTests
     [TestFixture]
     public class CompetitionTest
     {
-        private CompetitionController _competitionController;
+        private CompetitionProvider _competitionController;
 
         [SetUp]
         public void CompetitionSetUp()
         {
             var competitionSource = new CompetitionSource();
-            _competitionController = new CompetitionController(competitionSource);
+            _competitionController = new CompetitionProvider(competitionSource);
         }
 
         [Test]
@@ -45,6 +45,16 @@ namespace FootballDataApi.Tests.CompetitionTests
             competition = _competitionController.GetCompetition(2000).Result;
 
             Assert.IsNotNull(competition);
+        }
+
+        [Test]
+        public void DeserializationOfCompetition_HaveNot_NullValues()
+        {
+            var competition = _competitionController.GetCompetition(2000).Result;
+
+            Assert.IsNotNull(competition);
+            Assert.IsNotNull(competition.Area);
+            Assert.IsNotNull(competition.CurrentSeason);
         }
     }
 }

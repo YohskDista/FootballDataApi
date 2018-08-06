@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class StandingController
+    public class StandingProvider
     {
         private readonly IStanding _standingDataSource;
 
-        public StandingController(IStanding standingDataSource)
+        public StandingProvider(IStanding standingDataSource)
         {
             _standingDataSource = standingDataSource;
         }

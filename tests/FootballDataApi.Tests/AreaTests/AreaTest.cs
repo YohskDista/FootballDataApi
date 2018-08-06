@@ -10,13 +10,13 @@ namespace FootballDataApi.Tests.AreaTests
     [TestFixture]
     public class AreaTest
     {
-        private AreaController _areaController;
+        private AreaProvider _areaController;
 
         [SetUp]
         public void AreaTestSetUp()
         {
             var area = new AreaSource();
-            _areaController = new AreaController(area);
+            _areaController = new AreaProvider(area);
         }
 
         [Test]

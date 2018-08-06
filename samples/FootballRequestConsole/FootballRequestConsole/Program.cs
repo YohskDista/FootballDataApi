@@ -25,8 +25,8 @@ namespace FootballRequestConsole
             var competitionSource = new CompetitionHttp(httpClient);
             var matchSource = new MatchHttp(httpClient);
 
-            var competitionController = new CompetitionController(competitionSource);
-            var matchController = new MatchController(matchSource);
+            var competitionController = new CompetitionProvider(competitionSource);
+            var matchController = new MatchProvider(matchSource);
 
             //GetCompetitions(competitionController);
             //GetCompetitionsWithFilter(competitionController);
@@ -38,7 +38,7 @@ namespace FootballRequestConsole
             Console.ReadKey();
         }
 
-        private static async void GetMatchById(MatchController matchController, int idMatch)
+        private static async void GetMatchById(MatchProvider matchController, int idMatch)
         {
             var match = await matchController.GetMatchById(idMatch);
 
@@ -50,7 +50,7 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetAllMatch(MatchController matchController)
+        private static async void GetAllMatch(MatchProvider matchController)
         {
             var matches = await matchController.GetAllMatches();
 
@@ -62,7 +62,7 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetAllMatchOfCompetition(MatchController matchController, int id)
+        private static async void GetAllMatchOfCompetition(MatchProvider matchController, int id)
         {
             var matches = await matchController.GetAllMatchOfCompetition(id);
 
@@ -74,7 +74,7 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetCompetitionById(CompetitionController competitionController, int id)
+        private static async void GetCompetitionById(CompetitionProvider competitionController, int id)
         {
             var competition = await competitionController.GetCompetition(id);
 
@@ -86,7 +86,7 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetCompetitions(CompetitionController competitionController)
+        private static async void GetCompetitions(CompetitionProvider competitionController)
         {
             var competitions = await competitionController.GetAvailableCompetition();
 
@@ -98,7 +98,7 @@ namespace FootballRequestConsole
             }
         }
 
-        private static async void GetCompetitionsWithFilter(CompetitionController competitionController)
+        private static async void GetCompetitionsWithFilter(CompetitionProvider competitionController)
         {
             var competitions = await competitionController.GetAvailableCompetitionByArea(2114);
 

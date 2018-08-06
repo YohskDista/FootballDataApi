@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class CompetitionController
+    public class CompetitionProvider
     {
         private readonly ICompetition _competitionDataSource;
 
-        public CompetitionController(ICompetition competitionDataSource)
+        public CompetitionProvider(ICompetition competitionDataSource)
         {
             _competitionDataSource = competitionDataSource;
         }

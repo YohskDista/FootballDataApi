@@ -8,11 +8,11 @@ using FootballDataApi.Models;
 
 namespace FootballDataApi
 {
-    public class MatchController
+    public class MatchProvider
     {
         private readonly IMatch _matchCommands;
 
-        public MatchController(IMatch matchCommands)
+        public MatchProvider(IMatch matchCommands)
         {
             _matchCommands = matchCommands;
         }

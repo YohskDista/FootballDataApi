@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class AreaController
+    public class AreaProvider
     {
         private readonly IArea _areaDataSource;
 
-        public AreaController(IArea areaDataSource)
+        public AreaProvider(IArea areaDataSource)
         {
             _areaDataSource = areaDataSource;
         }
