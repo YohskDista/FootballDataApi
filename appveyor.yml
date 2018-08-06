@@ -15,8 +15,10 @@ artifacts:
   - path: '.\src\FootballDataApi\artifacts\*.nupkg'
     name: NuGet
 deploy:  
-- provider: NuGet
+  provider: NuGet
   name: production
+  artifact: /.*\.nupkg/
+  skip_symbols: false
   api_key:
     secure: oy2lolnwvfhe47lska4q22s3mq7rsvre5ashv2de5gkcou
   on:
