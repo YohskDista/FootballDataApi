@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
+using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi.Tests.AreaTests
 {
-    public class AreaSource : IArea
+    public class AreaSource : IAreaProvider
     {
         private RootArea _rootArea;
 
@@ -42,6 +43,8 @@ namespace FootballDataApi.Tests.AreaTests
 
         public Task<Area> GetAreaById(int idArea)
         {
+            HttpHelpers.VerifyActionParameters(idArea, null, null);
+
             return Task.Run(() => _rootArea.Areas
                 .FirstOrDefault(T => T.Id == idArea));
         }

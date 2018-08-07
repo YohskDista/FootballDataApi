@@ -1,5 +1,4 @@
 ﻿using FootballDataApi;
-using FootballDataApi.DataSources;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -21,12 +20,14 @@ namespace FootballRequestConsole
             var apiKey = Environment.GetEnvironmentVariable("ApiKey");
             if (!string.IsNullOrEmpty(apiKey))
                 httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
+            
+            var competitionController = CompetitionProvider.Create()
+                .With(httpClient)
+                .Build();
 
-            var competitionSource = new CompetitionHttp(httpClient);
-            var matchSource = new MatchHttp(httpClient);
-
-            var competitionController = new CompetitionProvider(competitionSource);
-            var matchController = new MatchProvider(matchSource);
+            var matchController = MatchProvider.Create()
+                .With(httpClient)
+                .Build();
 
             //GetCompetitions(competitionController);
             //GetCompetitionsWithFilter(competitionController);

@@ -10,20 +10,19 @@ namespace FootballDataApi.Tests.AreaTests
     [TestFixture]
     public class AreaTest
     {
-        private AreaProvider _areaController;
+        private AreaSource _areaSource;
 
         [SetUp]
         public void AreaTestSetUp()
         {
-            var area = new AreaSource();
-            _areaController = new AreaProvider(area);
+            _areaSource = new AreaSource();
         }
 
         [Test]
         public void GetAreaById_MustReturn_SingleValue_OrNull_IfNotFound()
         {
-            var result = _areaController.GetAreaById(2000).Result;
-            var result2 = _areaController.GetAreaById(1000).Result;
+            var result = _areaSource.GetAreaById(2000).Result;
+            var result2 = _areaSource.GetAreaById(1000).Result;
 
             Assert.IsNotNull(result);
             Assert.IsNull(result2);
@@ -32,7 +31,7 @@ namespace FootballDataApi.Tests.AreaTests
         [Test]
         public void GetAreaById_ThrowException_IfIdIsNegative()
         {
-            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _areaController.GetAreaById(-1));
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _areaSource.GetAreaById(-1));
         }
     }
 }

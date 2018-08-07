@@ -1,32 +1,50 @@
-﻿using FootballDataApi.Extensions;
+﻿using FootballDataApi.Builders;
+using FootballDataApi.Extensions;
 using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class AreaProvider
+    public class AreaProvider : IAreaProvider
     {
-        private readonly IArea _areaDataSource;
+        private static string BaseAddress = "http://api.football-data.org/v2/areas";
+        
+        private HttpClient _httpClient;
 
-        public AreaProvider(IArea areaDataSource)
+        internal AreaProvider(HttpClient httpClient)
         {
-            _areaDataSource = areaDataSource;
+            _httpClient = httpClient;
         }
 
         public async Task<IEnumerable<Area>> GetAllAreas()
         {
-            return await _areaDataSource.GetAllAreas();
+            var url = $"{BaseAddress}";
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+
+            var rootArea = await _httpClient.Get<RootArea>(request);
+
+            return rootArea.Areas;
         }
 
         public async Task<Area> GetAreaById(int idArea)
         {
             HttpHelpers.VerifyActionParameters(idArea, null, null);
 
-            return await _areaDataSource.GetAreaById(idArea);
+            var url = $"{BaseAddress}/{idArea}";
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+
+            return await _httpClient.Get<Area>(request);
+        }
+
+        public static AreaProviderBuilder Create()
+        {
+            return new AreaProviderBuilder();
         }
     }
 }

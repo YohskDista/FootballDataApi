@@ -12,51 +12,50 @@ namespace FootballDataApi.Tests.MatchTests
     [TestFixture]
     public class MatchTest
     {
-        private MatchProvider _matchController;
+        private IMatchProvider _matchProvider;
 
         [SetUp]
         public void MatchTestSetUp()
         {
-            IMatch match = new MatchSource();
-            _matchController = new MatchProvider(match);
+            _matchProvider = new MatchSource();
         }
 
         [Test]
         public void GetMatchById_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
         {
-            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetMatchById(-1));
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchProvider.GetMatchById(-1));
         }
 
         [Test]
         public void GetAllMatchByTeam_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
         {
-            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetAllMatchOfTeam(-1));
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchProvider.GetAllMatchOfTeam(-1));
         }
 
         [Test]
         public void GetAllMatchOfCompetition_MustThrow_IndexOutOfRangeException_If_IdIsNegative()
         {
-            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchController.GetAllMatchOfCompetition(-1));
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _matchProvider.GetAllMatchOfCompetition(-1));
         }
 
         [Test]
         public void AllMatchesMethods_WhoHaveFilters_MustVerifyThat_TheFilters_AreValid()
         {
-            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatches("test"), "Respect key value parameters.");
-            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatches("test", "value"), "This filters are not supported: \n test");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchProvider.GetAllMatches("test"), "Respect key value parameters.");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchProvider.GetAllMatches("test", "value"), "This filters are not supported: \n test");
 
-            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfCompetition(1, "test"), "Respect key value parameters.");
-            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfCompetition(1, "test", "value"), "This filters are not supported: \n test");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchProvider.GetAllMatchOfCompetition(1, "test"), "Respect key value parameters.");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchProvider.GetAllMatchOfCompetition(1, "test", "value"), "This filters are not supported: \n test");
 
 
-            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfTeam(1, "test"), "Respect key value parameters.");
-            Assert.ThrowsAsync<ArgumentException>(() => _matchController.GetAllMatchOfTeam(1, "test", "value", "hello", "world"), "This filters are not supported: \n test\nworld");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchProvider.GetAllMatchOfTeam(1, "test"), "Respect key value parameters.");
+            Assert.ThrowsAsync<ArgumentException>(() => _matchProvider.GetAllMatchOfTeam(1, "test", "value", "hello", "world"), "This filters are not supported: \n test\nworld");
         }
 
         [Test]
         public void GetAllMatches_Must_Return_ThreeResults()
         {
-            var result = _matchController.GetAllMatches().Result;
+            var result = _matchProvider.GetAllMatches().Result;
 
             Assert.NotZero(result.Count());
             Assert.AreEqual(result.Count(), 3);
@@ -65,7 +64,7 @@ namespace FootballDataApi.Tests.MatchTests
         [Test]
         public void GetMatchesByCompetition_Must_Return_ThreeResults()
         {
-            var result = _matchController.GetAllMatchOfCompetition(2000).Result;
+            var result = _matchProvider.GetAllMatchOfCompetition(2000).Result;
 
             Assert.NotZero(result.Count());
             Assert.AreEqual(result.Count(), 3);
@@ -74,7 +73,7 @@ namespace FootballDataApi.Tests.MatchTests
         [Test]
         public void GetMatchesByTeam_Must_Return_OneResult()
         {
-            var result = _matchController.GetAllMatchOfTeam(794).Result;
+            var result = _matchProvider.GetAllMatchOfTeam(794).Result;
 
             Assert.NotZero(result.Count());
             Assert.AreEqual(result.Count(), 1);
@@ -83,7 +82,7 @@ namespace FootballDataApi.Tests.MatchTests
         [Test]
         public void GetMatchesById_Must_Return_OneResultOnly()
         {
-            var result = _matchController.GetMatchById(200045).Result;
+            var result = _matchProvider.GetMatchById(200045).Result;
 
             Assert.NotNull(result);
             Assert.AreEqual(result.HomeTeam.Name, "Poland");
@@ -92,7 +91,7 @@ namespace FootballDataApi.Tests.MatchTests
         [Test]
         public void VerifyThatNoData_IsNull_InTheFirstMatch()
         {
-            var result = _matchController.GetMatchById(200045).Result;
+            var result = _matchProvider.GetMatchById(200045).Result;
 
             Assert.IsNotNull(result);
             Assert.IsNotNull(result.Referees);

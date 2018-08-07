@@ -11,25 +11,24 @@ namespace FootballDataApi.Tests.StandingTests
     [TestFixture]
     public class StandingTest
     {
-        private StandingProvider _standingController;
+        private StandingSource _standingSource;
 
         [SetUp]
         public void MatchTestSetUp()
         {
-            IStanding standing = new StandingSource();
-            _standingController = new StandingProvider(standing);
+            _standingSource = new StandingSource();
         }
 
         [Test]
         public void GetStandingOfCompetition_Return_IndexOutOfRangeException_When_Id_IsNegative()
         {
-            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _standingController.GetStandingOfCompetition(-1));
+            Assert.ThrowsAsync<IndexOutOfRangeException>(() => _standingSource.GetStandingOfCompetition(-1));
         }
 
         [Test]
         public void Team_MustNotBe_Null_InFirstStanding()
         {
-            var standing = _standingController.GetStandingOfCompetition(10).Result;
+            var standing = _standingSource.GetStandingOfCompetition(10).Result;
 
             Assert.IsNotNull(standing);
 

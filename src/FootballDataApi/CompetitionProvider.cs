@@ -1,6 +1,8 @@
-﻿using FootballDataApi.Extensions;
+﻿using FootballDataApi.Builders;
+using FootballDataApi.Extensions;
 using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -12,30 +14,50 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class CompetitionProvider
+    public class CompetitionProvider : ICompetitionProvider
     {
-        private readonly ICompetition _competitionDataSource;
+        private static string BaseAddress = "http://api.football-data.org/v2/competitions";
 
-        public CompetitionProvider(ICompetition competitionDataSource)
+        private readonly HttpClient _httpClient;
+
+        internal CompetitionProvider(HttpClient httpClient)
         {
-            _competitionDataSource = competitionDataSource;
+            _httpClient = httpClient;
         }
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetition()
         {
-            return await _competitionDataSource.GetAvailableCompetition();
+            var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);
+            var competitionRoot = await _httpClient.Get<RootCompetition>(request);
+
+            return competitionRoot.Competitions;
         }
 
         public async Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
         {
             HttpHelpers.VerifyActionParameters(areaId, null, null);
-            return await _competitionDataSource.GetAvailableCompetitionByArea(areaId);
+
+            var urlAreas = $"{BaseAddress}/?areas={ areaId }";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
+            var competitionRoot = await _httpClient.Get<RootCompetition>(request);
+
+            return competitionRoot.Competitions;
         }
 
         public async Task<Competition> GetCompetition(int idCompetition)
         {
             HttpHelpers.VerifyActionParameters(idCompetition, null, null);
-            return await _competitionDataSource.GetCompetition(idCompetition);
+
+            var url = $"{BaseAddress}/{idCompetition}";
+            var request = new HttpRequestMessage(HttpMethod.Get, url);
+
+            return await _httpClient.Get<Competition>(request);
+        }
+
+        public static CompetitionProviderBuilder Create()
+        {
+            return new CompetitionProviderBuilder();
         }
     }
 }

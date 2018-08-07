@@ -1,20 +1,23 @@
-﻿using FootballDataApi.Extensions;
+﻿using FootballDataApi.Builders;
+using FootballDataApi.Extensions;
 using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class TeamProvider
+    public class TeamProvider : ITeamProvider
     {
-        private readonly ITeam _teamSource;
+        private readonly HttpClient _httpClient;
 
-        public TeamProvider(ITeam teamSource)
+        internal TeamProvider(HttpClient httpClient)
         {
-            _teamSource = teamSource;
+            _httpClient = httpClient;
         }
 
         public async Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
@@ -23,14 +26,31 @@ namespace FootballDataApi
 
             HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
-            return await _teamSource.GetTeamByCompetition(idCompetition, filters);
+            var urlTeamByCompetition = $"http://api.football-data.org/v2/competitions/{idCompetition}/teams";
+
+            urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
+            var TeamRoot = await _httpClient.Get<RootTeam>(request);
+
+            return TeamRoot.Teams;
         }
 
         public async Task<Team> GetTeamById(int idTeam)
         {
             HttpHelpers.VerifyActionParameters(idTeam, null, null);
 
-            return await _teamSource.GetTeamById(idTeam);
+            var urlTeamByCompetition = $"http://api.football-data.org/v2/teams/{idTeam}";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
+            var Team = await _httpClient.Get<Team>(request);
+
+            return Team;
+        }
+
+        public static TeamProviderBuilder Create()
+        {
+            return new TeamProviderBuilder();
         }
     }
 }

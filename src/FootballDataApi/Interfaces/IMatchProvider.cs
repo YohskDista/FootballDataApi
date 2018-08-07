@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi.Interfaces
 {
-    public interface IMatch
+    public interface IMatchProvider
     {
         Task<IEnumerable<Match>> GetAllMatches(params string[] filters);
 

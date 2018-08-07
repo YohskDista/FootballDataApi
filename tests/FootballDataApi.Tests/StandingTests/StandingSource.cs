@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
+using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using Newtonsoft.Json;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi.Tests.StandingTests
 {
-    public class StandingSource : IStanding
+    public class StandingSource : IStandingProvider
     {
         private SeasonStanding seasonStandingMockup;
 
@@ -36,6 +37,8 @@ namespace FootballDataApi.Tests.StandingTests
 
         public Task<SeasonStanding> GetStandingOfCompetition(int idCompetition)
         {
+            HttpHelpers.VerifyActionParameters(idCompetition, null, null);
+
             return Task.Run(() => seasonStandingMockup);
         }
     }

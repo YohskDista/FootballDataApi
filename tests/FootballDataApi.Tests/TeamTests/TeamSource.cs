@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
+using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
@@ -12,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi.Tests.TeamTests
 {
-    public class TeamSource : ITeam
+    public class TeamSource : ITeamProvider
     {
         private RootTeam _rootTeam;
 
@@ -37,11 +38,17 @@ namespace FootballDataApi.Tests.TeamTests
 
         public Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
         {
+            string[] authorizedFilters = new string[] { "stage" };
+
+            HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+
             return Task.Run(() => _rootTeam.Teams);
         }
 
         public Task<Team> GetTeamById(int idTeam)
         {
+            HttpHelpers.VerifyActionParameters(idTeam, null, null);
+
             return Task.Run(() => _rootTeam.Teams
                 .FirstOrDefault(T => T.Id == idTeam));
         }

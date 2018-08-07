@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi.Interfaces
 {
-    public interface ICompetition
+    public interface ICompetitionProvider
     {
         Task<IEnumerable<Competition>> GetAvailableCompetition();
 

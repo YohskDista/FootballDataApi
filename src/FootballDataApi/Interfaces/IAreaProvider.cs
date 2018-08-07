@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi.Interfaces
 {
-    public interface ITeam
+    public interface IAreaProvider
     {
-        Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters);
+        Task<IEnumerable<Area>> GetAllAreas();
 
-        Task<Team> GetTeamById(int idTeam);
+        Task<Area> GetAreaById(int idArea);
     }
 }

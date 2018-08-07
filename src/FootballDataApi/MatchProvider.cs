@@ -1,20 +1,25 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
+using FootballDataApi.Builders;
 using FootballDataApi.Extensions;
 using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Utilities;
 
 namespace FootballDataApi
 {
-    public class MatchProvider
+    public class MatchProvider : IMatchProvider
     {
-        private readonly IMatch _matchCommands;
+        private static string BaseAddress = "http://api.football-data.org/v2/matches";
 
-        public MatchProvider(IMatch matchCommands)
+        private readonly HttpClient _httpClient;
+
+        internal MatchProvider(HttpClient httpClient)
         {
-            _matchCommands = matchCommands;
+            _httpClient = httpClient;
         }
 
         public async Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
@@ -23,7 +28,15 @@ namespace FootballDataApi
 
             HttpHelpers.VerifyFilters(filters, authorizedFilters);
 
-            return await _matchCommands.GetAllMatches(filters);
+            var urlMatches = BaseAddress;
+
+            if (filters.Length > 0)
+                urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
+            var rootMatches = await _httpClient.Get<RootMatch>(request);
+
+            return rootMatches.Matches;
         }
 
         public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
@@ -32,7 +45,15 @@ namespace FootballDataApi
 
             HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
-            return await _matchCommands.GetAllMatchOfCompetition(idCompetition, filters);
+            var urlMatches = BaseAddress;
+
+            if (filters.Length > 0)
+                urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
+            var rootMatches = await _httpClient.Get<RootMatch>(request);
+
+            return rootMatches.Matches;
         }
 
         public async Task<IEnumerable<Match>> GetAllMatchOfTeam(int idTeam, params string[] filters)
@@ -41,14 +62,30 @@ namespace FootballDataApi
 
             HttpHelpers.VerifyActionParameters(idTeam, filters, authorizedFilters);
 
-            return await _matchCommands.GetAllMatchOfTeam(idTeam, filters);
+            var urlMatches = $"http://api.football-data.org/v2/teams/{idTeam}/matches";
+
+            if (filters.Length > 0)
+                urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlMatches);
+            var rootMatches = await _httpClient.Get<RootMatch>(request);
+
+            return rootMatches.Matches;
         }
 
         public async Task<Match> GetMatchById(int idMatch)
         {
             HttpHelpers.VerifyActionParameters(idMatch, null, null);
 
-            return await _matchCommands.GetMatchById(idMatch);
+            var urlMatch = $"{BaseAddress}/{idMatch}";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlMatch);
+            return await _httpClient.Get<Match>(request);
+        }
+
+        public static MatchProviderBuilder Create()
+        {
+            return new MatchProviderBuilder();
         }
     }
 }

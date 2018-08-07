@@ -1,27 +1,38 @@
-﻿using FootballDataApi.Extensions;
+﻿using FootballDataApi.Builders;
+using FootballDataApi.Extensions;
 using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FootballDataApi
 {
-    public class StandingProvider
+    public class StandingProvider : IStandingProvider
     {
-        private readonly IStanding _standingDataSource;
+        private readonly HttpClient _httpClient;
 
-        public StandingProvider(IStanding standingDataSource)
+        internal StandingProvider(HttpClient httpClient)
         {
-            _standingDataSource = standingDataSource;
+            _httpClient = httpClient;
         }
 
         public async Task<SeasonStanding> GetStandingOfCompetition(int idCompetition)
         {
             HttpHelpers.VerifyActionParameters(idCompetition, null, null);
 
-            return await _standingDataSource.GetStandingOfCompetition(idCompetition);
+            var urlStanding = $"http://api.football-data.org/v2/competitions/{idCompetition}/standings";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, urlStanding);
+
+            return await _httpClient.Get<SeasonStanding>(request);
+        }
+
+        public static StandingProviderBuilder Create()
+        {
+            return new StandingProviderBuilder();
         }
     }
 }
