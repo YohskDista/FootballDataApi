@@ -1,6 +1,6 @@
 # FootballDataApi
 
-This library is an unofficial who can access to the [![football-data API](https://www.football-data.org/)] in C#. To begin you must obtain an API key on the football-data.org website. This library can access with a free account as well as a paid account.
+This library is an unofficial who can access to the [football-data API](https://www.football-data.org/) in C#. To begin you must obtain an API key on the football-data.org website. This library can access with a free account as well as a paid account.
 
 # Build info & NuGet
 
@@ -31,7 +31,7 @@ The `Provider` classes permitt to access to the API of football-data. Here is th
   
 # Use a provider
   
-For using a provider you must first create an HTTP Client with the API key in header as described in [![football-data API documentation](https://www.football-data.org/documentation/api)]. Here is an example :
+For using a provider you must first create an HTTP Client with the API key in header as described in [football-data API documentation](https://www.football-data.org/documentation/api). Here is an example :
   
 ```
 var httpClient = new HttpClient();
