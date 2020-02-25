@@ -6,10 +6,10 @@ namespace FootballDataApi.Models
     {
         public string Winner { get; set; }
         public string Duration { get; set; }
-        public Tuple<int?, int?> HalfTime { get; set; }
-        public Tuple<int?, int?> FullTime { get; set; }
-        public Tuple<int?, int?> ExtraTime { get; set; }
-        public Tuple<int?, int?> Penalties { get; set; }
+        public GoalScore HalfTime { get; set; }
+        public GoalScore FullTime { get; set; }
+        public GoalScore ExtraTime { get; set; }
+        public GoalScore Penalties { get; set; }
     }
 
 }
