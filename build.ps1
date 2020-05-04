@@ -54,7 +54,7 @@ if (Test-Path .\artifacts) {
     Remove-Item .\artifacts -Force -Recurse
 }
 
-# Assert-PsBuildInstalled
+Assert-PsBuildInstalled
 
 'Starting dotnet restore' | Write-Verbose
 exec {& dotnet restore}
@@ -62,7 +62,7 @@ exec {& dotnet restore}
 'Starting dotnet build' | Write-Verbose
 exec {& dotnet build .\src\FootballDataApi\FootballDataApi.csproj }
 
-$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$NULL -ne $env:APPVEYOR_BUILD_NUMBER];
+$revision = @{ $true = $env:APPVEYOR_BUILD_NUMBER; $false = 1 }[$env:APPVEYOR_BUILD_NUMBER -ne $NULL];
 $revision = "build{0:D4}" -f [convert]::ToInt32($revision, 10)
 
 'Running tests' | Write-Verbose
