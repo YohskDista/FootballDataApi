@@ -54,10 +54,10 @@ if (Test-Path .\artifacts) {
     Remove-Item .\artifacts -Force -Recurse
 }
 
-Assert-PsBuildInstalled
-
 'Starting dotnet restore' | Write-Verbose
 exec {& dotnet restore}
+
+Assert-PsBuildInstalled
 
 'Starting dotnet build' | Write-Verbose
 exec {& dotnet build .\src\FootballDataApi\FootballDataApi.csproj }
