@@ -13,7 +13,7 @@ The library is in .NetStandard2.0 and can be used on each platform (Windows, Lin
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
 </Project>
