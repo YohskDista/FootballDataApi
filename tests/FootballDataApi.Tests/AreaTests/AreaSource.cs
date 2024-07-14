@@ -3,50 +3,47 @@ using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Tests.AreaTests
+namespace FootballDataApi.Tests.AreaTests;
+
+public class AreaSource : IAreaProvider
 {
-    public class AreaSource : IAreaProvider
+    private RootArea _rootArea;
+
+    public AreaSource()
     {
-        private RootArea _rootArea;
+        InitializeData();
+    }
 
-        public AreaSource()
+    private void InitializeData()
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        var resourceName = "FootballDataApi.Tests.Data.AreaData.json";
+
+        using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+        using (StreamReader reader = new StreamReader(stream))
         {
-            InitializeData();
+            string areas = reader.ReadToEnd();
+            var rootAreas = JsonConvert.DeserializeObject<RootArea>(areas);
+            _rootArea = rootAreas;
         }
+    }
 
-        private void InitializeData()
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "FootballDataApi.Tests.Data.AreaData.json";
+    public Task<IEnumerable<Area>> GetAllAreas()
+    {
+        return Task.Run(() => _rootArea.Areas);
+    }
 
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                string areas = reader.ReadToEnd();
-                var rootAreas = JsonConvert.DeserializeObject<RootArea>(areas);
-                _rootArea = rootAreas;
-            }
-        }
+    public Task<Area> GetAreaById(int idArea)
+    {
+        HttpHelpers.VerifyActionParameters(idArea, null, null);
 
-        public Task<IEnumerable<Area>> GetAllAreas()
-        {
-            return Task.Run(() => _rootArea.Areas);
-        }
-
-        public Task<Area> GetAreaById(int idArea)
-        {
-            HttpHelpers.VerifyActionParameters(idArea, null, null);
-
-            return Task.Run(() => _rootArea.Areas
-                .FirstOrDefault(T => T.Id == idArea));
-        }
+        return Task.Run(() => _rootArea.Areas
+            .FirstOrDefault(T => T.Id == idArea));
     }
 }

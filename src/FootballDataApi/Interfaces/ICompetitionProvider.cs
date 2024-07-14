@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Interfaces
+namespace FootballDataApi.Interfaces;
+
+public interface ICompetitionProvider
 {
-    public interface ICompetitionProvider
-    {
-        Task<IEnumerable<Competition>> GetAvailableCompetition();
+    Task<IEnumerable<Competition>> GetAvailableCompetition();
 
-        Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId);
+    Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId);
 
-        Task<Competition> GetCompetition(int idCompetition);
-    }
+    Task<Competition> GetCompetition(int idCompetition);
 }

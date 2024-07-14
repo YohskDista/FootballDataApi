@@ -1,10 +1,9 @@
 ﻿using FootballDataApi.Models;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Interfaces
+namespace FootballDataApi.Interfaces;
+
+public interface IStandingProvider
 {
-    public interface IStandingProvider
-    {
-        Task<SeasonStanding> GetStandingOfCompetition(int idCompetition);
-    }
+    Task<SeasonStanding> GetStandingOfCompetition(int idCompetition);
 }
