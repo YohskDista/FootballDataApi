@@ -20,6 +20,6 @@ deploy:
   artifact: /.*\.nupkg/
   skip_symbols: false
   api_key:
-    secure: Am7f+su19sNy5IWGLJFfa44aHad5WFFbKEkyro1gcsdqtyBFN48pkqs4lMe73UAE
+    secure: yp9gBDjGkW+PXZu7oftjlUIRuz9JSuszKw70+jbGu1cWM8TNishkbwHZGu4JN+gK
   on:
     branch: master
