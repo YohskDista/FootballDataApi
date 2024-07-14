@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Interfaces;
+﻿using FluentAssertions;
+using FootballDataApi.Interfaces;
 using NUnit.Framework;
 using System;
 using System.Linq;
@@ -53,8 +54,7 @@ public class MatchTest
     {
         var result = _matchProvider.GetAllMatches().Result;
 
-        Assert.NotZero(result.Count());
-        Assert.AreEqual(result.Count(), 3);
+        result.Should().HaveCount(3);
     }
 
     [Test]
@@ -62,8 +62,7 @@ public class MatchTest
     {
         var result = _matchProvider.GetAllMatchOfCompetition(2000).Result;
 
-        Assert.NotZero(result.Count());
-        Assert.AreEqual(result.Count(), 3);
+        result.Should().HaveCount(3);
     }
 
     [Test]
@@ -71,8 +70,7 @@ public class MatchTest
     {
         var result = _matchProvider.GetAllMatchOfTeam(794).Result;
 
-        Assert.NotZero(result.Count());
-        Assert.AreEqual(result.Count(), 1);
+        result.Should().HaveCount(1);
     }
 
     [Test]
@@ -80,8 +78,8 @@ public class MatchTest
     {
         var result = _matchProvider.GetMatchById(200045).Result;
 
-        Assert.NotNull(result);
-        Assert.AreEqual(result.HomeTeam.Name, "Poland");
+        result.Should().NotBeNull();
+        result.HomeTeam.Name.Should().Be("Poland");
     }
 
     [Test]
@@ -89,24 +87,24 @@ public class MatchTest
     {
         var result = _matchProvider.GetMatchById(200045).Result;
 
-        Assert.IsNotNull(result);
-        Assert.IsNotNull(result.Referees);
+        result.Should().NotBeNull();
 
-        Assert.IsNotNull(result.HomeTeam);
-        Assert.IsNotNull(result.HomeTeam.Captain);
-        Assert.IsNotNull(result.HomeTeam.Lineup);
-        Assert.IsNotNull(result.HomeTeam.Bench);
+        result.Referees.Should().NotBeNull();
 
-        Assert.IsNotNull(result.AwayTeam);
-        Assert.IsNotNull(result.AwayTeam.Captain);
-        Assert.IsNotNull(result.AwayTeam.Lineup);
-        Assert.IsNotNull(result.AwayTeam.Bench);
+        result.HomeTeam.Should().NotBeNull();
+        result.HomeTeam.Captain.Should().NotBeNull();
+        result.HomeTeam.Lineup.Should().NotBeNull();
+        result.HomeTeam.Bench.Should().NotBeNull();
 
-        Assert.AreEqual(result.Referees.Count(), 4);
-        Assert.AreEqual(result.HomeTeam.Lineup.Count(), 11);
-        Assert.AreEqual(result.AwayTeam.Lineup.Count(), 11);
+        result.AwayTeam.Should().NotBeNull();
+        result.AwayTeam.Captain.Should().NotBeNull();
+        result.AwayTeam.Lineup.Should().NotBeNull();
+        result.AwayTeam.Bench.Should().NotBeNull();
 
-        Assert.AreEqual(result.HomeTeam.Bench.Count(), 12);
-        Assert.AreEqual(result.AwayTeam.Bench.Count(), 11);
+        result.Referees.Should().HaveCount(4);
+        result.HomeTeam.Lineup.Should().HaveCount(11);
+        result.AwayTeam.Lineup.Should().HaveCount(11);
+        result.HomeTeam.Bench.Should().HaveCount(12);
+        result.AwayTeam.Bench.Should().HaveCount(11);
     }
 }

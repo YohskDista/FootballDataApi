@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System;
 using System.Linq;
 
@@ -26,11 +27,11 @@ public class StandingTest
     {
         var standing = _standingSource.GetStandingOfCompetition(10).Result;
 
-        Assert.IsNotNull(standing);
+        standing.Should().NotBeNull();
 
         var firstTeam = standing.Standings.FirstOrDefault().Table.FirstOrDefault();
 
-        Assert.IsNotNull(firstTeam);
-        Assert.IsNotNull(firstTeam.Team);
+        firstTeam.Should().NotBeNull();
+        firstTeam.Team.Should().NotBeNull();
     }
 }

@@ -1,4 +1,5 @@
-﻿using FootballDataApi.Extensions;
+﻿using FluentAssertions;
+using FootballDataApi.Extensions;
 using NUnit.Framework;
 using System;
 
@@ -17,7 +18,7 @@ public class HttpHelpersTests
     {
         var urlWithFilters = HttpHelpers.AddFiltersToUrl(baseUrl, filters);
 
-        Assert.AreEqual(expectedUrl, urlWithFilters);
+        expectedUrl.Should().BeEquivalentTo(urlWithFilters);
     }
 
     [Test]
@@ -77,7 +78,7 @@ public class HttpHelpersTests
             result = false;
         }
 
-        Assert.AreEqual(expectedResult, result);
+        result.Should().Be(expectedResult);
     }
 
     [Test]
@@ -98,6 +99,6 @@ public class HttpHelpersTests
             result = false;
         }
 
-        Assert.AreEqual(expectedResult, result);
+        result.Should().Be(expectedResult);
     }
 }

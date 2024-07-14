@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System;
 using System.Linq;
 
@@ -29,7 +30,7 @@ public class TeamTest
 
         var teams = _teamSource.GetTeamByCompetition(2001, new string[] { "stage", "SEMI_FINAL" }).Result;
 
-        Assert.IsNotNull(teams);
-        Assert.AreEqual(teams.Count(), 4);
+        teams.Should().NotBeNull();
+        teams.Should().HaveCount(4);
     }
 }

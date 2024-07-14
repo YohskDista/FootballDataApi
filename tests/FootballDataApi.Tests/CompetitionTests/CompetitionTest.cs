@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System;
 using System.Linq;
 
@@ -27,8 +28,8 @@ public class CompetitionTest
     {
         var competition = _competitionSource.GetAvailableCompetitionByArea(2267).Result;
 
-        Assert.IsNotEmpty(competition);
-        Assert.True(competition.Count() == 1);
+        competition.Should().NotBeEmpty();
+        competition.Should().HaveCount(1);
     }
 
     [Test]
@@ -36,11 +37,11 @@ public class CompetitionTest
     {
         var competition = _competitionSource.GetCompetition(1).Result;
 
-        Assert.IsNull(competition);
+        competition.Should().BeNull();
 
         competition = _competitionSource.GetCompetition(2000).Result;
 
-        Assert.IsNotNull(competition);
+        competition.Should().NotBeNull();
     }
 
     [Test]
@@ -48,8 +49,8 @@ public class CompetitionTest
     {
         var competition = _competitionSource.GetCompetition(2000).Result;
 
-        Assert.IsNotNull(competition);
-        Assert.IsNotNull(competition.Area);
-        Assert.IsNotNull(competition.CurrentSeason);
+        competition.Should().NotBeNull();
+        competition.Area.Should().NotBeNull();
+        competition.CurrentSeason.Should().NotBeNull();
     }
 }

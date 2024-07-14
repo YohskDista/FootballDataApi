@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NUnit.Framework;
 using System;
 
 namespace FootballDataApi.Tests.AreaTests;
@@ -20,8 +21,8 @@ public class AreaTest
         var result = _areaSource.GetAreaById(2000).Result;
         var result2 = _areaSource.GetAreaById(1000).Result;
 
-        Assert.IsNotNull(result);
-        Assert.IsNull(result2);
+        result.Should().NotBeNull();
+        result2.Should().BeNull();
     }
 
     [Test]
