@@ -1,28 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 
-namespace FootballDataApi.Builders
+namespace FootballDataApi.Builders;
+
+public class StandingProviderBuilder
 {
-    public class StandingProviderBuilder
+    private HttpClient _httpClient;
+
+    internal StandingProviderBuilder()
     {
-        private HttpClient _httpClient;
 
-        internal StandingProviderBuilder()
-        {
+    }
 
-        }
+    public StandingProviderBuilder With(HttpClient client)
+    {
+        ArgumentNullException.ThrowIfNull(client);
 
-        public StandingProviderBuilder With(HttpClient client)
-        {
-            _httpClient = client;
-            return this;
-        }
+        _httpClient = client;
+        return this;
+    }
 
-        public StandingProvider Build()
-        {
-            return new StandingProvider(_httpClient);
-        }
+    public StandingProvider Build()
+    {
+        return new StandingProvider(_httpClient);
     }
 }

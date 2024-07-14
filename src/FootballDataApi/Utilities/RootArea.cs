@@ -1,12 +1,9 @@
 ﻿using FootballDataApi.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace FootballDataApi.Utilities
+namespace FootballDataApi.Utilities;
+
+public sealed record RootArea : RootApi
 {
-    public class RootArea : RootApi
-    {
-        public IEnumerable<Area> Areas { get; set; }
-    }
+    public IEnumerable<Area> Areas { get; set; }
 }

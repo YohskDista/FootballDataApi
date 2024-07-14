@@ -1,8 +1,8 @@
-﻿namespace FootballDataApi.Models
+﻿namespace FootballDataApi.Models;
+
+public sealed record Area
 {
-    public class Area
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-    }
+    public int Id { get; set; }
+
+    public string Name { get; set; }
 }

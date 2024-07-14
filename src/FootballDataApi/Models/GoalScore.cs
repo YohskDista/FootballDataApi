@@ -1,11 +1,8 @@
-using System.Collections.Generic;
+namespace FootballDataApi.Models;
 
-namespace FootballDataApi.Models
+public sealed record GoalScore
 {
-    public class GoalScore
-    {
-        public int? HomeTeam { get; set; }
-        public int? AwayTeam { get; set; }
-    }
+    public int? HomeTeam { get; set; }
 
+    public int? AwayTeam { get; set; }
 }

@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace FootballDataApi.Models
+namespace FootballDataApi.Models;
+
+public sealed record CompetitionMatches
 {
-    public class CompetitionMatches
-    {
-        public int Count { get; set; }
-        public object Filters { get; set; }
-        public Season Season { get; set; }
-        public IEnumerable<Match> Matches { get; set; }
-    }
+    public int Count { get; set; }
+
+    public object Filters { get; set; }
+
+    public Season Season { get; set; }
+
+    public IEnumerable<Match> Matches { get; set; }
 }

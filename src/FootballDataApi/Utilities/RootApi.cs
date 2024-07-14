@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿namespace FootballDataApi.Utilities;
 
-namespace FootballDataApi.Utilities
+public abstract record RootApi
 {
-    public abstract class RootApi
-    {
-        public int Count { get; set; }
-        public object Filters { get; set; }
-    }
+    public int Count { get; set; }
+
+    public object Filters { get; set; }
 }

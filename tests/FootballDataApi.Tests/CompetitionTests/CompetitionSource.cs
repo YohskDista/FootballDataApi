@@ -3,58 +3,55 @@ using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Tests.CompetitionTests
+namespace FootballDataApi.Tests.CompetitionTests;
+
+public class CompetitionSource : ICompetitionProvider
 {
-    public class CompetitionSource : ICompetitionProvider
+    private IEnumerable<Competition> _listCompetitionMockup;
+
+    public CompetitionSource()
     {
-        private IEnumerable<Competition> _listCompetitionMockup;
+        InitializeData();
+    }
 
-        public CompetitionSource()
+    private void InitializeData()
+    {
+        var assembly = Assembly.GetExecutingAssembly();
+        var resourceName = "FootballDataApi.Tests.Data.CompetitionData.json";
+
+        using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+        using (StreamReader reader = new StreamReader(stream))
         {
-            InitializeData();
+            string matches = reader.ReadToEnd();
+            var rootCompetitions = JsonConvert.DeserializeObject<RootCompetition>(matches);
+            _listCompetitionMockup = rootCompetitions.Competitions;
         }
+    }
 
-        private void InitializeData()
-        {
-            var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "FootballDataApi.Tests.Data.CompetitionData.json";
+    public Task<IEnumerable<Competition>> GetAvailableCompetition()
+    {
+        return Task.Run(() => _listCompetitionMockup);
+    }
 
-            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
-            using (StreamReader reader = new StreamReader(stream))
-            {
-                string matches = reader.ReadToEnd();
-                var rootCompetitions = JsonConvert.DeserializeObject<RootCompetition>(matches);
-                _listCompetitionMockup = rootCompetitions.Competitions;
-            }
-        }
+    public Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
+    {
+        HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        public Task<IEnumerable<Competition>> GetAvailableCompetition()
-        {
-            return Task.Run(() => _listCompetitionMockup);
-        }
+        return Task.Run(() => _listCompetitionMockup
+            .Where(T => T.Area.Id == areaId));
+    }
 
-        public Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
-        {
-            HttpHelpers.VerifyActionParameters(areaId, null, null);
+    public Task<Competition> GetCompetition(int competitionId)
+    {
+        HttpHelpers.VerifyActionParameters(competitionId, null, null);
 
-            return Task.Run(() => _listCompetitionMockup
-                .Where(T => T.Area.Id == areaId));
-        }
-
-        public Task<Competition> GetCompetition(int competitionId)
-        {
-            HttpHelpers.VerifyActionParameters(competitionId, null, null);
-
-            return Task.Run(() => _listCompetitionMockup
-                .FirstOrDefault(T => T.Id == competitionId));
-        }
+        return Task.Run(() => _listCompetitionMockup
+            .FirstOrDefault(T => T.Id == competitionId));
     }
 }

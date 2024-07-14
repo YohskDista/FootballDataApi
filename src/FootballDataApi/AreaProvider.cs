@@ -6,45 +6,41 @@ using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace FootballDataApi
+namespace FootballDataApi;
+
+public sealed class AreaProvider : IAreaProvider
 {
-    public class AreaProvider : IAreaProvider
+    private static string BaseAddress = "http://api.football-data.org/v2/areas";
+    
+    private HttpClient _httpClient;
+
+    internal AreaProvider(HttpClient httpClient)
+        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+
+    public async Task<IEnumerable<Area>> GetAllAreas()
     {
-        private static string BaseAddress = "http://api.football-data.org/v2/areas";
-        
-        private HttpClient _httpClient;
+        var url = $"{BaseAddress}";
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-        internal AreaProvider(HttpClient httpClient)
-        {
-            _httpClient = httpClient;
-        }
+        var rootArea = await _httpClient.Get<RootArea>(request);
 
-        public async Task<IEnumerable<Area>> GetAllAreas()
-        {
-            var url = $"{BaseAddress}";
-            var request = new HttpRequestMessage(HttpMethod.Get, url);
+        return rootArea.Areas;
+    }
 
-            var rootArea = await _httpClient.Get<RootArea>(request);
+    public async Task<Area> GetAreaById(int idArea)
+    {
+        HttpHelpers.VerifyActionParameters(idArea, null, null);
 
-            return rootArea.Areas;
-        }
+        var url = $"{BaseAddress}/{idArea}";
+        var request = new HttpRequestMessage(HttpMethod.Get, url);
 
-        public async Task<Area> GetAreaById(int idArea)
-        {
-            HttpHelpers.VerifyActionParameters(idArea, null, null);
+        return await _httpClient.Get<Area>(request);
+    }
 
-            var url = $"{BaseAddress}/{idArea}";
-            var request = new HttpRequestMessage(HttpMethod.Get, url);
-
-            return await _httpClient.Get<Area>(request);
-        }
-
-        public static AreaProviderBuilder Create()
-        {
-            return new AreaProviderBuilder();
-        }
+    public static AreaProviderBuilder Create()
+    {
+        return new AreaProviderBuilder();
     }
 }
