@@ -1,5 +1,4 @@
-﻿using FootballDataApi.Builders;
-using FootballDataApi.Extensions;
+﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
 using FootballDataApi.Services;
 using System;
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi;
 
-public sealed class StandingProvider : IStandingProvider
+internal sealed class StandingProvider : IStandingProvider
 {
     private readonly HttpClient _httpClient;
 
@@ -24,10 +23,5 @@ public sealed class StandingProvider : IStandingProvider
         var request = new HttpRequestMessage(HttpMethod.Get, urlStanding);
 
         return await _httpClient.Get<SeasonStanding>(request);
-    }
-
-    public static StandingProviderBuilder Create()
-    {
-        return new StandingProviderBuilder();
     }
 }

@@ -1,9 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using FootballDataApi.Builders;
 using FootballDataApi.Extensions;
 using FootballDataApi.Models;
 using FootballDataApi.Services;
@@ -11,7 +9,7 @@ using FootballDataApi.Utilities;
 
 namespace FootballDataApi;
 
-public sealed class MatchProvider : IMatchProvider
+internal sealed class MatchProvider : IMatchProvider
 {
     private static string BaseAddress = "http://api.football-data.org/v2/matches";
 
@@ -79,10 +77,5 @@ public sealed class MatchProvider : IMatchProvider
 
         var request = new HttpRequestMessage(HttpMethod.Get, urlMatch);
         return await _httpClient.Get<Match>(request);
-    }
-
-    public static MatchProviderBuilder Create()
-    {
-        return new MatchProviderBuilder();
     }
 }

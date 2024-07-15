@@ -1,4 +1,5 @@
 ﻿using FootballDataApi;
+using FootballDataApi.Builders;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
@@ -17,20 +18,20 @@ public class Program
         if (!string.IsNullOrEmpty(apiKey))
             httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
         
-        var competitionController = CompetitionProvider.Create()
-            .With(httpClient)
-            .Build();
+        //var competitionController = CompetitionProviderBuilder.Create()
+        //    .With(httpClient)
+        //    .Build();
 
-        var matchController = MatchProvider.Create()
-            .With(httpClient)
-            .Build();
+        //var matchController = MatchProvider.Create()
+        //    .With(httpClient)
+        //    .Build();
 
         //GetCompetitions(competitionController);
         //GetCompetitionsWithFilter(competitionController);
         //GetCompetitionById(competitionController, 2019);
         //GetAllMatchOfCompetition(matchController, 2019);
         //GetAllMatch(matchController);
-        GetMatchById(matchController, 200033);
+        //GetMatchById(matchController, 200033);
 
         Console.ReadKey();
     }

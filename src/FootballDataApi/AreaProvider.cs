@@ -1,5 +1,4 @@
-﻿using FootballDataApi.Builders;
-using FootballDataApi.Extensions;
+﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
 using FootballDataApi.Services;
 using FootballDataApi.Utilities;
@@ -37,10 +36,5 @@ internal sealed class AreaProvider : IAreaProvider
         var request = new HttpRequestMessage(HttpMethod.Get, url);
 
         return await _httpClient.Get<Area>(request);
-    }
-
-    public static AreaProviderBuilder Create()
-    {
-        return new AreaProviderBuilder();
     }
 }

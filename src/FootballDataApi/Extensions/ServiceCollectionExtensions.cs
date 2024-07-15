@@ -9,14 +9,21 @@ public static class ServiceCollectionExtensions
 {
     private static readonly string ApiBaseAddress = "http://api.football-data.org/v2/";
 
-    public static IServiceCollection AddFootballDataService(this IServiceCollection serviceCollection)
+    public static IServiceCollection AddFootballDataService(this IServiceCollection serviceCollection, string apiKey)
     {
         ArgumentNullException.ThrowIfNull(serviceCollection);
 
+        if (string.IsNullOrWhiteSpace(apiKey))
+        {
+            throw new ArgumentException(
+                "You cannot use this API without an API key configured.", 
+                nameof(apiKey));
+        }
+
         return serviceCollection.AddSingleton(new HttpClient()
-                {
-                    BaseAddress = new Uri(ApiBaseAddress)
-                })
+            {
+                BaseAddress = new Uri(ApiBaseAddress)
+            })
             .AddSingleton<IAreaProvider, AreaProvider>()
             .AddSingleton<ICompetitionProvider, CompetitionProvider>()
             .AddSingleton<IMatchProvider, MatchProvider>()

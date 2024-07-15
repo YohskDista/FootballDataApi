@@ -1,12 +1,10 @@
-﻿using FootballDataApi.Builders;
-using FootballDataApi.Extensions;
+﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
 using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FootballDataApi;
@@ -44,10 +42,5 @@ internal sealed class TeamProvider : ITeamProvider
         var Team = await _httpClient.Get<Team>(request);
 
         return Team;
-    }
-
-    public static TeamProviderBuilder Create()
-    {
-        return new TeamProviderBuilder();
     }
 }

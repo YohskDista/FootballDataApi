@@ -1,5 +1,4 @@
-﻿using FootballDataApi.Builders;
-using FootballDataApi.Extensions;
+﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
 using FootballDataApi.Services;
 using FootballDataApi.Utilities;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi;
 
-public sealed class CompetitionProvider : ICompetitionProvider
+internal sealed class CompetitionProvider : ICompetitionProvider
 {
     private static string BaseAddress = "http://api.football-data.org/v2/competitions";
 
@@ -47,10 +46,5 @@ public sealed class CompetitionProvider : ICompetitionProvider
         var request = new HttpRequestMessage(HttpMethod.Get, url);
 
         return await _httpClient.Get<Competition>(request);
-    }
-
-    public static CompetitionProviderBuilder Create()
-    {
-        return new CompetitionProviderBuilder();
     }
 }
