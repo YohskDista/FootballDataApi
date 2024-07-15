@@ -19,6 +19,6 @@ var areas = await areaProvider.GetAllAreas();
 var matches = await matchProvider.GetAllMatches();
 var competitions = await competitionProvider.GetAvailableCompetition();
 //var standings = await standingProvider.GetStandingOfCompetition(2019);
-var teams = await teamProvider.GetTeamByCompetition(2114);
+var teams = await teamProvider.GetTeamByCompetition(2019);
 
 await host.RunAsync();

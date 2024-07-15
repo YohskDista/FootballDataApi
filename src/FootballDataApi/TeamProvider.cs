@@ -16,13 +16,13 @@ internal sealed class TeamProvider : ITeamProvider
     public TeamProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
+    public async Task<IEnumerable<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
     {
         string[] authorizedFilters = ["stage"];
 
-        HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+        HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
 
-        var urlTeamByCompetition = $"competitions/{idCompetition}/teams";
+        var urlTeamByCompetition = $"competitions/{competitionId}/teams";
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
