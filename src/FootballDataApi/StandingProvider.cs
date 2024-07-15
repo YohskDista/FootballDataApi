@@ -14,14 +14,10 @@ internal sealed class StandingProvider : IStandingProvider
     public StandingProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<SeasonStanding> GetStandingOfCompetition(int idCompetition)
+    public Task<SeasonStanding> GetStandingOfCompetition(int competitionId)
     {
-        HttpHelpers.VerifyActionParameters(idCompetition, null, null);
+        HttpHelpers.VerifyActionParameters(competitionId, null, null);
 
-        var urlStanding = $"http://api.football-data.org/v2/competitions/{idCompetition}/standings";
-
-        var request = new HttpRequestMessage(HttpMethod.Get, urlStanding);
-
-        return await _httpClient.Get<SeasonStanding>(request);
+        return _httpClient.GetAsync<SeasonStanding>($"competitions/{competitionId}/standings");
     }
 }

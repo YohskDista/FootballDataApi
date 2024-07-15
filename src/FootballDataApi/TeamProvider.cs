@@ -18,29 +18,23 @@ internal sealed class TeamProvider : ITeamProvider
 
     public async Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
     {
-        string[] authorizedFilters = new string[] { "stage" };
+        string[] authorizedFilters = ["stage"];
 
         HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
-        var urlTeamByCompetition = $"http://api.football-data.org/v2/competitions/{idCompetition}/teams";
+        var urlTeamByCompetition = $"competitions/{idCompetition}/teams";
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
-        var TeamRoot = await _httpClient.Get<RootTeam>(request);
+        var teamRoot = await _httpClient.GetAsync<RootTeam>(urlTeamByCompetition);
 
-        return TeamRoot.Teams;
+        return teamRoot.Teams;
     }
 
-    public async Task<Team> GetTeamById(int idTeam)
+    public Task<Team> GetTeamById(int teamId)
     {
-        HttpHelpers.VerifyActionParameters(idTeam, null, null);
+        HttpHelpers.VerifyActionParameters(teamId, null, null);
 
-        var urlTeamByCompetition = $"http://api.football-data.org/v2/teams/{idTeam}";
-
-        var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
-        var Team = await _httpClient.Get<Team>(request);
-
-        return Team;
+        return _httpClient.GetAsync<Team>($"teams/{teamId}");
     }
 }

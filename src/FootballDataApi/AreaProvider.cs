@@ -2,7 +2,6 @@
 using FootballDataApi.Models;
 using FootballDataApi.Services;
 using FootballDataApi.Utilities;
-using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -24,10 +23,10 @@ internal sealed class AreaProvider : IAreaProvider
         return rootArea.Areas;
     }
 
-    public Task<Area> GetAreaById(int idArea)
+    public Task<Area> GetAreaById(int areaId)
     {
-        HttpHelpers.VerifyActionParameters(idArea, null, null);
+        HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        return _httpClient.GetAsync<Area>($"areas/{idArea}");
+        return _httpClient.GetAsync<Area>($"areas/{areaId}");
     }
 }
