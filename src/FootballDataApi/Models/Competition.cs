@@ -11,9 +11,11 @@ public sealed record Competition
 
     public string Name { get; set; }
 
-    public object Code { get; set; }
+    public string Code { get; set; }
 
-    public string Plan { get; set; }
+    public string Type { get; set; }
+
+    public string Emblem { get; set; }
 
     public Season CurrentSeason { get; set; }
 

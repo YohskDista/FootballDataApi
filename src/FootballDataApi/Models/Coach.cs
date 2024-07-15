@@ -1,4 +1,6 @@
-﻿namespace FootballDataApi.Models;
+﻿using System;
+
+namespace FootballDataApi.Models;
 
 public sealed record Coach
 {
@@ -6,7 +8,20 @@ public sealed record Coach
 
     public string Name { get; set; }
 
-    public string CountryOfBirth { get; set; }
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
+
+    public DateTime DateOfBirth { get; set; }
 
     public string Nationality { get; set; }
+
+    public Contract Contract { get; set; }
+}
+
+public sealed record Contract
+{
+    public string Start { get; set; }
+
+    public string Until { get; set; }
 }

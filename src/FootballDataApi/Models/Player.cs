@@ -8,15 +8,19 @@ public sealed record Player
 
     public string Name { get; set; }
 
+    public string FirstName { get; set; }
+
+    public string LastName { get; set; }
+
     public string Position { get; set; }
 
     public int? ShirtNumber { get; set; }
 
     public DateTime DateOfBirth { get; set; }
 
-    public string CountryOfBirth { get; set; }
-
     public string Nationality { get; set; }
 
-    public string Role { get; set; }
+    public DateTime? LastUpdated { get; set; }
+
+    public Team CurrentTeam { get; set; }
 }

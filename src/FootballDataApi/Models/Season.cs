@@ -12,5 +12,7 @@ public sealed record Season
 
     public int? CurrentMatchday { get; set; }
 
-    public string[] AvailableStages { get; set; }
+    public string? Winner {  get; set; }
+
+    public string[] Stages { get; set; }
 }
