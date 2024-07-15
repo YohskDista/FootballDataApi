@@ -39,11 +39,11 @@ public class AreaSource : IAreaProvider
         return Task.Run(() => _rootArea.Areas);
     }
 
-    public Task<Area> GetAreaById(int idArea)
+    public Task<Area> GetAreaById(int areaId)
     {
-        HttpHelpers.VerifyActionParameters(idArea, null, null);
+        HttpHelpers.VerifyActionParameters(areaId, null, null);
 
         return Task.Run(() => _rootArea.Areas
-            .FirstOrDefault(T => T.Id == idArea));
+            .FirstOrDefault(T => T.Id == areaId));
     }
 }

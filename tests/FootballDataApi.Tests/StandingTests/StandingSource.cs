@@ -31,9 +31,9 @@ public class StandingSource : IStandingProvider
         }
     }
 
-    public Task<SeasonStanding> GetStandingOfCompetition(int idCompetition)
+    public Task<SeasonStanding> GetStandingOfCompetition(int competitionId)
     {
-        HttpHelpers.VerifyActionParameters(idCompetition, null, null);
+        HttpHelpers.VerifyActionParameters(competitionId, null, null);
 
         return Task.Run(() => seasonStandingMockup);
     }

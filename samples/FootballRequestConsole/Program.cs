@@ -4,13 +4,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-HostApplicationBuilder builder = Host.CreateApplicationBuilder(args);
+var builder = Host.CreateApplicationBuilder(args);
 
 builder.Configuration.AddUserSecrets<Program>();
 
-var apiKey = builder.Configuration["FootballData:ApiKey"];
-
-builder.Services.AddFootballDataService(apiKey);
+builder.Services.AddFootballDataService(builder.Configuration["FootballData:ApiKey"]);
 
 var host = builder.Build();
 
