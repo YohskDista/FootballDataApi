@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{D0EA98E1-EC27-4663-A004-C4F61176BB21}"
 EndProject
@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B3CDA28D-6CA
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballDataApi", "src\FootballDataApi\FootballDataApi.csproj", "{E5515669-309C-4CE1-BE7D-AEFA6946D102}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballRequestConsole", "samples\FootballRequestConsole\FootballRequestConsole\FootballRequestConsole.csproj", "{0162A865-DEB6-4E81-A02C-1E7B2366B362}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{5C9E0FCE-1B2A-4860-9D33-8701EBAEEADF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootballDataApi.Tests", "tests\FootballDataApi.Tests\FootballDataApi.Tests.csproj", "{F9845B18-C0B7-4AB1-80FA-F4DB43025992}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballDataApi.Tests", "tests\FootballDataApi.Tests\FootballDataApi.Tests.csproj", "{F9845B18-C0B7-4AB1-80FA-F4DB43025992}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FootballRequestConsole", "samples\FootballRequestConsole\FootballRequestConsole.csproj", "{33930FD2-C00F-4116-88B3-BA7D44E016B7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,22 +25,22 @@ Global
 		{E5515669-309C-4CE1-BE7D-AEFA6946D102}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5515669-309C-4CE1-BE7D-AEFA6946D102}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5515669-309C-4CE1-BE7D-AEFA6946D102}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0162A865-DEB6-4E81-A02C-1E7B2366B362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0162A865-DEB6-4E81-A02C-1E7B2366B362}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0162A865-DEB6-4E81-A02C-1E7B2366B362}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0162A865-DEB6-4E81-A02C-1E7B2366B362}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9845B18-C0B7-4AB1-80FA-F4DB43025992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9845B18-C0B7-4AB1-80FA-F4DB43025992}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9845B18-C0B7-4AB1-80FA-F4DB43025992}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9845B18-C0B7-4AB1-80FA-F4DB43025992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33930FD2-C00F-4116-88B3-BA7D44E016B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33930FD2-C00F-4116-88B3-BA7D44E016B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33930FD2-C00F-4116-88B3-BA7D44E016B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33930FD2-C00F-4116-88B3-BA7D44E016B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E5515669-309C-4CE1-BE7D-AEFA6946D102} = {B3CDA28D-6CA7-429C-85BA-7E197C47E005}
-		{0162A865-DEB6-4E81-A02C-1E7B2366B362} = {D0EA98E1-EC27-4663-A004-C4F61176BB21}
 		{F9845B18-C0B7-4AB1-80FA-F4DB43025992} = {5C9E0FCE-1B2A-4860-9D33-8701EBAEEADF}
+		{33930FD2-C00F-4116-88B3-BA7D44E016B7} = {D0EA98E1-EC27-4663-A004-C4F61176BB21}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9F23F84F-5883-4FBC-83C5-3A7A48C5B381}
