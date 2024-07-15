@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using FootballDataApi.Interfaces;
+using FootballDataApi.Services;
 using NUnit.Framework;
 using System;
 using System.Linq;

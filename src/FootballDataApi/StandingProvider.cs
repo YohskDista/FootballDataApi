@@ -1,7 +1,7 @@
 ﻿using FootballDataApi.Builders;
 using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;

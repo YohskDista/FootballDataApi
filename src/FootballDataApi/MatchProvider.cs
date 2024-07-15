@@ -5,8 +5,8 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using FootballDataApi.Builders;
 using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 
 namespace FootballDataApi;

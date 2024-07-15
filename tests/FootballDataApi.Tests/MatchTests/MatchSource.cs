@@ -1,6 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
