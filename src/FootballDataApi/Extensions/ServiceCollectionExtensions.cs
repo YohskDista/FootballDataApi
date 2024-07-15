@@ -7,7 +7,7 @@ namespace FootballDataApi.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-    private static readonly string ApiBaseAddress = "http://api.football-data.org/v2/";
+    private static readonly string ApiBaseAddress = "http://api.football-data.org/v4/";
 
     public static IServiceCollection AddFootballDataService(this IServiceCollection serviceCollection, string apiKey)
     {
