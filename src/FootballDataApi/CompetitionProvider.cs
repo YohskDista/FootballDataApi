@@ -15,7 +15,7 @@ internal sealed class CompetitionProvider : ICompetitionProvider
 
     private readonly HttpClient _httpClient;
 
-    internal CompetitionProvider(HttpClient httpClient) 
+    public CompetitionProvider(HttpClient httpClient) 
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
     public async Task<IEnumerable<Competition>> GetAvailableCompetition()

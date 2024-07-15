@@ -13,7 +13,7 @@ internal sealed class TeamProvider : ITeamProvider
 {
     private readonly HttpClient _httpClient;
 
-    internal TeamProvider(HttpClient httpClient)
+    public TeamProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
     public async Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)

@@ -11,7 +11,7 @@ internal sealed class StandingProvider : IStandingProvider
 {
     private readonly HttpClient _httpClient;
 
-    internal StandingProvider(HttpClient httpClient)
+    public StandingProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
     public async Task<SeasonStanding> GetStandingOfCompetition(int idCompetition)

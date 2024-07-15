@@ -15,7 +15,7 @@ internal sealed class MatchProvider : IMatchProvider
 
     private readonly HttpClient _httpClient;
 
-    internal MatchProvider(HttpClient httpClient)
+    public MatchProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
     public async Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
