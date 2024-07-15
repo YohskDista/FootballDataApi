@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi;
 
-public sealed class AreaProvider : IAreaProvider
+internal sealed class AreaProvider : IAreaProvider
 {
     private static string BaseAddress = "http://api.football-data.org/v2/areas";
     

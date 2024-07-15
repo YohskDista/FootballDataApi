@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi;
 
-public sealed class TeamProvider : ITeamProvider
+internal sealed class TeamProvider : ITeamProvider
 {
     private readonly HttpClient _httpClient;
 
