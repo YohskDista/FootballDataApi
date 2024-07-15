@@ -13,21 +13,21 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(serviceCollection);
 
-        if (string.IsNullOrWhiteSpace(apiKey))
+        var httpClient = new HttpClient
         {
-            throw new ArgumentException(
-                "You cannot use this API without an API key configured.", 
-                nameof(apiKey));
+            BaseAddress = new Uri(ApiBaseAddress)
+        };
+
+        if (!string.IsNullOrWhiteSpace(apiKey))
+        {
+            httpClient.DefaultRequestHeaders.Add("X-Auth-Token", apiKey);
         }
 
-        return serviceCollection.AddSingleton(new HttpClient()
-            {
-                BaseAddress = new Uri(ApiBaseAddress)
-            })
-            .AddSingleton<IAreaProvider, AreaProvider>()
-            .AddSingleton<ICompetitionProvider, CompetitionProvider>()
-            .AddSingleton<IMatchProvider, MatchProvider>()
-            .AddSingleton<IStandingProvider, StandingProvider>()
-            .AddSingleton<ITeamProvider, TeamProvider>();
+        return serviceCollection.AddSingleton(httpClient)
+                                .AddSingleton<IAreaProvider, AreaProvider>()
+                                .AddSingleton<ICompetitionProvider, CompetitionProvider>()
+                                .AddSingleton<IMatchProvider, MatchProvider>()
+                                .AddSingleton<IStandingProvider, StandingProvider>()
+                                .AddSingleton<ITeamProvider, TeamProvider>();
     }
 }
