@@ -4,6 +4,7 @@ using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -13,7 +14,7 @@ namespace FootballDataApi.Tests.MatchTests;
 
 public class MatchSource : IMatchProvider
 {
-    private IEnumerable<Match> listMatchMockup;
+    private IReadOnlyCollection<Match> listMatchMockup;
 
     public MatchSource()
     {
@@ -34,7 +35,7 @@ public class MatchSource : IMatchProvider
         }
     }
 
-    public Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters)
     {
         var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
 
@@ -43,22 +44,28 @@ public class MatchSource : IMatchProvider
         return Task.Run(() => listMatchMockup);
     }
 
-    public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
     {
         var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
         HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
 
-        return Task.Run(() => listMatchMockup.Where(T => T.Competition.Id == idCompetition));
+        return Task.Run(() => 
+          (IReadOnlyCollection<Match>)listMatchMockup
+            .Where(T => T.Competition.Id == idCompetition)
+            .ToArray());
     }
 
-    public Task<IEnumerable<Match>> GetAllMatchOfTeam(int idTeam, params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetAllMatchOfTeam(int idTeam, params string[] filters)
     {
         var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
 
         HttpHelpers.VerifyActionParameters(idTeam, filters, authorizedFilters);
 
-        return Task.Run(() => listMatchMockup.Where(T => T.AwayTeam.Id == idTeam || T.HomeTeam.Id == idTeam));
+        return Task.Run(() => 
+          (IReadOnlyCollection<Match>)listMatchMockup
+            .Where(T => T.AwayTeam.Id == idTeam || T.HomeTeam.Id == idTeam)
+            .ToArray());
     }
 
     public Task<Match> GetMatchById(int idMatch)

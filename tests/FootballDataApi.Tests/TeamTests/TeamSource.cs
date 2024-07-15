@@ -34,7 +34,7 @@ public class TeamSource : ITeamProvider
         }
     }
 
-    public Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
+    public Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
     {
         string[] authorizedFilters = new string[] { "stage" };
 

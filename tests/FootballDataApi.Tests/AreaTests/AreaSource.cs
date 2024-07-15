@@ -34,7 +34,7 @@ public class AreaSource : IAreaProvider
         }
     }
 
-    public Task<IEnumerable<Area>> GetAllAreas()
+    public Task<IReadOnlyCollection<Area>> GetAllAreas()
     {
         return Task.Run(() => _rootArea.Areas);
     }
