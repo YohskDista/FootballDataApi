@@ -1,6 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -34,20 +34,20 @@ public class TeamSource : ITeamProvider
         }
     }
 
-    public Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
+    public Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
     {
         string[] authorizedFilters = new string[] { "stage" };
 
-        HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+        HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
 
         return Task.Run(() => _rootTeam.Teams);
     }
 
-    public Task<Team> GetTeamById(int idTeam)
+    public Task<Team> GetTeamById(int teamId)
     {
-        HttpHelpers.VerifyActionParameters(idTeam, null, null);
+        HttpHelpers.VerifyActionParameters(teamId, null, null);
 
         return Task.Run(() => _rootTeam.Teams
-            .FirstOrDefault(T => T.Id == idTeam));
+            .FirstOrDefault(T => T.Id == teamId));
     }
 }

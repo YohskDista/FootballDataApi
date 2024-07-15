@@ -1,6 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace FootballDataApi.Tests.MatchTests;
 
 public class MatchSource : IMatchProvider
 {
-    private IEnumerable<Match> listMatchMockup;
+    private IReadOnlyCollection<Match> listMatchMockup;
 
     public MatchSource()
     {
@@ -34,7 +34,7 @@ public class MatchSource : IMatchProvider
         }
     }
 
-    public Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters)
     {
         var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
 
@@ -43,28 +43,34 @@ public class MatchSource : IMatchProvider
         return Task.Run(() => listMatchMockup);
     }
 
-    public Task<IEnumerable<Match>> GetAllMatchOfCompetition(int idCompetition, params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetition(int competitionId, params string[] filters)
     {
         var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
-        HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+        HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
 
-        return Task.Run(() => listMatchMockup.Where(T => T.Competition.Id == idCompetition));
+        return Task.Run(() => 
+          (IReadOnlyCollection<Match>)listMatchMockup
+            .Where(T => T.Competition.Id == competitionId)
+            .ToArray());
     }
 
-    public Task<IEnumerable<Match>> GetAllMatchOfTeam(int idTeam, params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetAllMatchOfTeam(int teamId, params string[] filters)
     {
         var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
 
-        HttpHelpers.VerifyActionParameters(idTeam, filters, authorizedFilters);
+        HttpHelpers.VerifyActionParameters(teamId, filters, authorizedFilters);
 
-        return Task.Run(() => listMatchMockup.Where(T => T.AwayTeam.Id == idTeam || T.HomeTeam.Id == idTeam));
+        return Task.Run(() => 
+          (IReadOnlyCollection<Match>)listMatchMockup
+            .Where(T => T.AwayTeam.Id == teamId || T.HomeTeam.Id == teamId)
+            .ToArray());
     }
 
-    public Task<Match> GetMatchById(int idMatch)
+    public Task<Match> GetMatchById(int matchId)
     {
-        HttpHelpers.VerifyActionParameters(idMatch, null, null);
+        HttpHelpers.VerifyActionParameters(matchId, null, null);
 
-        return Task.Run(() => listMatchMockup.FirstOrDefault(T => T.Id == idMatch));
+        return Task.Run(() => listMatchMockup.FirstOrDefault(T => T.Id == matchId));
     }
 }

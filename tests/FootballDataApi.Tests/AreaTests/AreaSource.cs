@@ -1,6 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -34,16 +34,16 @@ public class AreaSource : IAreaProvider
         }
     }
 
-    public Task<IEnumerable<Area>> GetAllAreas()
+    public Task<IReadOnlyCollection<Area>> GetAllAreas()
     {
         return Task.Run(() => _rootArea.Areas);
     }
 
-    public Task<Area> GetAreaById(int idArea)
+    public Task<Area> GetAreaById(int areaId)
     {
-        HttpHelpers.VerifyActionParameters(idArea, null, null);
+        HttpHelpers.VerifyActionParameters(areaId, null, null);
 
         return Task.Run(() => _rootArea.Areas
-            .FirstOrDefault(T => T.Id == idArea));
+            .FirstOrDefault(T => T.Id == areaId));
     }
 }

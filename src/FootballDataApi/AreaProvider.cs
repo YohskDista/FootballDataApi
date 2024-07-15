@@ -1,7 +1,6 @@
-﻿using FootballDataApi.Builders;
-using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
@@ -10,37 +9,24 @@ using System.Threading.Tasks;
 
 namespace FootballDataApi;
 
-public sealed class AreaProvider : IAreaProvider
-{
-    private static string BaseAddress = "http://api.football-data.org/v2/areas";
-    
+internal sealed class AreaProvider : IAreaProvider
+{    
     private HttpClient _httpClient;
 
-    internal AreaProvider(HttpClient httpClient)
+    public AreaProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Area>> GetAllAreas()
+    public async Task<IReadOnlyCollection<Area>> GetAllAreas()
     {
-        var url = $"{BaseAddress}";
-        var request = new HttpRequestMessage(HttpMethod.Get, url);
-
-        var rootArea = await _httpClient.Get<RootArea>(request);
+        var rootArea = await _httpClient.GetAsync<RootArea>("areas");
 
         return rootArea.Areas;
     }
 
-    public async Task<Area> GetAreaById(int idArea)
+    public Task<Area> GetAreaById(int areaId)
     {
-        HttpHelpers.VerifyActionParameters(idArea, null, null);
+        HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        var url = $"{BaseAddress}/{idArea}";
-        var request = new HttpRequestMessage(HttpMethod.Get, url);
-
-        return await _httpClient.Get<Area>(request);
-    }
-
-    public static AreaProviderBuilder Create()
-    {
-        return new AreaProviderBuilder();
+        return _httpClient.GetAsync<Area>($"areas/{areaId}");
     }
 }

@@ -1,53 +1,40 @@
-﻿using FootballDataApi.Builders;
-using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
+﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FootballDataApi;
 
-public sealed class TeamProvider : ITeamProvider
+internal sealed class TeamProvider : ITeamProvider
 {
     private readonly HttpClient _httpClient;
 
-    internal TeamProvider(HttpClient httpClient)
+    public TeamProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Team>> GetTeamByCompetition(int idCompetition, params string[] filters)
+    public async Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
     {
-        string[] authorizedFilters = new string[] { "stage" };
+        string[] authorizedFilters = ["stage"];
 
-        HttpHelpers.VerifyActionParameters(idCompetition, filters, authorizedFilters);
+        HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
 
-        var urlTeamByCompetition = $"http://api.football-data.org/v2/competitions/{idCompetition}/teams";
+        var urlTeamByCompetition = $"competitions/{competitionId}/teams";
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
-        var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
-        var TeamRoot = await _httpClient.Get<RootTeam>(request);
+        var teamRoot = await _httpClient.GetAsync<RootTeam>(urlTeamByCompetition);
 
-        return TeamRoot.Teams;
+        return teamRoot.Teams;
     }
 
-    public async Task<Team> GetTeamById(int idTeam)
+    public Task<Team> GetTeamById(int teamId)
     {
-        HttpHelpers.VerifyActionParameters(idTeam, null, null);
+        HttpHelpers.VerifyActionParameters(teamId, null, null);
 
-        var urlTeamByCompetition = $"http://api.football-data.org/v2/teams/{idTeam}";
-
-        var request = new HttpRequestMessage(HttpMethod.Get, urlTeamByCompetition);
-        var Team = await _httpClient.Get<Team>(request);
-
-        return Team;
-    }
-
-    public static TeamProviderBuilder Create()
-    {
-        return new TeamProviderBuilder();
+        return _httpClient.GetAsync<Team>($"teams/{teamId}");
     }
 }

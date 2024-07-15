@@ -1,6 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Interfaces;
 using FootballDataApi.Models;
+using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
@@ -13,7 +13,7 @@ namespace FootballDataApi.Tests.CompetitionTests;
 
 public class CompetitionSource : ICompetitionProvider
 {
-    private IEnumerable<Competition> _listCompetitionMockup;
+    private IReadOnlyCollection<Competition> _listCompetitionMockup;
 
     public CompetitionSource()
     {
@@ -34,17 +34,17 @@ public class CompetitionSource : ICompetitionProvider
         }
     }
 
-    public Task<IEnumerable<Competition>> GetAvailableCompetition()
+    public Task<IReadOnlyCollection<Competition>> GetAvailableCompetition()
     {
         return Task.Run(() => _listCompetitionMockup);
     }
 
-    public Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
+    public Task<IReadOnlyCollection<Competition>> GetAvailableCompetitionByArea(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        return Task.Run(() => _listCompetitionMockup
-            .Where(T => T.Area.Id == areaId));
+        return Task.Run(() => (IReadOnlyCollection<Competition>)_listCompetitionMockup
+            .Where(T => T.Area.Id == areaId).ToArray());
     }
 
     public Task<Competition> GetCompetition(int competitionId)

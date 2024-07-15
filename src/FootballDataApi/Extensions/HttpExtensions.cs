@@ -1,6 +1,5 @@
 using System;
 using System.Net.Http;
-using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -8,16 +7,17 @@ namespace FootballDataApi.Extensions;
 
 public static class HttpExtensions
 {
-    public static async Task<T> Get<T>(this HttpClient httpClient, HttpRequestMessage request)
+    public static async Task<T> GetAsync<T>(this HttpClient httpClient, string requestUri)
     {
         ArgumentNullException.ThrowIfNull(httpClient);
-        ArgumentNullException.ThrowIfNull(request);
+        ArgumentNullException.ThrowIfNullOrWhiteSpace(requestUri);
 
-        using (var response = await httpClient.SendAsync(request, new CancellationToken()))
-        {
-            response.EnsureSuccessStatusCode();
-            var content = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(content);
-        }
+        var response = await httpClient.GetAsync(requestUri);
+
+        response.EnsureSuccessStatusCode();
+
+        var content = await response.Content.ReadAsStringAsync();
+
+        return JsonConvert.DeserializeObject<T>(content);
     }
 }

@@ -12,7 +12,7 @@ public sealed record MatchTeam
 
     public Player Captain { get; set; }
 
-    public IEnumerable<Player> Lineup { get; set; }
+    public IReadOnlyCollection<Player> Lineup { get; set; }
 
-    public IEnumerable<Player> Bench { get; set; }
+    public IReadOnlyCollection<Player> Bench { get; set; }
 }

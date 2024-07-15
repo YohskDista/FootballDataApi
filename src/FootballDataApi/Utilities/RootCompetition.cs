@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FootballDataApi.Utilities;
 
-public sealed record RootCompetition : RootApi
+internal sealed record RootCompetition : RootApi
 {
-    public IEnumerable<Competition> Competitions { get; set; }
+    public IReadOnlyCollection<Competition> Competitions { get; set; }
 }

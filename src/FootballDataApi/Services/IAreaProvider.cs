@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FootballDataApi.Interfaces;
+namespace FootballDataApi.Services;
 
 public interface IAreaProvider
 {
-    Task<IEnumerable<Area>> GetAllAreas();
+    Task<IReadOnlyCollection<Area>> GetAllAreas();
 
-    Task<Area> GetAreaById(int idArea);
+    Task<Area> GetAreaById(int areaId);
 }
