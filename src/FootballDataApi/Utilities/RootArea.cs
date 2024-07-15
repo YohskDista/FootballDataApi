@@ -5,5 +5,5 @@ namespace FootballDataApi.Utilities;
 
 internal sealed record RootArea : RootApi
 {
-    public IEnumerable<Area> Areas { get; set; }
+    public IReadOnlyCollection<Area> Areas { get; set; }
 }

@@ -5,5 +5,5 @@ namespace FootballDataApi.Utilities;
 
 internal sealed record RootMatch : RootApi
 {
-    public IEnumerable<Match> Matches { get; set; }
+    public IReadOnlyCollection<Match> Matches { get; set; }
 }

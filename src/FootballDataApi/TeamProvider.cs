@@ -16,7 +16,7 @@ internal sealed class TeamProvider : ITeamProvider
     public TeamProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
+    public async Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
     {
         string[] authorizedFilters = ["stage"];
 

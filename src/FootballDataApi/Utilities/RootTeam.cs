@@ -9,5 +9,5 @@ internal sealed record RootTeam : RootApi
 
     public Season Season { get; set; }
 
-    public IEnumerable<Team> Teams { get; set; }
+    public IReadOnlyCollection<Team> Teams { get; set; }
 }

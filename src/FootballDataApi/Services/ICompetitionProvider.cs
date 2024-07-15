@@ -6,9 +6,9 @@ namespace FootballDataApi.Services;
 
 public interface ICompetitionProvider
 {
-    Task<IEnumerable<Competition>> GetAvailableCompetition();
+    Task<IReadOnlyCollection<Competition>> GetAvailableCompetition();
 
-    Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId);
+    Task<IReadOnlyCollection<Competition>> GetAvailableCompetitionByArea(int areaId);
 
     Task<Competition> GetCompetition(int competitionId);
 }

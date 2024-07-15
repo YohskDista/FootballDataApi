@@ -16,14 +16,14 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     public CompetitionProvider(HttpClient httpClient) 
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Competition>> GetAvailableCompetition()
+    public async Task<IReadOnlyCollection<Competition>> GetAvailableCompetition()
     {
         var competitionRoot = await _httpClient.GetAsync<RootCompetition>("competitions");
 
         return competitionRoot.Competitions;
     }
 
-    public async Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId)
+    public async Task<IReadOnlyCollection<Competition>> GetAvailableCompetitionByArea(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 

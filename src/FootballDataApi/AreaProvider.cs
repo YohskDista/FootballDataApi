@@ -16,7 +16,7 @@ internal sealed class AreaProvider : IAreaProvider
     public AreaProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Area>> GetAllAreas()
+    public async Task<IReadOnlyCollection<Area>> GetAllAreas()
     {
         var rootArea = await _httpClient.GetAsync<RootArea>("areas");
 

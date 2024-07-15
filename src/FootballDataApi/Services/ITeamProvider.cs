@@ -6,7 +6,7 @@ namespace FootballDataApi.Services;
 
 public interface ITeamProvider
 {
-    Task<IEnumerable<Team>> GetTeamByCompetition(int competitionId, params string[] filters);
+    Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int competitionId, params string[] filters);
 
     Task<Team> GetTeamById(int teamId);
 }

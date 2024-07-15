@@ -11,14 +11,12 @@ namespace FootballDataApi;
 
 internal sealed class MatchProvider : IMatchProvider
 {
-    private static string BaseAddress = "http://api.football-data.org/v2/matches";
-
     private readonly HttpClient _httpClient;
 
     public MatchProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IEnumerable<Match>> GetAllMatches(params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters)
     {
         var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
 
@@ -36,7 +34,7 @@ internal sealed class MatchProvider : IMatchProvider
         return rootMatches.Matches;
     }
 
-    public async Task<IEnumerable<Match>> GetAllMatchOfCompetition(int competitionId, params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetition(int competitionId, params string[] filters)
     {
         var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
@@ -54,7 +52,7 @@ internal sealed class MatchProvider : IMatchProvider
         return rootMatches.Matches;
     }
 
-    public async Task<IEnumerable<Match>> GetAllMatchOfTeam(int teamId, params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfTeam(int teamId, params string[] filters)
     {
         var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
 

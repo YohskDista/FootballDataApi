@@ -6,5 +6,5 @@ public sealed record SeasonStanding
 {
     public Season Season { get; set; }
 
-    public IEnumerable<Standing> Standings { get; set; }
+    public IReadOnlyCollection<Standing> Standings { get; set; }
 }

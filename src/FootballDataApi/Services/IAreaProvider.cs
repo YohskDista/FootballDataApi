@@ -6,7 +6,7 @@ namespace FootballDataApi.Services;
 
 public interface IAreaProvider
 {
-    Task<IEnumerable<Area>> GetAllAreas();
+    Task<IReadOnlyCollection<Area>> GetAllAreas();
 
     Task<Area> GetAreaById(int areaId);
 }
