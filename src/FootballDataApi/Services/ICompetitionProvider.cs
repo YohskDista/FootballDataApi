@@ -10,5 +10,5 @@ public interface ICompetitionProvider
 
     Task<IEnumerable<Competition>> GetAvailableCompetitionByArea(int areaId);
 
-    Task<Competition> GetCompetition(int idCompetition);
+    Task<Competition> GetCompetition(int competitionId);
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FootballDataApi.Utilities;
 
-public sealed record RootTeam : RootApi
+internal sealed record RootTeam : RootApi
 {
     public Competition Competition { get; set; }
 

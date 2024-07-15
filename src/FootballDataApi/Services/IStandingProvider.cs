@@ -5,5 +5,5 @@ namespace FootballDataApi.Services;
 
 public interface IStandingProvider
 {
-    Task<SeasonStanding> GetStandingOfCompetition(int idCompetition);
+    Task<SeasonStanding> GetStandingOfCompetition(int competitionId);
 }

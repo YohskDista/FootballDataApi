@@ -11,8 +11,6 @@ namespace FootballDataApi;
 
 internal sealed class CompetitionProvider : ICompetitionProvider
 {
-    private static string BaseAddress = "http://api.football-data.org/v2/competitions";
-
     private readonly HttpClient _httpClient;
 
     public CompetitionProvider(HttpClient httpClient) 
@@ -20,8 +18,7 @@ internal sealed class CompetitionProvider : ICompetitionProvider
 
     public async Task<IEnumerable<Competition>> GetAvailableCompetition()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, BaseAddress);
-        var competitionRoot = await _httpClient.Get<RootCompetition>(request);
+        var competitionRoot = await _httpClient.GetAsync<RootCompetition>("competitions");
 
         return competitionRoot.Competitions;
     }
@@ -30,21 +27,15 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        var urlAreas = $"{BaseAddress}/?areas={ areaId }";
-
-        var request = new HttpRequestMessage(HttpMethod.Get, urlAreas);
-        var competitionRoot = await _httpClient.Get<RootCompetition>(request);
+        var competitionRoot = await _httpClient.GetAsync<RootCompetition>($"competitions?areas={areaId}");
 
         return competitionRoot.Competitions;
     }
 
-    public async Task<Competition> GetCompetition(int idCompetition)
+    public Task<Competition> GetCompetition(int competitionId)
     {
-        HttpHelpers.VerifyActionParameters(idCompetition, null, null);
+        HttpHelpers.VerifyActionParameters(competitionId, null, null);
 
-        var url = $"{BaseAddress}/{idCompetition}";
-        var request = new HttpRequestMessage(HttpMethod.Get, url);
-
-        return await _httpClient.Get<Competition>(request);
+        return _httpClient.GetAsync<Competition>($"competitions/{competitionId}");
     }
 }

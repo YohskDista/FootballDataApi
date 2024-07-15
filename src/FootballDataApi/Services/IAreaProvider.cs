@@ -8,5 +8,5 @@ public interface IAreaProvider
 {
     Task<IEnumerable<Area>> GetAllAreas();
 
-    Task<Area> GetAreaById(int idArea);
+    Task<Area> GetAreaById(int areaId);
 }

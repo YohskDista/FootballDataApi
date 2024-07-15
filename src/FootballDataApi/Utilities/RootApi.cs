@@ -1,6 +1,6 @@
 ﻿namespace FootballDataApi.Utilities;
 
-public abstract record RootApi
+internal abstract record RootApi
 {
     public int Count { get; set; }
 
