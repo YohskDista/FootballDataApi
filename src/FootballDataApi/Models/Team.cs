@@ -29,7 +29,7 @@ public sealed record Team
 
     public object Venue { get; set; }
 
-    public IEnumerable<Player> Squad { get; set; }
+    public IReadOnlyCollection<Player> Squad { get; set; }
 
     public DateTime LastUpdated { get; set; }
 }

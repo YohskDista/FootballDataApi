@@ -33,11 +33,11 @@ public sealed record Match
 
     public Score Score { get; set; }
 
-    public IEnumerable<Goal> Goals { get; set; }
+    public IReadOnlyCollection<Goal> Goals { get; set; }
 
-    public IEnumerable<Booking> Bookings { get; set; }
+    public IReadOnlyCollection<Booking> Bookings { get; set; }
 
-    public IEnumerable<Substitution> Substitutions { get; set; }
+    public IReadOnlyCollection  <Substitution> Substitutions { get; set; }
 
-    public IEnumerable<Referee> Referees { get; set; }
+    public IReadOnlyCollection<Referee> Referees { get; set; }
 }

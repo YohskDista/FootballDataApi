@@ -10,5 +10,5 @@ public sealed record Standing
 
     public object Group { get; set; }
 
-    public IEnumerable<Ranking> Table { get; set; }
+    public IReadOnlyCollection<Ranking> Table { get; set; }
 }

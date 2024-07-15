@@ -10,5 +10,5 @@ public sealed record CompetitionMatches
 
     public Season Season { get; set; }
 
-    public IEnumerable<Match> Matches { get; set; }
+    public IReadOnlyCollection<Match> Matches { get; set; }
 }

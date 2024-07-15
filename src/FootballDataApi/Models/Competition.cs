@@ -17,7 +17,7 @@ public sealed record Competition
 
     public Season CurrentSeason { get; set; }
 
-    public IEnumerable<Season> Seasons { get; set; }
+    public IReadOnlyCollection<Season> Seasons { get; set; }
 
     public int NumberOfAvailableSeasons { get; set; }
 
