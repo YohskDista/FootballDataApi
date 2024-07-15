@@ -5,7 +5,7 @@
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Company>YohskSoftware</Company>
 		<Authors>Leonardo Di Stasio</Authors>
-		<Version>2.0.0</Version>
+		<Version>3.0.0</Version>
 		<Description>
 			Simplify access to the football-data.org API in C#.
 			The library is in .NetStandard2.0 and can be used on each platform (Windows, Linux, Android, iOS, etc.)
