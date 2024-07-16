@@ -5,9 +5,9 @@ namespace FootballDataApi.Models;
 
 public sealed record Competition
 {
-    public int Id { get; set; }
-
     public Area Area { get; set; }
+
+    public int Id { get; set; }
 
     public string Name { get; set; }
 
@@ -20,8 +20,6 @@ public sealed record Competition
     public Season CurrentSeason { get; set; }
 
     public IReadOnlyCollection<Season> Seasons { get; set; }
-
-    public int NumberOfAvailableSeasons { get; set; }
 
     public DateTime LastUpdated { get; set; }
 }
