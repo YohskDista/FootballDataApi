@@ -8,7 +8,7 @@ public sealed record Standing
 
     public string Type { get; set; }
 
-    public object Group { get; set; }
+    public object? Group { get; set; }
 
     public IReadOnlyCollection<Ranking> Table { get; set; }
 }

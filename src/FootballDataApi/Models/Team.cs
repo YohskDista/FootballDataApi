@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FootballDataApi.Models;
 
-public sealed record Team
+public record Club
 {
     public Area? Area { get; set; }
 
@@ -26,7 +26,10 @@ public sealed record Team
     public string? ClubColors { get; set; }
 
     public string? Venue { get; set; }
+}
 
+public record Team : Club
+{
     public long? MarketValue { get; set; }
 
     public Coach? Coach { get; set; }
@@ -38,4 +41,9 @@ public sealed record Team
     public IReadOnlyCollection<Person>? Staff { get; set; }
 
     public DateTime? LastUpdated { get; set; }
+}
+
+public sealed record PlayerTeam : Club
+{
+    public Contract? Contract { get; set; }
 }

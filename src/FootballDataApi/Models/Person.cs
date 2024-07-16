@@ -24,7 +24,5 @@ public sealed record Person
 
     public long MarketValue { get; set; }
 
-    public Team? CurrentTeam { get; set; }
-
-    public Contract? Contract { get; set; }
+    public PlayerTeam? CurrentTeam { get; set; }
 }

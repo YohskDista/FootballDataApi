@@ -8,6 +8,8 @@ public sealed record Ranking
 
     public int PlayedGames { get; set; }
 
+    public string Form { get; set; }
+
     public int Won { get; set; }
 
     public int Draw { get; set; }
