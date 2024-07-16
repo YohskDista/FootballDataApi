@@ -1,696 +1,703 @@
 ﻿{
-  "count": 3,
-  "filters": {
-    "competitions": [
-      "2000"
-    ],
-    "dateFrom": "2018-06-24",
-    "dateTo": "2018-06-24"
+  "area": {
+    "id": 2081,
+    "name": "France",
+    "code": "FRA",
+    "flag": "https://crests.football-data.org/773.svg"
   },
-  "matches": [
+  "competition": {
+    "id": 2015,
+    "name": "Ligue 1",
+    "code": "FL1",
+    "type": "LEAGUE",
+    "emblem": "https://crests.football-data.org/FL1.png"
+  },
+  "season": {
+    "id": 746,
+    "startDate": "2021-08-06",
+    "endDate": "2022-05-21",
+    "currentMatchday": 38,
+    "winner": null,
+    "stages": [
+      "REGULAR_SEASON"
+    ]
+  },
+  "id": 330299,
+  "utcDate": "2022-02-27T16:05:00Z",
+  "status": "FINISHED",
+  "minute": 90,
+  "injuryTime": 7,
+  "attendance": 16871,
+  "venue": "Stade de l'Aube",
+  "matchday": 26,
+  "stage": "REGULAR_SEASON",
+  "group": null,
+  "lastUpdated": "2022-06-06T08:20:24Z",
+  "homeTeam": {
+    "id": 531,
+    "name": "ES Troyes AC",
+    "shortName": "Troyes",
+    "tla": "ETR",
+    "crest": "https://crests.football-data.org/531.svg",
+    "coach": {
+      "id": 108988,
+      "name": "Bruno Irles",
+      "nationality": "France"
+    },
+    "leagueRank": null,
+    "formation": "3-4-1-2",
+    "lineup": [
+      {
+        "id": 899,
+        "name": "Gauthier Gallon",
+        "position": "Goalkeeper",
+        "shirtNumber": 30
+      },
+      {
+        "id": 8775,
+        "name": "Yoann Salmier",
+        "position": "Centre-Back",
+        "shirtNumber": 17
+      },
+      {
+        "id": 8348,
+        "name": "Adil Rami",
+        "position": "Centre-Back",
+        "shirtNumber": 23
+      },
+      {
+        "id": 9004,
+        "name": "Erik Palmer-Brown",
+        "position": "Centre-Back",
+        "shirtNumber": 2
+      },
+      {
+        "id": 123574,
+        "name": "Issa Kaboré",
+        "position": "Right-Back",
+        "shirtNumber": 29
+      },
+      {
+        "id": 37728,
+        "name": "Abdu Conté",
+        "position": "Left-Back",
+        "shirtNumber": 12
+      },
+      {
+        "id": 507,
+        "name": "Florian Tardieu",
+        "position": "Defensive Midfield",
+        "shirtNumber": 10
+      },
+      {
+        "id": 8623,
+        "name": "Tristan Dingomé",
+        "position": "Central Midfield",
+        "shirtNumber": 5
+      },
+      {
+        "id": 43707,
+        "name": "Mama Baldé",
+        "position": "Right Winger",
+        "shirtNumber": 25
+      },
+      {
+        "id": 8415,
+        "name": "Rominigue Kouamé",
+        "position": "Central Midfield",
+        "shirtNumber": 6
+      },
+      {
+        "id": 6406,
+        "name": "Iké Ugbo",
+        "position": "Centre-Forward",
+        "shirtNumber": 13
+      }
+    ],
+    "bench": [
+      {
+        "id": 74570,
+        "name": "Sébastien Rénot",
+        "position": "Goalkeeper",
+        "shirtNumber": 16
+      },
+      {
+        "id": 99805,
+        "name": "Giulian Biancone",
+        "position": "Right-Back",
+        "shirtNumber": 4
+      },
+      {
+        "id": 811,
+        "name": "Youssouf Koné",
+        "position": "Left-Back",
+        "shirtNumber": 3
+      },
+      {
+        "id": 133766,
+        "name": "Yasser Larouci",
+        "position": "Left-Back",
+        "shirtNumber": 22
+      },
+      {
+        "id": 8544,
+        "name": "Dylan Chambost",
+        "position": "Attacking Midfield",
+        "shirtNumber": 14
+      },
+      {
+        "id": 824,
+        "name": "Xavier Chavalerin",
+        "position": "Central Midfield",
+        "shirtNumber": 24
+      },
+      {
+        "id": 1043,
+        "name": "Lebo Mothiba",
+        "position": "Centre-Forward",
+        "shirtNumber": 26
+      },
+      {
+        "id": 519,
+        "name": "Yoann Touzghar",
+        "position": "Centre-Forward",
+        "shirtNumber": 7
+      },
+      {
+        "id": 169252,
+        "name": "Metinho",
+        "position": "Central Midfield",
+        "shirtNumber": 31
+      }
+    ],
+    "statistics": {
+      "corner_kicks": 4,
+      "free_kicks": 10,
+      "goal_kicks": 5,
+      "offsides": 4,
+      "fouls": 16,
+      "ball_possession": 41,
+      "saves": 1,
+      "throw_ins": 12,
+      "shots": 8,
+      "shots_on_goal": 3,
+      "shots_off_goal": 5,
+      "yellow_cards": 5,
+      "yellow_red_cards": 0,
+      "red_cards": 0
+    }
+  },
+  "awayTeam": {
+    "id": 516,
+    "name": "Olympique de Marseille",
+    "shortName": "Marseille",
+    "tla": "MAR",
+    "crest": "https://crests.football-data.org/516.png",
+    "coach": {
+      "id": 33636,
+      "name": "Jorge Sampaoli",
+      "nationality": "Argentina"
+    },
+    "leagueRank": null,
+    "formation": "4-3-3",
+    "lineup": [
+      {
+        "id": 32695,
+        "name": "Pau López",
+        "position": "Goalkeeper",
+        "shirtNumber": 16
+      },
+      {
+        "id": 80171,
+        "name": "William Saliba",
+        "position": "Centre-Back",
+        "shirtNumber": 2
+      },
+      {
+        "id": 10206,
+        "name": "Duje Ćaleta-Car",
+        "position": "Centre-Back",
+        "shirtNumber": 15
+      },
+      {
+        "id": 8346,
+        "name": "Boubacar Kamara",
+        "position": "Defensive Midfield",
+        "shirtNumber": 4
+      },
+      {
+        "id": 8695,
+        "name": "Valentin Rongier",
+        "position": "Central Midfield",
+        "shirtNumber": 21
+      },
+      {
+        "id": 1086,
+        "name": "Luan Peres",
+        "position": "Centre-Back",
+        "shirtNumber": 14
+      },
+      {
+        "id": 1815,
+        "name": "Gerson",
+        "position": "Central Midfield",
+        "shirtNumber": 8
+      },
+      {
+        "id": 600,
+        "name": "Mattéo Guendouzi",
+        "position": "Central Midfield",
+        "shirtNumber": 6
+      },
+      {
+        "id": 1818,
+        "name": "Cengiz Ünder",
+        "position": "Right Winger",
+        "shirtNumber": 17
+      },
+      {
+        "id": 8360,
+        "name": "Dimitri Payet",
+        "position": "Attacking Midfield",
+        "shirtNumber": 10
+      },
+      {
+        "id": 166640,
+        "name": "Ahmadou Bamba Dieng",
+        "position": null,
+        "shirtNumber": 12
+      }
+    ],
+    "bench": [
+      {
+        "id": 3356,
+        "name": "Steve Mandanda",
+        "position": "Goalkeeper",
+        "shirtNumber": 30
+      },
+      {
+        "id": 33108,
+        "name": "Álvaro González",
+        "position": "Centre-Back",
+        "shirtNumber": 3
+      },
+      {
+        "id": 7786,
+        "name": "Sead Kolašinac",
+        "position": "Left-Back",
+        "shirtNumber": 23
+      },
+      {
+        "id": 3714,
+        "name": "Amine Harit",
+        "position": "Attacking Midfield",
+        "shirtNumber": 7
+      },
+      {
+        "id": 633,
+        "name": "Pape Gueye",
+        "position": "Defensive Midfield",
+        "shirtNumber": 22
+      },
+      {
+        "id": 2105,
+        "name": "Arkadiusz Milik",
+        "position": "Centre-Forward",
+        "shirtNumber": 9
+      },
+      {
+        "id": 115074,
+        "name": "Luis Henrique",
+        "position": "Left Winger",
+        "shirtNumber": 11
+      },
+      {
+        "id": 21583,
+        "name": "Cédric Bakambu",
+        "position": "Centre-Forward",
+        "shirtNumber": 13
+      },
+      {
+        "id": 166642,
+        "name": "Pol Lirola",
+        "position": null,
+        "shirtNumber": 29
+      }
+    ],
+    "statistics": {
+      "corner_kicks": 8,
+      "free_kicks": 20,
+      "goal_kicks": 7,
+      "offsides": 0,
+      "fouls": 10,
+      "ball_possession": 59,
+      "saves": 2,
+      "throw_ins": 14,
+      "shots": 4,
+      "shots_on_goal": 2,
+      "shots_off_goal": 2,
+      "yellow_cards": 3,
+      "yellow_red_cards": 0,
+      "red_cards": 0
+    }
+  },
+  "score": {
+    "winner": "DRAW",
+    "duration": "REGULAR",
+    "fullTime": {
+      "home": 1,
+      "away": 1
+    },
+    "halfTime": {
+      "home": 0,
+      "away": 1
+    }
+  },
+  "goals": [
     {
-      "id": 200045,
-      "competition": {
-        "id": 2000,
-        "name": "FIFA World Cup"
+      "minute": 28,
+      "injuryTime": null,
+      "type": "PENALTY",
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
       },
-      "season": {
-        "id": 1,
-        "startDate": "2018-06-14T17:00:00Z",
-        "endDate": "2018-07-15T17:00:00Z",
-        "currentMatchday": 3,
-        "availableStages": [
-          "GROUP_STAGE"
-        ]
+      "scorer": {
+        "id": 8360,
+        "name": "Dimitri Payet"
       },
-      "utcDate": "2018-06-24T18:00:00Z",
-      "status": "FINISHED",
-      "minute": null,
-      "attendance": null,
-      "matchday": 2,
-      "stage": "GROUP_STAGE",
-      "group": "Group H",
-      "lastUpdated": "2018-06-24T21:55:19Z",
-      "referees": [
-        {
-          "id": 56408,
-          "name": "César Arturo Ramos",
-          "nationality": null
-        },
-        {
-          "id": 56008,
-          "name": "Marvin Torrentera",
-          "nationality": null
-        },
-        {
-          "id": 56009,
-          "name": "Miguel Ángel Hernández",
-          "nationality": null
-        },
-        {
-          "id": 23895,
-          "name": "Julio Bascuñán",
-          "nationality": null
-        }
-      ],
-      "homeTeam": {
-        "id": 794,
-        "name": "Poland",
-        "coach": {
-          "id": 10204,
-          "name": "Adam Nawałka",
-          "countryOfBirth": "Poland",
-          "nationality": "Poland"
-        },
-        "captain": {
-          "id": 371,
-          "name": "Robert Lewandowski",
-          "shirtNumber": 9
-        },
-        "lineup": [
-          {
-            "id": 2022,
-            "name": "Wojciech Szczęsny",
-            "position": "Goalkeeper",
-            "shirtNumber": 1
-          },
-          {
-            "id": 136,
-            "name": "Łukasz Piszczek",
-            "position": "Defender",
-            "shirtNumber": 20
-          },
-          {
-            "id": 371,
-            "name": "Robert Lewandowski",
-            "position": "Attacker",
-            "shirtNumber": 9
-          },
-          {
-            "id": 2097,
-            "name": "Piotr Zieliński",
-            "position": "Midfielder",
-            "shirtNumber": 19
-          },
-          {
-            "id": 2249,
-            "name": "Bartosz Bereszyński",
-            "position": "Defender",
-            "shirtNumber": 18
-          },
-          {
-            "id": 3534,
-            "name": "Grzegorz Krychowiak",
-            "position": "Midfielder",
-            "shirtNumber": 10
-          },
-          {
-            "id": 3530,
-            "name": "Michał Pazdan",
-            "position": "Defender",
-            "shirtNumber": 2
-          },
-          {
-            "id": 2263,
-            "name": "Dawid Kownacki",
-            "position": "Midfielder",
-            "shirtNumber": 23
-          },
-          {
-            "id": 8086,
-            "name": "Jan Bednarek",
-            "position": "Defender",
-            "shirtNumber": 5
-          },
-          {
-            "id": 3536,
-            "name": "Maciej Rybus",
-            "position": "Midfielder",
-            "shirtNumber": 13
-          },
-          {
-            "id": 3538,
-            "name": "Jacek Góralski",
-            "position": "Midfielder",
-            "shirtNumber": 6
-          }
-        ],
-        "bench": [
-          {
-            "id": 3526,
-            "name": "Łukasz Fabiański",
-            "position": "Goalkeeper",
-            "shirtNumber": 22
-          },
-          {
-            "id": 3533,
-            "name": "Sławomir Peszko",
-            "position": "Midfielder",
-            "shirtNumber": 17
-          },
-          {
-            "id": 3529,
-            "name": "Kamil Glik",
-            "position": "Defender",
-            "shirtNumber": 15
-          },
-          {
-            "id": 3542,
-            "name": "Kamil Grosicki",
-            "position": "Attacker",
-            "shirtNumber": 11
-          },
-          {
-            "id": 3537,
-            "name": "Jakub Błaszczykowski",
-            "position": "Midfielder",
-            "shirtNumber": 16
-          },
-          {
-            "id": 3545,
-            "name": "Rafał Kurzawa",
-            "position": "Attacker",
-            "shirtNumber": 21
-          },
-          {
-            "id": 2258,
-            "name": "Karol Linetty",
-            "position": "Midfielder",
-            "shirtNumber": 8
-          },
-          {
-            "id": 3543,
-            "name": "Łukasz Teodorczyk",
-            "position": "Attacker",
-            "shirtNumber": 14
-          },
-          {
-            "id": 3528,
-            "name": "Artur Jędrzejczyk",
-            "position": "Defender",
-            "shirtNumber": 3
-          },
-          {
-            "id": 2105,
-            "name": "Arkadiusz Milik",
-            "position": "Attacker",
-            "shirtNumber": 7
-          },
-          {
-            "id": 3527,
-            "name": "Bartosz Białkowski",
-            "position": "Goalkeeper",
-            "shirtNumber": 12
-          },
-          {
-            "id": 2356,
-            "name": "Thiago Cionek",
-            "position": "Defender",
-            "shirtNumber": 4
-          }
-        ]
-      },
-      "awayTeam": {
-        "id": 818,
-        "name": "Colombia",
-        "coach": {
-          "id": 33668,
-          "name": "José Pekerman",
-          "countryOfBirth": "Argentina",
-          "nationality": "Argentina"
-        },
-        "captain": {
-          "id": 3739,
-          "name": "Radamel Falcao",
-          "shirtNumber": 9
-        },
-        "lineup": [
-          {
-            "id": 3722,
-            "name": "David Ospina",
-            "position": "Goalkeeper",
-            "shirtNumber": 1
-          },
-          {
-            "id": 2037,
-            "name": "Juan Cuadrado",
-            "position": "Midfielder",
-            "shirtNumber": 11
-          },
-          {
-            "id": 3723,
-            "name": "Santiago Arias",
-            "position": "Defender",
-            "shirtNumber": 4
-          },
-          {
-            "id": 3730,
-            "name": "Juan Fernando Quintero",
-            "position": "Midfielder",
-            "shirtNumber": 20
-          },
-          {
-            "id": 3731,
-            "name": "Abel Aguilar",
-            "position": "Midfielder",
-            "shirtNumber": 8
-          },
-          {
-            "id": 365,
-            "name": "James Rodríguez",
-            "position": "Midfielder",
-            "shirtNumber": 10
-          },
-          {
-            "id": 3739,
-            "name": "Radamel Falcao",
-            "position": "Attacker",
-            "shirtNumber": 9
-          },
-          {
-            "id": 3724,
-            "name": "Johan Mojica",
-            "position": "Defender",
-            "shirtNumber": 17
-          },
-          {
-            "id": 3728,
-            "name": "Yerry Mina",
-            "position": "Defender",
-            "shirtNumber": 13
-          },
-          {
-            "id": 3732,
-            "name": "Wílmar Barrios",
-            "position": "Midfielder",
-            "shirtNumber": 5
-          },
-          {
-            "id": 3733,
-            "name": "Davinson Sánchez",
-            "position": "Midfielder",
-            "shirtNumber": 23
-          }
-        ],
-        "bench": [
-          {
-            "id": 1195,
-            "name": "Miguel Borja",
-            "position": "Attacker",
-            "shirtNumber": 19
-          },
-          {
-            "id": 57,
-            "name": "Luis Fernando Muriel",
-            "position": "Attacker",
-            "shirtNumber": 14
-          },
-          {
-            "id": 3721,
-            "name": "Camilo Vargas",
-            "position": "Goalkeeper",
-            "shirtNumber": 12
-          },
-          {
-            "id": 1737,
-            "name": "Cristián Zapata",
-            "position": "Defender",
-            "shirtNumber": 2
-          },
-          {
-            "id": 3740,
-            "name": "Carlos Bacca",
-            "position": "Attacker",
-            "shirtNumber": 7
-          },
-          {
-            "id": 3735,
-            "name": "José Izquierdo",
-            "position": "Midfielder",
-            "shirtNumber": 21
-          },
-          {
-            "id": 22036,
-            "name": "José Cuadrado",
-            "position": "Goalkeeper",
-            "shirtNumber": 22
-          },
-          {
-            "id": 3734,
-            "name": "Mateus Uribe",
-            "position": "Midfielder",
-            "shirtNumber": 15
-          },
-          {
-            "id": 3737,
-            "name": "Jefferson Lerma",
-            "position": "Midfielder",
-            "shirtNumber": 16
-          },
-          {
-            "id": 33662,
-            "name": "Farid Díaz",
-            "position": "Defender",
-            "shirtNumber": 18
-          },
-          {
-            "id": 3727,
-            "name": "Óscar Murillo",
-            "position": "Defender",
-            "shirtNumber": 3
-          }
-        ]
-      },
+      "assist": null,
       "score": {
-        "winner": "AWAY_TEAM",
-        "duration": "REGULAR",
-        "halfTime": {
-          "homeTeam": 0,
-          "awayTeam": 1
-        },
-        "fullTime": {
-          "homeTeam": 0,
-          "awayTeam": 3
-        },
-        "extraTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "penalties": {
-          "homeTeam": null,
-          "awayTeam": null
-        }
-      },
-      "goals": [
-        {
-          "minute": 40,
-          "scorer": {
-            "id": 3728,
-            "name": "Yerry Mina"
-          },
-          "assist": [
-            {
-              "id": 365,
-              "name": "James Rodríguez"
-            }
-          ]
-        },
-        {
-          "minute": 70,
-          "scorer": {
-            "id": 3739,
-            "name": "Radamel Falcao"
-          },
-          "assist": [
-            {
-              "id": 3730,
-              "name": "Juan Fernando Quintero"
-            }
-          ]
-        }
-      ],
-      "bookings": [
-        {
-          "minute": 61,
-          "team": {
-            "id": 794,
-            "name": "Poland"
-          },
-          "player": {
-            "id": 8086,
-            "name": "Jan Bednarek"
-          },
-          "card": "YELLOW_CARD"
-        },
-        {
-          "minute": 85,
-          "team": {
-            "id": 794,
-            "name": "Poland"
-          },
-          "player": {
-            "id": 3538,
-            "name": "Jacek Góralski"
-          },
-          "card": "YELLOW_CARD"
-        }
-      ],
-      "substitutions": [
-        {
-          "minute": 32,
-          "team": {
-            "id": 818,
-            "name": "Colombia"
-          },
-          "playerOut": {
-            "id": 3731,
-            "name": "Abel Aguilar"
-          },
-          "playerIn": {
-            "id": 3734,
-            "name": "Mateus Uribe"
-          }
-        },
-        {
-          "minute": 57,
-          "team": {
-            "id": 794,
-            "name": "Poland"
-          },
-          "playerOut": {
-            "id": 2263,
-            "name": "Dawid Kownacki"
-          },
-          "playerIn": {
-            "id": 3542,
-            "name": "Kamil Grosicki"
-          }
-        },
-        {
-          "minute": 72,
-          "team": {
-            "id": 794,
-            "name": "Poland"
-          },
-          "playerOut": {
-            "id": 2249,
-            "name": "Bartosz Bereszyński"
-          },
-          "playerIn": {
-            "id": 3543,
-            "name": "Łukasz Teodorczyk"
-          }
-        },
-        {
-          "minute": 73,
-          "team": {
-            "id": 818,
-            "name": "Colombia"
-          },
-          "playerOut": {
-            "id": 3730,
-            "name": "Juan Fernando Quintero"
-          },
-          "playerIn": {
-            "id": 3737,
-            "name": "Jefferson Lerma"
-          }
-        },
-        {
-          "minute": 78,
-          "team": {
-            "id": 818,
-            "name": "Colombia"
-          },
-          "playerOut": {
-            "id": 3739,
-            "name": "Radamel Falcao"
-          },
-          "playerIn": {
-            "id": 3740,
-            "name": "Carlos Bacca"
-          }
-        },
-        {
-          "minute": 80,
-          "team": {
-            "id": 794,
-            "name": "Poland"
-          },
-          "playerOut": {
-            "id": 3530,
-            "name": "Michał Pazdan"
-          },
-          "playerIn": {
-            "id": 3529,
-            "name": "Kamil Glik"
-          }
-        }
-      ]
+        "home": 0,
+        "away": 1
+      }
     },
     {
-      "id": 200004,
-      "competition": {
-        "id": 2000,
-        "name": "FIFA World Cup"
+      "minute": 90,
+      "injuryTime": null,
+      "type": "REGULAR",
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
       },
-      "season": {
-        "id": 1,
-        "startDate": "2018-06-14T17:00:00Z",
-        "endDate": "2018-07-15T17:00:00Z",
-        "currentMatchday": 3,
-        "availableStages": [
-          "GROUP_STAGE"
-        ]
+      "scorer": {
+        "id": 519,
+        "name": "Yoann Touzghar"
       },
-      "utcDate": "2018-06-25T14:00:00Z",
-      "status": "SCHEDULED",
-      "minute": null,
-      "attendance": null,
-      "matchday": 3,
-      "stage": "GROUP_STAGE",
-      "group": "Group A",
-      "lastUpdated": "2018-06-22T10:00:01Z",
-      "referees": [],
-      "homeTeam": {
-        "id": 801,
-        "name": "Saudi Arabia",
-        "coach": {
-          "id": null,
-          "name": null,
-          "countryOfBirth": null,
-          "nationality": null
-        },
-        "captain": {
-          "id": null,
-          "name": null,
-          "shirtNumber": null
-        },
-        "lineup": [],
-        "bench": []
-      },
-      "awayTeam": {
-        "id": 825,
-        "name": "Egypt",
-        "coach": {
-          "id": null,
-          "name": null,
-          "countryOfBirth": null,
-          "nationality": null
-        },
-        "captain": {
-          "id": null,
-          "name": null,
-          "shirtNumber": null
-        },
-        "lineup": [],
-        "bench": []
+      "assist": {
+        "id": 811,
+        "name": "Youssouf Koné"
       },
       "score": {
-        "winner": null,
-        "duration": "REGULAR",
-        "halfTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "fullTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "extraTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "penalties": {
-          "homeTeam": null,
-          "awayTeam": null
-        }
+        "home": 1,
+        "away": 1
+      }
+    }
+  ],
+  "penalties": [
+    {
+      "player": {
+        "id": 8360,
+        "name": "Dimitri Payet"
       },
-      "goals": [],
-      "bookings": [],
-      "substitutions": []
+      "team": {
+        "id": null,
+        "name": null
+      },
+      "scored": true
+    }
+  ],
+  "bookings": [
+    {
+      "minute": 11,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "player": {
+        "id": 8695,
+        "name": "Valentin Rongier"
+      },
+      "card": "YELLOW"
     },
     {
-      "id": 200005,
-      "competition": {
-        "id": 2000,
-        "name": "FIFA World Cup"
+      "minute": 27,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
       },
-      "season": {
-        "id": 1,
-        "startDate": "2018-06-14T17:00:00Z",
-        "endDate": "2018-07-15T17:00:00Z",
-        "currentMatchday": 3,
-        "availableStages": [
-          "GROUP_STAGE"
-        ]
+      "player": {
+        "id": 43707,
+        "name": "Mama Baldé"
       },
-      "utcDate": "2018-06-25T14:00:00Z",
-      "status": "SCHEDULED",
-      "minute": null,
-      "attendance": null,
-      "matchday": 3,
-      "stage": "GROUP_STAGE",
-      "group": "Group A",
-      "lastUpdated": "2018-06-22T10:00:01Z",
-      "referees": [],
-      "homeTeam": {
-        "id": 758,
-        "name": "Uruguay",
-        "coach": {
-          "id": null,
-          "name": null,
-          "countryOfBirth": null,
-          "nationality": null
-        },
-        "captain": {
-          "id": null,
-          "name": null,
-          "shirtNumber": null
-        },
-        "lineup": [],
-        "bench": []
+      "card": "YELLOW"
+    },
+    {
+      "minute": 36,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
       },
-      "awayTeam": {
-        "id": 808,
-        "name": "Russia",
-        "coach": {
-          "id": null,
-          "name": null,
-          "countryOfBirth": null,
-          "nationality": null
-        },
-        "captain": {
-          "id": null,
-          "name": null,
-          "shirtNumber": null
-        },
-        "lineup": [],
-        "bench": []
+      "player": {
+        "id": 507,
+        "name": "Florian Tardieu"
       },
-      "score": {
-        "winner": null,
-        "duration": "REGULAR",
-        "halfTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "fullTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "extraTime": {
-          "homeTeam": null,
-          "awayTeam": null
-        },
-        "penalties": {
-          "homeTeam": null,
-          "awayTeam": null
-        }
+      "card": "YELLOW"
+    },
+    {
+      "minute": 36,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
       },
-      "goals": [],
-      "bookings": [],
-      "substitutions": []
+      "player": {
+        "id": 8348,
+        "name": "Adil Rami"
+      },
+      "card": "YELLOW"
+    },
+    {
+      "minute": 49,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "player": {
+        "id": 37728,
+        "name": "Abdu Conté"
+      },
+      "card": "YELLOW"
+    },
+    {
+      "minute": 55,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "player": {
+        "id": 8360,
+        "name": "Dimitri Payet"
+      },
+      "card": "YELLOW"
+    },
+    {
+      "minute": 85,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "player": {
+        "id": 32695,
+        "name": "Pau López"
+      },
+      "card": "YELLOW"
+    },
+    {
+      "minute": 90,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "player": {
+        "id": 99805,
+        "name": "Giulian Biancone"
+      },
+      "card": "YELLOW"
+    }
+  ],
+  "substitutions": [
+    {
+      "minute": 57,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "playerOut": {
+        "id": 8695,
+        "name": "Valentin Rongier"
+      },
+      "playerIn": {
+        "id": 166642,
+        "name": "Pol Lirola"
+      }
+    },
+    {
+      "minute": 57,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "playerOut": {
+        "id": 166640,
+        "name": "Ahmadou Bamba Dieng"
+      },
+      "playerIn": {
+        "id": 115074,
+        "name": "Luis Henrique"
+      }
+    },
+    {
+      "minute": 58,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "playerOut": {
+        "id": 6406,
+        "name": "Iké Ugbo"
+      },
+      "playerIn": {
+        "id": 1043,
+        "name": "Lebo Mothiba"
+      }
+    },
+    {
+      "minute": 59,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "playerOut": {
+        "id": 37728,
+        "name": "Abdu Conté"
+      },
+      "playerIn": {
+        "id": 811,
+        "name": "Youssouf Koné"
+      }
+    },
+    {
+      "minute": 77,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "playerOut": {
+        "id": 9004,
+        "name": "Erik Palmer-Brown"
+      },
+      "playerIn": {
+        "id": 99805,
+        "name": "Giulian Biancone"
+      }
+    },
+    {
+      "minute": 77,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "playerOut": {
+        "id": 43707,
+        "name": "Mama Baldé"
+      },
+      "playerIn": {
+        "id": 519,
+        "name": "Yoann Touzghar"
+      }
+    },
+    {
+      "minute": 78,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "playerOut": {
+        "id": 8360,
+        "name": "Dimitri Payet"
+      },
+      "playerIn": {
+        "id": 2105,
+        "name": "Arkadiusz Milik"
+      }
+    },
+    {
+      "minute": 86,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "playerOut": {
+        "id": 1818,
+        "name": "Cengiz Ünder"
+      },
+      "playerIn": {
+        "id": 633,
+        "name": "Pape Gueye"
+      }
+    },
+    {
+      "minute": 87,
+      "team": {
+        "id": 516,
+        "name": "Olympique de Marseille"
+      },
+      "playerOut": {
+        "id": 1086,
+        "name": "Luan Peres"
+      },
+      "playerIn": {
+        "id": 7786,
+        "name": "Sead Kolašinac"
+      }
+    },
+    {
+      "minute": 90,
+      "team": {
+        "id": 531,
+        "name": "ES Troyes AC"
+      },
+      "playerOut": {
+        "id": 8415,
+        "name": "Rominigue Kouamé"
+      },
+      "playerIn": {
+        "id": 824,
+        "name": "Xavier Chavalerin"
+      }
+    }
+  ],
+  "odds": {
+    "homeWin": 4.25,
+    "draw": 3.72,
+    "awayWin": 1.81
+  },
+  "referees": [
+    {
+      "id": 57080,
+      "name": "Cyril Mugnier",
+      "type": "ASSISTANT_REFEREE_N1",
+      "nationality": "France"
+    },
+    {
+      "id": 57049,
+      "name": "Mehdi Rahmouni",
+      "type": "ASSISTANT_REFEREE_N2",
+      "nationality": "France"
+    },
+    {
+      "id": 57031,
+      "name": "Alexandre Perreau Niel",
+      "type": "FOURTH_OFFICIAL",
+      "nationality": "France"
+    },
+    {
+      "id": 43918,
+      "name": "François Letexier",
+      "type": "REFEREE",
+      "nationality": "France"
+    },
+    {
+      "id": 57073,
+      "name": "Jérémie Pignard",
+      "type": "VIDEO_ASSISTANT_REFEREE_N1",
+      "nationality": "France"
+    },
+    {
+      "id": 166622,
+      "name": "Abdelali Chaoui",
+      "type": "VIDEO_ASSISTANT_REFEREE_N2",
+      "nationality": null
     }
   ]
 }
