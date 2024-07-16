@@ -15,11 +15,11 @@ public sealed record Competition
 
     public string Type { get; set; }
 
-    public string Emblem { get; set; }
+    public string? Emblem { get; set; }
 
-    public Season CurrentSeason { get; set; }
+    public Season? CurrentSeason { get; set; }
 
-    public IReadOnlyCollection<Season> Seasons { get; set; }
+    public IReadOnlyCollection<Season>? Seasons { get; set; }
 
-    public DateTime LastUpdated { get; set; }
+    public DateTime? LastUpdated { get; set; }
 }

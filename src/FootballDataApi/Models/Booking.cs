@@ -6,7 +6,7 @@ public sealed record Booking
 
     public MatchTeam Team { get; set; }
 
-    public Player Player { get; set; }
+    public Person Player { get; set; }
 
     public string Card { get; set; }
 }

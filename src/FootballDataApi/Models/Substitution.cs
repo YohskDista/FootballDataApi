@@ -2,13 +2,13 @@
 {
     public sealed record Substitution
     {
-        public int? Minute { get; set; }
+        public int Minute { get; set; }
 
         public MatchTeam Team { get; set; }
 
-        public Player PlayerOut { get; set; }
+        public Person PlayerOut { get; set; }
 
-        public Player PlayerIn { get; set; }
+        public Person PlayerIn { get; set; }
     }
 
 }
