@@ -1,4 +1,4 @@
-﻿namespace FootballDataApi.Models;
+﻿namespace FootballDataApi.Models.Matches;
 
 public class Score
 {

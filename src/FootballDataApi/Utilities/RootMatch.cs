@@ -1,4 +1,4 @@
-﻿using FootballDataApi.Models;
+﻿using FootballDataApi.Models.Matches;
 using System.Collections.Generic;
 
 namespace FootballDataApi.Utilities;

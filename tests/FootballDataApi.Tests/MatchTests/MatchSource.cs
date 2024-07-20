@@ -1,5 +1,5 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 using Newtonsoft.Json;

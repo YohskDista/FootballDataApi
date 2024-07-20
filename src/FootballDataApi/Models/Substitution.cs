@@ -1,4 +1,6 @@
-﻿namespace FootballDataApi.Models
+﻿using FootballDataApi.Models.Matches;
+
+namespace FootballDataApi.Models
 {
     public sealed record Substitution
     {

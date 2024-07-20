@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FootballDataApi.Models;
+namespace FootballDataApi.Models.Matches;
 
 public sealed record Match
 {
@@ -15,13 +15,15 @@ public sealed record Match
 
     public DateTime UtcDate { get; set; }
 
-    public string Status { get; set; }
+    public Status Status { get; set; }
 
     public int Minute { get; set; }
 
     public int InjuryTime { get; set; }
 
     public int Attendance { get; set; }
+
+    public string Venue { get; set; }
 
     public int Matchday { get; set; }
 
@@ -43,7 +45,7 @@ public sealed record Match
 
     public IReadOnlyCollection<Booking> Bookings { get; set; }
 
-    public IReadOnlyCollection  <Substitution> Substitutions { get; set; }
+    public IReadOnlyCollection<Substitution> Substitutions { get; set; }
 
     public Odds Odds { get; set; }
 

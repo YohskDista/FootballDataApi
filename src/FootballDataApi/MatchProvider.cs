@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
 using FootballDataApi.Utilities;
 
