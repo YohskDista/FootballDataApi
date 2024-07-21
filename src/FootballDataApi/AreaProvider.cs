@@ -16,17 +16,17 @@ internal sealed class AreaProvider : IAreaProvider
     public AreaProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<Area>> GetAllAreas()
+    public async Task<IReadOnlyCollection<DetailedArea>> GetAllAreas()
     {
         var rootArea = await _httpClient.GetAsync<RootArea>("areas");
 
         return rootArea.Areas;
     }
 
-    public Task<Area> GetAreaById(int areaId)
+    public Task<DetailedArea> GetAreaById(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        return _httpClient.GetAsync<Area>($"areas/{areaId}");
+        return _httpClient.GetAsync<DetailedArea>($"areas/{areaId}");
     }
 }

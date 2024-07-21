@@ -26,7 +26,7 @@ public sealed record CurrentTeam
 
     public string Venue { get; set; }
 
-    public IReadOnlyCollection<RunningCompetition> RunningCompetitions { get; set; }
+    public IReadOnlyCollection<Competition> RunningCompetitions { get; set; }
 
     public Contract Contract { get; set; }
 }

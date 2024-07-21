@@ -34,12 +34,12 @@ public class AreaSource : IAreaProvider
         }
     }
 
-    public Task<IReadOnlyCollection<Area>> GetAllAreas()
+    public Task<IReadOnlyCollection<DetailedArea>> GetAllAreas()
     {
         return Task.Run(() => _rootArea.Areas);
     }
 
-    public Task<Area> GetAreaById(int areaId)
+    public Task<DetailedArea> GetAreaById(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 

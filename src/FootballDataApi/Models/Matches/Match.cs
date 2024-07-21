@@ -7,7 +7,7 @@ public sealed record Match
 {
     public int Id { get; set; }
 
-    public Area? Area { get; set; }
+    public DetailedArea? Area { get; set; }
 
     public Competition? Competition { get; set; }
 

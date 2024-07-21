@@ -1,6 +1,6 @@
-﻿namespace FootballDataApi.Models.Persons;
+﻿namespace FootballDataApi.Models;
 
-public sealed record RunningCompetition
+public record Competition
 {
     public int Id { get; set; }
 
