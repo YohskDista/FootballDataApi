@@ -18,10 +18,3 @@ public sealed record Goal
 
     public GoalScore Score { get; set; }
 }
-
-public sealed record GoalScorer
-{
-    public int Id { get; set; }
-
-    public string Name { get; set; }
-}

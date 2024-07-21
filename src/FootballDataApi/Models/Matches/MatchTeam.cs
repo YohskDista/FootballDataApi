@@ -26,10 +26,3 @@ public sealed record MatchTeam
 
     public Statistics? Statistics { get; set; }
 }
-
-public sealed record GoalTeam
-{
-    public int Id { get; set; }
-
-    public string Team { get; set; }
-}

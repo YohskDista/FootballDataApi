@@ -1,4 +1,4 @@
-﻿namespace FootballDataApi.Models.Competitions;
+﻿namespace FootballDataApi.Models.Teams;
 
 public sealed record Area
 {
@@ -10,4 +10,5 @@ public sealed record Area
 
     public string Flag { get; set; }
 }
+
 

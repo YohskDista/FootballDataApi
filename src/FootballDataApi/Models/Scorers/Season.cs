@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FootballDataApi.Models.Competitions;
+namespace FootballDataApi.Models.Scorers;
 
-public sealed record Season
+public class Season
 {
     public int Id { get; set; }
 
@@ -11,10 +11,11 @@ public sealed record Season
 
     public DateTime EndDate { get; set; }
 
-    public int? CurrentMatchday { get; set; }
+    public int CurrentMatchday { get; set; }
 
     public Winner Winner { get; set; }
 
-    public IReadOnlyList<string> Stages { get; set; }
+    public IReadOnlyCollection<string> Stages { get; set; }
 }
+
 
