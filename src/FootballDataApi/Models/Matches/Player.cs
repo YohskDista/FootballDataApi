@@ -1,8 +1,7 @@
 ﻿namespace FootballDataApi.Models.Matches;
-
-public sealed record Player
+public sealed record Player : Person
 {
-    public int Id { get; set; }
+    public string Position { get; set; }
 
-    public string Name { get; set; }
+    public int ShirtNumber { get; set; }
 }

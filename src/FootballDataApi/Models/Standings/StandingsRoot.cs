@@ -2,7 +2,7 @@
 
 namespace FootballDataApi.Models.Standings;
 
-public sealed record Root
+public sealed record StandingsRoot
 {
     public Filters Filters { get; set; }
 

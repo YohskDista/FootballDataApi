@@ -18,7 +18,7 @@ public sealed record PersonMatch
 
     public string Position { get; set; }
 
-    public object ShirtNumber { get; set; }
+    public int? ShirtNumber { get; set; }
 
     public DateTime LastUpdated { get; set; }
 }

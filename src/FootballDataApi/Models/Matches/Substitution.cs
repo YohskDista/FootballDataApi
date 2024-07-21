@@ -8,7 +8,7 @@ public sealed record Substitution
 
     public Team Team { get; set; }
 
-    public Player PlayerOut { get; set; }
+    public Person PlayerOut { get; set; }
 
-    public Player PlayerIn { get; set; }
+    public Person PlayerIn { get; set; }
 }

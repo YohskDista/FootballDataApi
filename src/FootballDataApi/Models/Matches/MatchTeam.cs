@@ -20,9 +20,9 @@ public sealed record MatchTeam
 
     public string Formation { get; set; }
 
-    public IReadOnlyCollection<Person>? Lineup { get; set; }
+    public IReadOnlyCollection<Player>? Lineup { get; set; }
 
-    public IReadOnlyCollection<Person>? Bench { get; set; }
+    public IReadOnlyCollection<Player>? Bench { get; set; }
 
     public Statistics? Statistics { get; set; }
 }

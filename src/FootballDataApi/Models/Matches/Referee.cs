@@ -1,11 +1,7 @@
 ﻿namespace FootballDataApi.Models.Matches;
 
-public sealed record Referee
+public sealed record Referee : Person
 {
-    public int Id { get; set; }
-
-    public string Name { get; set; }
-
     public string Type { get; set; }
 
     public string? Nationality { get; set; }
