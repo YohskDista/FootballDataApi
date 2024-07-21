@@ -1,9 +1,11 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-namespace FootballDataApi.Models;
+namespace FootballDataApi.Models.Persons;
 
-public sealed record CompetitionWinner
+public sealed record CurrentTeam
 {
+    public Area Area { get; set; }
+
     public int Id { get; set; }
 
     public string Name { get; set; }
@@ -12,7 +14,7 @@ public sealed record CompetitionWinner
 
     public string Tla { get; set; }
 
-    public string Creat { get; set; }
+    public string Crest { get; set; }
 
     public string Address { get; set; }
 
@@ -24,6 +26,9 @@ public sealed record CompetitionWinner
 
     public string Venue { get; set; }
 
-    public DateTime LastUpdated { get; set; }
+    public IReadOnlyCollection<RunningCompetition> RunningCompetitions { get; set; }
+
+    public Contract Contract { get; set; }
 }
+
 

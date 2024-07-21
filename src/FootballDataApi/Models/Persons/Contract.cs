@@ -1,4 +1,4 @@
-﻿namespace FootballDataApi.Models;
+﻿namespace FootballDataApi.Models.Persons;
 
 public sealed record Contract
 {
@@ -6,3 +6,5 @@ public sealed record Contract
 
     public string Until { get; set; }
 }
+
+
