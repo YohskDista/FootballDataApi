@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using FootballDataApi.Models.Competitions;
 
-namespace FootballDataApi.Models.Competitions;
+namespace FootballDataApi.Models;
 
 public sealed record Season
 {

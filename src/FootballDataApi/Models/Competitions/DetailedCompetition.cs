@@ -7,7 +7,7 @@ public sealed record DetailedCompetition : Competition
 {
     public Area Area { get; set; }
 
-    public CurrentSeason CurrentSeason { get; set; }
+    public Season CurrentSeason { get; set; }
 
     public IReadOnlyList<Season> Seasons { get; set; }
 
