@@ -1,7 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+using FootballDataApi.Models.Teams;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;

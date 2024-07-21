@@ -1,5 +1,6 @@
 ﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
+using FootballDataApi.Models.Standings;
 using FootballDataApi.Services;
 using System;
 using System.Net.Http;
@@ -14,10 +15,10 @@ internal sealed class StandingProvider : IStandingProvider
     public StandingProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public Task<SeasonStanding> GetStandingOfCompetition(int competitionId)
+    public Task<Standing> GetStandingOfCompetition(int competitionId)
     {
         HttpHelpers.VerifyActionParameters(competitionId, null, null);
 
-        return _httpClient.GetAsync<SeasonStanding>($"competitions/{competitionId}/standings");
+        return _httpClient.GetAsync<Standing>($"competitions/{competitionId}/standings");
     }
 }
