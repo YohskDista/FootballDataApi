@@ -11,7 +11,7 @@ namespace FootballDataApi;
 
 internal sealed class AreaProvider : IAreaProvider
 {    
-    private HttpClient _httpClient;
+    private readonly HttpClient _httpClient;
 
     public AreaProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));

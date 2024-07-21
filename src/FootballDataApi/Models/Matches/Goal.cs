@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FootballDataApi.Models.Matches;
+﻿namespace FootballDataApi.Models.Matches;
 
 public sealed record Goal
 {
