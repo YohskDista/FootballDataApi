@@ -9,7 +9,7 @@ public sealed record CompetitionMatchesRoot
 
     public ResultSet ResultSet { get; set; }
 
-    public Competition Competition { get; set; }
+    public AvailableCompetition Competition { get; set; }
 
     public IReadOnlyCollection<Match> Matches { get; set; }
 }

@@ -1,5 +1,4 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Models;
 using FootballDataApi.Models.Competitions;
 using FootballDataApi.Services;
 using System;
@@ -16,22 +15,20 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     public CompetitionProvider(HttpClient httpClient) 
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<Competition>> GetAvailableCompetition()
+    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetition()
     {
-        var competitionRoot = await _httpClient
-            .GetAsync<IReadOnlyCollection<DetailedCompetition>>("competitions");
+        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>("competitions");
 
-        return competitionRoot;
+        return competitionRoot.Competitions;
     }
 
-    public async Task<IReadOnlyCollection<Competition>> GetAvailableCompetitionByArea(int areaId)
+    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionByArea(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        var competitionRoot = await _httpClient
-            .GetAsync<IReadOnlyCollection<DetailedCompetition>>($"competitions?areas={areaId}");
+        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>($"competitions?areas={areaId}");
 
-        return competitionRoot;
+        return competitionRoot.Competitions;
     }
 
     public Task<DetailedCompetition> GetCompetition(string competitionId)
