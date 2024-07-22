@@ -1,5 +1,4 @@
-﻿using FootballDataApi.Models;
-using FootballDataApi.Models.Teams;
+﻿using FootballDataApi.Models.Teams;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
