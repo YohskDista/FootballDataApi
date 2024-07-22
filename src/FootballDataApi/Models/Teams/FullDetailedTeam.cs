@@ -3,19 +3,9 @@ using System.Collections.Generic;
 
 namespace FootballDataApi.Models.Teams;
 
-public sealed record Team
+public sealed record FullDetailedTeam : Team
 {
     public Area Area { get; set; }
-
-    public int Id { get; set; }
-
-    public string Name { get; set; }
-
-    public string ShortName { get; set; }
-
-    public string Tla { get; set; }
-
-    public string Crest { get; set; }
 
     public string Address { get; set; }
 

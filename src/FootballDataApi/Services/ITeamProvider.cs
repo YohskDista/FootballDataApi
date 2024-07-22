@@ -7,9 +7,9 @@ namespace FootballDataApi.Services;
 
 public interface ITeamProvider
 {
-    Task<IReadOnlyCollection<Team>> GetTeamByCompetition(
+    Task<IReadOnlyCollection<FullDetailedTeam>> GetTeamByCompetition(
         int competitionId, 
         params string[] filters);
 
-    Task<Team> GetTeamById(int teamId);
+    Task<FullDetailedTeam> GetTeamById(int teamId);
 }

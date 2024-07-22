@@ -15,7 +15,7 @@ internal sealed class TeamProvider : ITeamProvider
     public TeamProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
+    public async Task<IReadOnlyCollection<FullDetailedTeam>> GetTeamByCompetition(int competitionId, params string[] filters)
     {
         string[] authorizedFilters = ["stage"];
 
@@ -25,13 +25,13 @@ internal sealed class TeamProvider : ITeamProvider
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
-        return await _httpClient.GetAsync<IReadOnlyCollection<Team>>(urlTeamByCompetition);
+        return await _httpClient.GetAsync<IReadOnlyCollection<FullDetailedTeam>>(urlTeamByCompetition);
     }
 
-    public Task<Team> GetTeamById(int teamId)
+    public Task<FullDetailedTeam> GetTeamById(int teamId)
     {
         HttpHelpers.VerifyActionParameters(teamId, null, null);
 
-        return _httpClient.GetAsync<Team>($"teams/{teamId}");
+        return _httpClient.GetAsync<FullDetailedTeam>($"teams/{teamId}");
     }
 }

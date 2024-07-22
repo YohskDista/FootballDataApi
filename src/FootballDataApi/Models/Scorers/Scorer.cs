@@ -4,7 +4,7 @@ public class Scorer
 {
     public Player Player { get; set; }
 
-    public Team Team { get; set; }
+    public ScorerTeam Team { get; set; }
 
     public int Goals { get; set; }
 

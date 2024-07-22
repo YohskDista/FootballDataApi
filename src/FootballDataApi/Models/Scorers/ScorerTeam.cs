@@ -2,18 +2,8 @@
 
 namespace FootballDataApi.Models.Scorers;
 
-public class Team
+public sealed record ScorerTeam : Team
 {
-    public int Id { get; set; }
-
-    public string Name { get; set; }
-
-    public string ShortName { get; set; }
-
-    public string Tla { get; set; }
-
-    public string Crest { get; set; }
-
     public string Address { get; set; }
 
     public string Phone { get; set; }

@@ -7,7 +7,7 @@ public sealed record Match
 {
     public int Id { get; set; }
 
-    public DetailedArea? Area { get; set; }
+    public Area? Area { get; set; }
 
     public Competition? Competition { get; set; }
 
@@ -27,15 +27,15 @@ public sealed record Match
 
     public int Matchday { get; set; }
 
-    public string Stage { get; set; }
+    public Stages Stage { get; set; }
 
-    public string? Group { get; set; }
+    public Group? Group { get; set; }
 
     public DateTime LastUpdated { get; set; }
 
-    public MatchTeam HomeTeam { get; set; }
+    public Team HomeTeam { get; set; }
 
-    public MatchTeam AwayTeam { get; set; }
+    public Team AwayTeam { get; set; }
 
     public Score Score { get; set; }
 

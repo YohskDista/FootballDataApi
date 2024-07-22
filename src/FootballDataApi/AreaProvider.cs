@@ -23,10 +23,10 @@ internal sealed class AreaProvider : IAreaProvider
         return rootArea.Areas;
     }
 
-    public Task<DetailedArea> GetAreaById(int areaId)
+    public Task<AreaTreeStructure> GetAreaById(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        return _httpClient.GetAsync<DetailedArea>($"areas/{areaId}");
+        return _httpClient.GetAsync<AreaTreeStructure>($"areas/{areaId}");
     }
 }

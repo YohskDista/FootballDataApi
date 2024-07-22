@@ -8,5 +8,5 @@ public interface IAreaProvider
 {
     Task<IReadOnlyCollection<DetailedArea>> GetAllAreas();
 
-    Task<DetailedArea> GetAreaById(int areaId);
+    Task<AreaTreeStructure> GetAreaById(int areaId);
 }

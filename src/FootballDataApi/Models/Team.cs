@@ -1,6 +1,6 @@
-﻿namespace FootballDataApi.Models.Standings;
+﻿namespace FootballDataApi.Models;
 
-public sealed record Team
+public record Team
 {
     public int Id { get; set; }
 
