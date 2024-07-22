@@ -1,15 +1,19 @@
 ﻿using FootballDataApi.Models;
 using FootballDataApi.Models.Teams;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FootballDataApi.Services;
 
 public interface ITeamProvider
 {
-    Task<IReadOnlyCollection<FullDetailedTeam>> GetTeamByCompetition(
-        int competitionId, 
+    Task<IReadOnlyCollection<FullDetailedTeam>> GetTeamsByCompetitionAsync(
+        string competitionId,
+        CancellationToken cancellationToken = default,
         params string[] filters);
 
-    Task<FullDetailedTeam> GetTeamById(int teamId);
+    Task<FullDetailedTeam> GetTeamByIdAsync(
+        int teamId, 
+        CancellationToken cancellationToken = default);
 }

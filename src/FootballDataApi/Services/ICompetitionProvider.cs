@@ -1,15 +1,21 @@
 ﻿using FootballDataApi.Models;
 using FootballDataApi.Models.Competitions;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FootballDataApi.Services;
 
 public interface ICompetitionProvider
 {
-    Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetition();
+    Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsAsync(
+        CancellationToken cancellationToken = default);
 
-    Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionByArea(int areaId);
+    Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsByAreaAsync(
+        int areaId, 
+        CancellationToken cancellationToken = default);
 
-    Task<DetailedCompetition> GetCompetition(string competitionId);
+    Task<DetailedCompetition> GetCompetitionAsync(
+        string competitionId, 
+        CancellationToken cancellationToken = default);
 }

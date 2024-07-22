@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using FootballDataApi.Extensions;
 using FootballDataApi.Models.Competitions;
@@ -16,7 +17,9 @@ internal sealed class MatchProvider : IMatchProvider
     public MatchProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchesAsync(
+        CancellationToken cancellationToken = default, 
+        params string[] filters)
     {
         var authorizedFilters = new string[] { "ids", "date", "dateFrom", "dateTo", "status" };
 
@@ -29,12 +32,15 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches, cancellationToken);
 
         return rootMatches.Matches;
     }
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetition(int competitionId, params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetitionAsync(
+        int competitionId, 
+        CancellationToken cancellationToken = default, 
+        params string[] filters)
     {
         var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
 
@@ -47,12 +53,15 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<CompetitionMatchesRoot>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<CompetitionMatchesRoot>(urlMatches, cancellationToken);
 
         return rootMatches.Matches;
     }
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfTeam(int teamId, params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfTeamAsync(
+        int teamId, 
+        CancellationToken cancellationToken = default, 
+        params string[] filters)
     {
         var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
 
@@ -65,15 +74,17 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches, cancellationToken);
 
         return rootMatches.Matches;
     }
 
-    public Task<Match> GetMatchById(int matchId)
+    public Task<Match> GetMatchByIdAsync(
+        int matchId, 
+        CancellationToken cancellationToken = default)
     {
         HttpHelpers.VerifyActionParameters(matchId, null, null);
 
-        return _httpClient.GetAsync<Match>($"matches/{matchId}");
+        return _httpClient.GetAsync<Match>($"matches/{matchId}", cancellationToken);
     }
 }

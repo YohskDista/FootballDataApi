@@ -4,6 +4,7 @@ using FootballDataApi.Services;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FootballDataApi;
@@ -15,26 +16,35 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     public CompetitionProvider(HttpClient httpClient) 
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetition()
+    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsAsync(
+        CancellationToken cancellationToken = default)
     {
         var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>("competitions");
 
         return competitionRoot.Competitions;
     }
 
-    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionByArea(int areaId)
+    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsByAreaAsync(
+        int areaId,
+        CancellationToken cancellationToken = default)
     {
-        HttpHelpers.VerifyActionParameters(areaId, null, null);
+        ArgumentOutOfRangeException.ThrowIfLessThan(areaId, 0);
 
-        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>($"competitions?areas={areaId}");
+        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>(
+            $"competitions?areas={areaId}", 
+            cancellationToken);
 
         return competitionRoot.Competitions;
     }
 
-    public Task<DetailedCompetition> GetCompetition(string competitionId)
+    public Task<DetailedCompetition> GetCompetitionAsync(
+        string competitionId, 
+        CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
-        return _httpClient.GetAsync<DetailedCompetition>($"competitions/{competitionId}");
+        return _httpClient.GetAsync<DetailedCompetition>(
+            $"competitions/{competitionId}", 
+            cancellationToken);
     }
 }
