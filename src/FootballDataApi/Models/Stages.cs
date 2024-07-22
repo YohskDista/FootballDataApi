@@ -83,3 +83,17 @@ public enum Status
     CANCELLED,
     AWARDED
 }
+
+public enum GoalType
+{
+    Unknown = 0,
+    REGULAR = 1,
+    PENALTY = 2,
+}
+
+public enum CompetitionType
+{
+    Unknown = 0,
+    LEAGUE = 1,
+    CUP = 2
+}
