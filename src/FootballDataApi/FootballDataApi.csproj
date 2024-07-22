@@ -2,6 +2,8 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Company>YohskSoftware</Company>
 		<Authors>Leonardo Di Stasio</Authors>
@@ -20,7 +22,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="$(AssemblyName).Tests"/>
+		<InternalsVisibleTo Include="$(AssemblyName).Tests" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Utilities\" />
 	</ItemGroup>
 
 </Project>

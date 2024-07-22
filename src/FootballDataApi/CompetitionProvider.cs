@@ -1,7 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+using FootballDataApi.Models.Competitions;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -16,26 +15,26 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     public CompetitionProvider(HttpClient httpClient) 
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<Competition>> GetAvailableCompetition()
+    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetition()
     {
-        var competitionRoot = await _httpClient.GetAsync<RootCompetition>("competitions");
+        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>("competitions");
 
         return competitionRoot.Competitions;
     }
 
-    public async Task<IReadOnlyCollection<Competition>> GetAvailableCompetitionByArea(int areaId)
+    public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionByArea(int areaId)
     {
         HttpHelpers.VerifyActionParameters(areaId, null, null);
 
-        var competitionRoot = await _httpClient.GetAsync<RootCompetition>($"competitions?areas={areaId}");
+        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>($"competitions?areas={areaId}");
 
         return competitionRoot.Competitions;
     }
 
-    public Task<Competition> GetCompetition(int competitionId)
+    public Task<DetailedCompetition> GetCompetition(string competitionId)
     {
-        HttpHelpers.VerifyActionParameters(competitionId, null, null);
+        ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
-        return _httpClient.GetAsync<Competition>($"competitions/{competitionId}");
+        return _httpClient.GetAsync<DetailedCompetition>($"competitions/{competitionId}");
     }
 }

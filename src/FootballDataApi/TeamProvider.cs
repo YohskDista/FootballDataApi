@@ -1,7 +1,6 @@
 ﻿using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+using FootballDataApi.Models.Teams;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -16,7 +15,7 @@ internal sealed class TeamProvider : ITeamProvider
     public TeamProvider(HttpClient httpClient)
         => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
 
-    public async Task<IReadOnlyCollection<Team>> GetTeamByCompetition(int competitionId, params string[] filters)
+    public async Task<IReadOnlyCollection<FullDetailedTeam>> GetTeamByCompetition(int competitionId, params string[] filters)
     {
         string[] authorizedFilters = ["stage"];
 
@@ -26,15 +25,15 @@ internal sealed class TeamProvider : ITeamProvider
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
-        var teamRoot = await _httpClient.GetAsync<RootTeam>(urlTeamByCompetition);
+        var root = await _httpClient.GetAsync<TeamsByCompetitionRoot>(urlTeamByCompetition);
 
-        return teamRoot.Teams;
+        return root.Teams;
     }
 
-    public Task<Team> GetTeamById(int teamId)
+    public Task<FullDetailedTeam> GetTeamById(int teamId)
     {
         HttpHelpers.VerifyActionParameters(teamId, null, null);
 
-        return _httpClient.GetAsync<Team>($"teams/{teamId}");
+        return _httpClient.GetAsync<FullDetailedTeam>($"teams/{teamId}");
     }
 }

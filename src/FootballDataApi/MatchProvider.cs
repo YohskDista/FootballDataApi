@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+using FootballDataApi.Models.Competitions;
+using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 
 namespace FootballDataApi;
 
@@ -18,7 +18,7 @@ internal sealed class MatchProvider : IMatchProvider
 
     public async Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters)
     {
-        var authorizedFilters = new string[] { "competitions", "dateFrom", "dateTo", "status" };
+        var authorizedFilters = new string[] { "ids", "date", "dateFrom", "dateTo", "status" };
 
         HttpHelpers.VerifyFilters(filters, authorizedFilters);
 
@@ -29,7 +29,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<RootMatch>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
 
         return rootMatches.Matches;
     }
@@ -40,14 +40,14 @@ internal sealed class MatchProvider : IMatchProvider
 
         HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
 
-        var urlMatches = "matches";
+        var urlMatches = $"competitions/{competitionId}/matches";
 
         if (filters.Length > 0)
         {
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<RootMatch>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<CompetitionMatchesRoot>(urlMatches);
 
         return rootMatches.Matches;
     }
@@ -65,7 +65,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<RootMatch>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
 
         return rootMatches.Matches;
     }
