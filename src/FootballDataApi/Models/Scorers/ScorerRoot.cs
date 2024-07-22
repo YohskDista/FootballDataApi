@@ -2,12 +2,8 @@
 
 namespace FootballDataApi.Models.Scorers;
 
-public class Root
+internal sealed record ScorerRoot : ApiRootStructure
 {
-    public int Count { get; set; }
-
-    public Filters Filters { get; set; }
-
     public Competition Competition { get; set; }
 
     public Season Season { get; set; }

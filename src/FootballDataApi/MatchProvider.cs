@@ -6,7 +6,6 @@ using FootballDataApi.Extensions;
 using FootballDataApi.Models.Competitions;
 using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 
 namespace FootballDataApi;
 
@@ -30,7 +29,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<RootMatch>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
 
         return rootMatches.Matches;
     }
@@ -66,7 +65,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<RootMatch>(urlMatches);
+        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
 
         return rootMatches.Matches;
     }

@@ -1,7 +1,7 @@
 ﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
+using FootballDataApi.Models.Areas;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -13,7 +13,7 @@ namespace FootballDataApi.Tests.AreaTests;
 
 public class AreaSource : IAreaProvider
 {
-    private RootArea _rootArea;
+    private AreaRoot _rootArea;
 
     public AreaSource()
     {
@@ -29,7 +29,7 @@ public class AreaSource : IAreaProvider
         using (StreamReader reader = new StreamReader(stream))
         {
             string areas = reader.ReadToEnd();
-            var rootAreas = JsonConvert.DeserializeObject<RootArea>(areas);
+            var rootAreas = JsonConvert.DeserializeObject<AreaRoot>(areas);
             _rootArea = rootAreas;
         }
     }

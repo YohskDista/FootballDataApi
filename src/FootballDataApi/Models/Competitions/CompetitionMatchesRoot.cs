@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace FootballDataApi.Models.Competitions;
 
-public sealed record CompetitionMatchesRoot
+internal sealed record CompetitionMatchesRoot : ApiRootStructure
 {
-    public Filters Filters { get; set; }
-
     public ResultSet ResultSet { get; set; }
 
     public AvailableCompetition Competition { get; set; }

@@ -2,10 +2,8 @@
 
 namespace FootballDataApi.Models.Teams;
 
-internal sealed record TeamsByCompetitionRoot
+internal sealed record TeamsByCompetitionRoot : ApiRootStructure
 {
-    public int Count { get; set; }
-
     public Competition Competition { get; set; }
 
     public Season Season { get; set; }

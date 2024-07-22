@@ -1,7 +1,6 @@
 ﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -29,7 +28,7 @@ public class MatchSource : IMatchProvider
         using (StreamReader reader = new StreamReader(stream))
         {
             string matches = reader.ReadToEnd();
-            var rootMatches = JsonConvert.DeserializeObject<RootMatch>(matches);
+            var rootMatches = JsonConvert.DeserializeObject<MatchRoot>(matches);
             listMatchMockup = rootMatches.Matches;
         }
     }

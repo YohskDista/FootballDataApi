@@ -1,7 +1,7 @@
 ﻿using FootballDataApi.Extensions;
 using FootballDataApi.Models;
+using FootballDataApi.Models.Areas;
 using FootballDataApi.Services;
-using FootballDataApi.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -18,7 +18,7 @@ internal sealed class AreaProvider : IAreaProvider
 
     public async Task<IReadOnlyCollection<DetailedArea>> GetAllAreas()
     {
-        var rootArea = await _httpClient.GetAsync<RootArea>("areas");
+        var rootArea = await _httpClient.GetAsync<AreaRoot>("areas");
 
         return rootArea.Areas;
     }

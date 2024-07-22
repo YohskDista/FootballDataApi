@@ -1,6 +1,6 @@
 ﻿namespace FootballDataApi.Models.Persons;
 
-public sealed record PersonMatchRoot
+internal sealed record PersonMatchRoot
 {
     public Filters Filters { get; set; }
 
@@ -10,5 +10,3 @@ public sealed record PersonMatchRoot
 
     public PersonMatch Person { get; set; }
 }
-
-
