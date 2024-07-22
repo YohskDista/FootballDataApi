@@ -3,7 +3,6 @@ using FootballDataApi.Models.Teams;
 using FootballDataApi.Services;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,10 +10,10 @@ namespace FootballDataApi;
 
 internal sealed class TeamProvider : ITeamProvider
 {
-    private readonly HttpClient _httpClient;
+    private readonly IDataProvider _dataProvider;
 
-    public TeamProvider(HttpClient httpClient)
-        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    public TeamProvider(IDataProvider dataProvider)
+        => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
     public async Task<IReadOnlyCollection<FullDetailedTeam>> GetTeamsByCompetitionAsync(
         string competitionId,
@@ -30,7 +29,7 @@ internal sealed class TeamProvider : ITeamProvider
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
-        var root = await _httpClient.GetAsync<TeamsByCompetitionRoot>(urlTeamByCompetition, cancellationToken);
+        var root = await _dataProvider.GetAsync<TeamsByCompetitionRoot>(urlTeamByCompetition, cancellationToken);
 
         return root.Teams;
     }
@@ -41,6 +40,6 @@ internal sealed class TeamProvider : ITeamProvider
     {
         HttpHelpers.VerifyActionParameters(teamId, null, null);
 
-        return _httpClient.GetAsync<FullDetailedTeam>($"teams/{teamId}", cancellationToken);
+        return _dataProvider.GetAsync<FullDetailedTeam>($"teams/{teamId}", cancellationToken);
     }
 }

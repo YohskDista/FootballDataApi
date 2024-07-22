@@ -11,15 +11,15 @@ namespace FootballDataApi;
 
 internal sealed class CompetitionProvider : ICompetitionProvider
 {
-    private readonly HttpClient _httpClient;
+    private readonly IDataProvider _dataProvider;
 
-    public CompetitionProvider(HttpClient httpClient) 
-        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    public CompetitionProvider(IDataProvider dataProvider)
+        => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
     public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsAsync(
         CancellationToken cancellationToken = default)
     {
-        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>("competitions");
+        var competitionRoot = await _dataProvider.GetAsync<CompetitionRoot>("competitions");
 
         return competitionRoot.Competitions;
     }
@@ -30,7 +30,7 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(areaId, 0);
 
-        var competitionRoot = await _httpClient.GetAsync<CompetitionRoot>(
+        var competitionRoot = await _dataProvider.GetAsync<CompetitionRoot>(
             $"competitions?areas={areaId}", 
             cancellationToken);
 
@@ -43,7 +43,7 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
-        return _httpClient.GetAsync<DetailedCompetition>(
+        return _dataProvider.GetAsync<DetailedCompetition>(
             $"competitions/{competitionId}", 
             cancellationToken);
     }

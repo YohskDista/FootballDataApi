@@ -12,15 +12,15 @@ namespace FootballDataApi;
 
 internal sealed class AreaProvider : IAreaProvider
 {    
-    private readonly HttpClient _httpClient;
+    private readonly IDataProvider _dataProvider;
 
-    public AreaProvider(HttpClient httpClient)
-        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    public AreaProvider(IDataProvider dataProvider)
+        => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
     public async Task<IReadOnlyCollection<DetailedArea>> GetAllAreasAsync(
         CancellationToken cancellationToken = default)
     {
-        var rootArea = await _httpClient.GetAsync<AreaRoot>("areas", cancellationToken);
+        var rootArea = await _dataProvider.GetAsync<AreaRoot>("areas", cancellationToken);
 
         return rootArea.Areas;
     }
@@ -31,6 +31,6 @@ internal sealed class AreaProvider : IAreaProvider
     {
         ArgumentOutOfRangeException.ThrowIfLessThan(areaId, 0);
 
-        return _httpClient.GetAsync<AreaTreeStructure>($"areas/{areaId}", cancellationToken);
+        return _dataProvider.GetAsync<AreaTreeStructure>($"areas/{areaId}", cancellationToken);
     }
 }

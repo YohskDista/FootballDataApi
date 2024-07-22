@@ -1,19 +1,18 @@
+﻿using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 
-namespace FootballDataApi.Extensions;
+namespace FootballDataApi.Services;
 
-public static class HttpExtensions
+internal sealed class DataProvider(HttpClient httpClient) : IDataProvider
 {
-    public static async Task<T> GetAsync<T>(
-        this HttpClient httpClient, 
-        string requestUri, 
-        CancellationToken cancellationToken = default)
+    private readonly HttpClient _httpClient = 
+        httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+
+    public async Task<T> GetAsync<T>(string requestUri, CancellationToken cancellationToken = default)
     {
-        ArgumentNullException.ThrowIfNull(httpClient);
         ArgumentNullException.ThrowIfNullOrWhiteSpace(requestUri);
 
         var response = await httpClient.GetAsync(requestUri, cancellationToken);

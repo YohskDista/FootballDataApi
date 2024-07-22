@@ -11,10 +11,10 @@ namespace FootballDataApi;
 
 internal sealed class StandingProvider : IStandingProvider
 {
-    private readonly HttpClient _httpClient;
+    private readonly IDataProvider _dataProvider;
 
-    public StandingProvider(HttpClient httpClient)
-        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    public StandingProvider(IDataProvider dataProvider)
+        => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
     public async Task<IReadOnlyCollection<Standing>> GetStandingOfCompetitionAsync(
         string competitionId, 
@@ -22,7 +22,7 @@ internal sealed class StandingProvider : IStandingProvider
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
-        var standingsRoot = await _httpClient.GetAsync<StandingsRoot>(
+        var standingsRoot = await _dataProvider.GetAsync<StandingsRoot>(
             $"competitions/{competitionId}/standings",
             cancellationToken);
 

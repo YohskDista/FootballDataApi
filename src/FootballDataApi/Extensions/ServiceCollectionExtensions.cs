@@ -24,6 +24,7 @@ public static class ServiceCollectionExtensions
         }
 
         return serviceCollection.AddSingleton(httpClient)
+                                .AddSingleton<IDataProvider, DataProvider>()
                                 .AddSingleton<IAreaProvider, AreaProvider>()
                                 .AddSingleton<ICompetitionProvider, CompetitionProvider>()
                                 .AddSingleton<IMatchProvider, MatchProvider>()

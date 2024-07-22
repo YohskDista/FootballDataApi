@@ -12,10 +12,10 @@ namespace FootballDataApi;
 
 internal sealed class MatchProvider : IMatchProvider
 {
-    private readonly HttpClient _httpClient;
+    private readonly IDataProvider _dataProvider;
 
-    public MatchProvider(HttpClient httpClient)
-        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    public MatchProvider(IDataProvider dataProvider)
+        => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
     public async Task<IReadOnlyCollection<Match>> GetAllMatchesAsync(
         CancellationToken cancellationToken = default, 
@@ -32,7 +32,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches, cancellationToken);
+        var rootMatches = await _dataProvider.GetAsync<MatchRoot>(urlMatches, cancellationToken);
 
         return rootMatches.Matches;
     }
@@ -53,7 +53,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<CompetitionMatchesRoot>(urlMatches, cancellationToken);
+        var rootMatches = await _dataProvider.GetAsync<CompetitionMatchesRoot>(urlMatches, cancellationToken);
 
         return rootMatches.Matches;
     }
@@ -74,7 +74,7 @@ internal sealed class MatchProvider : IMatchProvider
             urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
         }
 
-        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches, cancellationToken);
+        var rootMatches = await _dataProvider.GetAsync<MatchRoot>(urlMatches, cancellationToken);
 
         return rootMatches.Matches;
     }
@@ -85,6 +85,6 @@ internal sealed class MatchProvider : IMatchProvider
     {
         HttpHelpers.VerifyActionParameters(matchId, null, null);
 
-        return _httpClient.GetAsync<Match>($"matches/{matchId}", cancellationToken);
+        return _dataProvider.GetAsync<Match>($"matches/{matchId}", cancellationToken);
     }
 }
