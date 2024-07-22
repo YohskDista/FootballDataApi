@@ -1,4 +1,4 @@
-﻿namespace FootballDataApi.Models.Matches;
+﻿namespace FootballDataApi.Models;
 
 public record Person
 {

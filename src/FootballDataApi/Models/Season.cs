@@ -16,6 +16,6 @@ public sealed record Season
 
     public Winner Winner { get; set; }
 
-    public IReadOnlyList<string> Stages { get; set; }
+    public IReadOnlyList<string>? Stages { get; set; }
 }
 

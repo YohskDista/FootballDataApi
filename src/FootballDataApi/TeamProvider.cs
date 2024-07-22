@@ -25,7 +25,9 @@ internal sealed class TeamProvider : ITeamProvider
 
         urlTeamByCompetition = HttpHelpers.AddFiltersToUrl(urlTeamByCompetition, filters);
 
-        return await _httpClient.GetAsync<IReadOnlyCollection<FullDetailedTeam>>(urlTeamByCompetition);
+        var root = await _httpClient.GetAsync<TeamsByCompetitionRoot>(urlTeamByCompetition);
+
+        return root.Teams;
     }
 
     public Task<FullDetailedTeam> GetTeamById(int teamId)

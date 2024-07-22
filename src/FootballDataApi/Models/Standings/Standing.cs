@@ -4,9 +4,12 @@ namespace FootballDataApi.Models.Standings;
 
 public sealed record Standing
 {
-    public string Stage { get; set; }
+    public Stages Stage { get; set; }
+
     public string Type { get; set; }
-    public object Group { get; set; }
+
+    public Group? Group { get; set; }
+
     public IReadOnlyCollection<Table> Table { get; set; }
 }
 

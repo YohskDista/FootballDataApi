@@ -1,14 +1,10 @@
 ﻿namespace FootballDataApi.Models.Teams;
 
-public sealed record Staff
+public sealed record Staff : Person
 {
-    public int Id { get; set; }
-
     public string FirstName { get; set; }
 
     public string LastName { get; set; }
-
-    public string Name { get; set; }
 
     public string DateOfBirth { get; set; }
 
