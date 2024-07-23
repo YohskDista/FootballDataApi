@@ -1,8 +1,10 @@
 ﻿using FootballDataApi.Extensions;
+using FootballDataApi.Models;
 using FootballDataApi.Models.Competitions;
 using FootballDataApi.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,13 +27,20 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     }
 
     public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsByAreaAsync(
-        int areaId,
+        IEnumerable<int> areaIds,
         CancellationToken cancellationToken = default)
     {
-        ArgumentOutOfRangeException.ThrowIfLessThan(areaId, 0);
+        if (areaIds is null)
+        {
+            throw new ArgumentNullException(nameof(areaIds));
+        }
+
+        var urlWithFilters = HttpHelpers.AddFiltersToUrl(
+            "competitions", 
+            ["area", string.Join(',', areaIds)]);
 
         var competitionRoot = await _dataProvider.GetAsync<CompetitionRoot>(
-            $"competitions?areas={areaId}", 
+            urlWithFilters, 
             cancellationToken);
 
         return competitionRoot.Competitions;
