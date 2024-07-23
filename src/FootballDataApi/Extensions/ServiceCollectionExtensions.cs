@@ -29,6 +29,7 @@ public static class ServiceCollectionExtensions
                                 .AddSingleton<ICompetitionProvider, CompetitionProvider>()
                                 .AddSingleton<IMatchProvider, MatchProvider>()
                                 .AddSingleton<IStandingProvider, StandingProvider>()
-                                .AddSingleton<ITeamProvider, TeamProvider>();
+                                .AddSingleton<ITeamProvider, TeamProvider>()
+                                .AddSingleton<IPersonProvider, PersonProvider>();
     }
 }

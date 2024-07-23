@@ -82,7 +82,7 @@ internal sealed class TeamProvider : ITeamProvider
         if (limit is < 1 or > 500)
         {
             throw new ArgumentOutOfRangeException(
-                nameof(limit), limit, "The limit must be between [1, 500]");
+                nameof(limit), limit, "The value must be between [1, 500]");
         }
 
         var filters = new string[]
@@ -113,7 +113,7 @@ internal sealed class TeamProvider : ITeamProvider
         if (limit is < 1 or > 500)
         {
             throw new ArgumentOutOfRangeException(
-                nameof(limit), limit, "The limit must be between [1, 500]");
+                nameof(limit), limit, "The value must be between [1, 500]");
         }
 
         var filters = new string[]

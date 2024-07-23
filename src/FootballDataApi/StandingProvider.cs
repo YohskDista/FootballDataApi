@@ -29,7 +29,7 @@ internal sealed class StandingProvider : IStandingProvider
 
     public Task<IReadOnlyCollection<Standing>> GetStandingOfCompetitionAsync(
         string competitionId,
-        int? seasonYear = null, 
+        int? season = null, 
         int? matchDay = null,
         CancellationToken cancellationToken = default)
     {
@@ -37,14 +37,14 @@ internal sealed class StandingProvider : IStandingProvider
 
         var filters = new List<string>();
 
-        if (seasonYear is not null)
+        if (season is not null)
         {
-            filters.AddRange(["season", $"{seasonYear}"]);
+            filters.AddRange([nameof(season), $"{season}"]);
         }
 
         if (matchDay is not null)
         {
-            filters.AddRange(["matchday", $"{matchDay}"]);
+            filters.AddRange([nameof(matchDay), $"{matchDay}"]);
         }
 
         return GetStandingsAsync(competitionId, filters.ToArray(), cancellationToken);
