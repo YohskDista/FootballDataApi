@@ -148,10 +148,6 @@ internal sealed class TeamProvider : ITeamProvider
             filters.AddRange([nameof(venue), $"{venue}"]);
         }
 
-        if (limit is not null)
-        {
-        }
-
         var url = HttpHelpers.AddFiltersToUrl(
             $"teams/{teamId}/matches", filters.Concat(existingFilters).ToArray());
 
