@@ -1,4 +1,5 @@
 ﻿using FootballDataApi.Extensions;
+using FootballDataApi.Models.Matches;
 using FootballDataApi.Models.Teams;
 using FootballDataApi.Services;
 using System;
@@ -41,5 +42,26 @@ internal sealed class TeamProvider : ITeamProvider
         HttpHelpers.VerifyActionParameters(teamId, null, null);
 
         return _dataProvider.GetAsync<FullDetailedTeam>($"teams/{teamId}", cancellationToken);
+    }
+
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfTeamAsync(
+        int teamId,
+        CancellationToken cancellationToken = default,
+        params string[] filters)
+    {
+        var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
+
+        HttpHelpers.VerifyActionParameters(teamId, filters, authorizedFilters);
+
+        var urlMatches = $"teams/{teamId}/matches";
+
+        if (filters.Length > 0)
+        {
+            urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+        }
+
+        var rootMatches = await _dataProvider.GetAsync<MatchRoot>(urlMatches, cancellationToken);
+
+        return rootMatches.Matches;
     }
 }
