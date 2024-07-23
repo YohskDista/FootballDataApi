@@ -151,6 +151,11 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
+        if (dateTo < dateFrom)
+        {
+            throw new ArgumentException("dateTo cannot be before dateFrom.", nameof(dateTo));
+        }
+
         var filters = new string[]
         {
             nameof(dateFrom), 

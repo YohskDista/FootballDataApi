@@ -39,7 +39,7 @@ internal sealed class MatchProvider : IMatchProvider
             filters.AddRange([nameof(date), date?.ToString("yyyy-MM-dd")]);
         }
 
-        return GetMatchesInformationAsync(filters.ToArray(), ids, status, cancellationToken);
+        return GetMatchesWithFiltersAsync(filters.ToArray(), ids, status, cancellationToken);
     }
 
     public Task<IReadOnlyCollection<Match>> GetMatchesBetweenAsync(
@@ -49,6 +49,11 @@ internal sealed class MatchProvider : IMatchProvider
         Status? status = null, 
         CancellationToken cancellationToken = default)
     {
+        if (dateTo < dateFrom)
+        {
+            throw new ArgumentException("dateTo cannot be before dateFrom.", nameof(dateTo));
+        }
+
         var filters = new string[]
         {
             nameof(dateFrom),
@@ -57,10 +62,10 @@ internal sealed class MatchProvider : IMatchProvider
             dateTo.ToString("yyyy-MM-dd")
         };
 
-        return GetMatchesInformationAsync(filters, ids, status, cancellationToken);
+        return GetMatchesWithFiltersAsync(filters, ids, status, cancellationToken);
     }
 
-    private async Task<IReadOnlyCollection<Match>> GetMatchesInformationAsync(
+    private async Task<IReadOnlyCollection<Match>> GetMatchesWithFiltersAsync(
         string[] existingFilters,
         IEnumerable<int>? ids = null, 
         Status? status = null, 
