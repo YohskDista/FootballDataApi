@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using FootballDataApi.Extensions;
-using FootballDataApi.Models.Competitions;
+using FootballDataApi.Models;
 using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
 
@@ -17,43 +16,59 @@ internal sealed class MatchProvider : IMatchProvider
     public MatchProvider(IDataProvider dataProvider)
         => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatchesAsync(
-        CancellationToken cancellationToken = default, 
-        params string[] filters)
+    public async Task<IReadOnlyCollection<Match>> GetAllMatchesOfCompetitionAsync(
+        string competitionId, 
+        int? season = null, 
+        int? matchDay = null,
+        Status? status = null,
+        DateTime? dateFrom = null, 
+        DateTime? dateTo = null, 
+        Stage? stage = null, 
+        Group? group = null, 
+        CancellationToken cancellationToken = default)
     {
-        var authorizedFilters = new string[] { "ids", "date", "dateFrom", "dateTo", "status" };
-
-        HttpHelpers.VerifyFilters(filters, authorizedFilters);
-
-        var urlMatches = "matches";
-
-        if (filters.Length > 0)
+        if ((season is not null || matchDay is not null) 
+         && (dateFrom is not null || dateTo is not null))
         {
-            urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+            throw new InvalidOperationException(
+                "You cannot set season or match day if you specify the dateFrom or dateTo parameter(s).");
         }
 
-        var rootMatches = await _dataProvider.GetAsync<MatchRoot>(urlMatches, cancellationToken);
+        var filters = new List<string>();
 
-        return rootMatches.Matches;
-    }
-
-    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetitionAsync(
-        int competitionId, 
-        CancellationToken cancellationToken = default, 
-        params string[] filters)
-    {
-        var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
-
-        HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
-
-        var urlMatches = $"competitions/{competitionId}/matches";
-
-        if (filters.Length > 0)
+        if (season is not null)
         {
-            urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+            filters.AddRange([nameof(season), $"{season}"]);
         }
 
-        var rootMatches = await _dataProvider.GetAsync<CompetitionMatchesRoot>(urlMatches, cancellationToken);
+        if (matchDay is not null)
+        {
+            filters.AddRange([nameof(matchDay), $"{matchDay}"]);
+        }
+
+        if (dateFrom is not null)
+        {
+            filters.AddRange([nameof(dateFrom), dateFrom?.ToString("yyyy-MM-dd")]);
+        }
+
+        if (dateTo is not null)
+        {
+            filters.AddRange([nameof(dateTo), dateTo?.ToString("yyyy-MM-dd")]);
+        }
+
+        if (stage is not null)
+        {
+            filters.AddRange([nameof(stage), $"{stage}"]);
+        }
+
+        if (group is not null)
+        {
+            filters.AddRange([nameof(group), $"{group}"]);
+        }
+
+        var url = HttpHelpers.AddFiltersToUrl($"competitions/{competitionId}/matches", filters.ToArray());
+
+        var rootMatches = await _dataProvider.GetAsync<MatchRoot>(url, cancellationToken);
 
         return rootMatches.Matches;
     }

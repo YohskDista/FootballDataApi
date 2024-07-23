@@ -1,4 +1,6 @@
 ﻿using FootballDataApi.Models.Competitions;
+using FootballDataApi.Models.Scorers;
+using FootballDataApi.Models.Teams;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,5 +18,16 @@ public interface ICompetitionProvider
 
     Task<DetailedCompetition> GetCompetitionAsync(
         string competitionId, 
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyCollection<Scorer>> GetScorersForCompetitionAsync(
+        string competitionId,
+        int? season = null,
+        int? matchDay = null,
+        CancellationToken cancellationToken = default);
+
+    Task<IReadOnlyCollection<FullDetailedTeam>> GetCompetitionTeamsAsync(
+        string competitionId, 
+        int? season = null, 
         CancellationToken cancellationToken = default);
 }

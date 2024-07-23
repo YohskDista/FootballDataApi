@@ -23,7 +23,7 @@ public enum PlayerAction
     SUB_OUT
 }
 
-public enum Stages
+public enum Stage
 {
     Unknown = 0,
     FINAL,

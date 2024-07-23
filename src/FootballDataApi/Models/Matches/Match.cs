@@ -27,7 +27,7 @@ public sealed record Match
 
     public int Matchday { get; set; }
 
-    public Stages Stage { get; set; }
+    public Stage Stage { get; set; }
 
     public Group? Group { get; set; }
 
