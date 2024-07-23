@@ -2,7 +2,7 @@
 
 namespace FootballDataApi.Models.Persons;
 
-public sealed record PersonMatch : Person
+public record PersonMatch : Person
 {
     public string FirstName { get; set; }
 

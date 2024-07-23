@@ -1,16 +1,29 @@
-﻿using FootballDataApi.Models.Matches;
+﻿using FootballDataApi.Models;
+using FootballDataApi.Models.Matches;
+using FootballDataApi.Models.Teams;
+using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FootballDataApi.Services;
 
 public interface IMatchProvider
 {
-    Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters);
+    Task<Match> GetMatchByIdAsync(
+        int matchId, 
+        CancellationToken cancellationToken = default);
 
-    Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetition(int competitionId, params string[] filters);
+    Task<IReadOnlyCollection<Match>> GetMatchesAsync(
+        IEnumerable<int>? ids = null,
+        DateTime? date = null,
+        Status? status = null,
+        CancellationToken cancellationToken = default);
 
-    Task<IReadOnlyCollection<Match>> GetAllMatchOfTeam(int teamId, params string[] filters);
-
-    Task<Match> GetMatchById(int matchId);
+    Task<IReadOnlyCollection<Match>> GetMatchesBetweenAsync(
+        DateTime dateFrom,
+        DateTime dateTo,
+        IEnumerable<int>? ids = null,
+        Status? status = null,
+        CancellationToken cancellationToken = default);
 }

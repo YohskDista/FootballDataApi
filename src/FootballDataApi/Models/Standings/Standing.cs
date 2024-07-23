@@ -4,7 +4,7 @@ namespace FootballDataApi.Models.Standings;
 
 public sealed record Standing
 {
-    public Stages Stage { get; set; }
+    public Stage Stage { get; set; }
 
     public string Type { get; set; }
 

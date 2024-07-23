@@ -24,10 +24,12 @@ public static class ServiceCollectionExtensions
         }
 
         return serviceCollection.AddSingleton(httpClient)
+                                .AddSingleton<IDataProvider, DataProvider>()
                                 .AddSingleton<IAreaProvider, AreaProvider>()
                                 .AddSingleton<ICompetitionProvider, CompetitionProvider>()
                                 .AddSingleton<IMatchProvider, MatchProvider>()
                                 .AddSingleton<IStandingProvider, StandingProvider>()
-                                .AddSingleton<ITeamProvider, TeamProvider>();
+                                .AddSingleton<ITeamProvider, TeamProvider>()
+                                .AddSingleton<IPersonProvider, PersonProvider>();
     }
 }

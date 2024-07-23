@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
+using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using FootballDataApi.Extensions;
-using FootballDataApi.Models.Competitions;
+using FootballDataApi.Models;
 using FootballDataApi.Models.Matches;
 using FootballDataApi.Services;
 
@@ -11,69 +12,81 @@ namespace FootballDataApi;
 
 internal sealed class MatchProvider : IMatchProvider
 {
-    private readonly HttpClient _httpClient;
+    private readonly IDataProvider _dataProvider;
 
-    public MatchProvider(HttpClient httpClient)
-        => _httpClient = httpClient ?? throw new ArgumentNullException(nameof(httpClient));
+    public MatchProvider(IDataProvider dataProvider)
+        => _dataProvider = dataProvider ?? throw new ArgumentNullException(nameof(dataProvider));
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatches(params string[] filters)
+    public Task<Match> GetMatchByIdAsync(
+        int matchId, 
+        CancellationToken cancellationToken = default)
     {
-        var authorizedFilters = new string[] { "ids", "date", "dateFrom", "dateTo", "status" };
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(matchId, 0);
 
-        HttpHelpers.VerifyFilters(filters, authorizedFilters);
-
-        var urlMatches = "matches";
-
-        if (filters.Length > 0)
-        {
-            urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
-        }
-
-        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
-
-        return rootMatches.Matches;
+        return _dataProvider.GetAsync<Match>($"matches/{matchId}", cancellationToken);
     }
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfCompetition(int competitionId, params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetMatchesAsync(
+        IEnumerable<int>? ids = null, 
+        DateTime? date = null, 
+        Status? status = null, 
+        CancellationToken cancellationToken = default)
     {
-        var authorizedFilters = new string[] { "dateFrom", "dateTo", "stage", "status", "matchday", "group" };
+        var filters = new List<string>();
 
-        HttpHelpers.VerifyActionParameters(competitionId, filters, authorizedFilters);
-
-        var urlMatches = $"competitions/{competitionId}/matches";
-
-        if (filters.Length > 0)
+        if (date is not null)
         {
-            urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+            filters.AddRange([nameof(date), date?.ToString("yyyy-MM-dd")]);
         }
 
-        var rootMatches = await _httpClient.GetAsync<CompetitionMatchesRoot>(urlMatches);
-
-        return rootMatches.Matches;
+        return GetMatchesWithFiltersAsync(filters.ToArray(), ids, status, cancellationToken);
     }
 
-    public async Task<IReadOnlyCollection<Match>> GetAllMatchOfTeam(int teamId, params string[] filters)
+    public Task<IReadOnlyCollection<Match>> GetMatchesBetweenAsync(
+        DateTime dateFrom, 
+        DateTime dateTo, 
+        IEnumerable<int>? ids = null, 
+        Status? status = null, 
+        CancellationToken cancellationToken = default)
     {
-        var authorizedFilters = new string[] { "venue", "dateFrom", "dateTo", "status" };
-
-        HttpHelpers.VerifyActionParameters(teamId, filters, authorizedFilters);
-
-        var urlMatches = $"teams/{teamId}/matches";
-
-        if (filters.Length > 0)
+        if (dateTo < dateFrom)
         {
-            urlMatches = HttpHelpers.AddFiltersToUrl(urlMatches, filters);
+            throw new ArgumentException("dateTo cannot be before dateFrom.", nameof(dateTo));
         }
 
-        var rootMatches = await _httpClient.GetAsync<MatchRoot>(urlMatches);
+        var filters = new string[]
+        {
+            nameof(dateFrom),
+            dateFrom.ToString("yyyy-MM-dd"),
+            nameof(dateTo),
+            dateTo.ToString("yyyy-MM-dd")
+        };
 
-        return rootMatches.Matches;
+        return GetMatchesWithFiltersAsync(filters, ids, status, cancellationToken);
     }
 
-    public Task<Match> GetMatchById(int matchId)
+    private async Task<IReadOnlyCollection<Match>> GetMatchesWithFiltersAsync(
+        string[] existingFilters,
+        IEnumerable<int>? ids = null, 
+        Status? status = null, 
+        CancellationToken cancellationToken = default)
     {
-        HttpHelpers.VerifyActionParameters(matchId, null, null);
+        var filters = new List<string>();
 
-        return _httpClient.GetAsync<Match>($"matches/{matchId}");
+        if (ids is not null)
+        {
+            filters.AddRange([nameof(ids), string.Join(',', ids)]);
+        }
+
+        if (status is not null)
+        {
+            filters.AddRange([nameof(status), $"{status}"]);
+        }
+
+        var url = HttpHelpers.AddFiltersToUrl("matches", filters.Concat(existingFilters).ToArray());
+
+        var rootMatches = await _dataProvider.GetAsync<MatchRoot>(url, cancellationToken);
+
+        return rootMatches.Matches;
     }
 }
