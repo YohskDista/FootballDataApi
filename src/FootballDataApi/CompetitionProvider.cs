@@ -10,7 +10,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace FootballDataApi;
 
@@ -30,17 +29,17 @@ internal sealed class CompetitionProvider : ICompetitionProvider
     }
 
     public async Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsByAreaAsync(
-        IEnumerable<int> areaIds,
+        IEnumerable<int> areas,
         CancellationToken cancellationToken = default)
     {
-        if (areaIds is null)
+        if (areas is null)
         {
-            throw new ArgumentNullException(nameof(areaIds));
+            throw new ArgumentNullException(nameof(areas));
         }
 
         var urlWithFilters = HttpHelpers.AddFiltersToUrl(
             "competitions", 
-            ["area", string.Join(',', areaIds)]);
+            [nameof(areas), string.Join(',', areas)]);
 
         var competitionRoot = await _dataProvider.GetAsync<CompetitionRoot>(
             urlWithFilters, 

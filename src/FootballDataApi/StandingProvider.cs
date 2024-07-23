@@ -24,7 +24,7 @@ internal sealed class StandingProvider : IStandingProvider
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
-        return GetStandingsAsync(competitionId, ["date", date.ToString("yyyy-MM-dd")], cancellationToken);
+        return GetStandingsWithFiltersAsync(competitionId, [nameof(date), date.ToString("yyyy-MM-dd")], cancellationToken);
     }
 
     public Task<IReadOnlyCollection<Standing>> GetStandingOfCompetitionAsync(
@@ -47,10 +47,10 @@ internal sealed class StandingProvider : IStandingProvider
             filters.AddRange([nameof(matchDay), $"{matchDay}"]);
         }
 
-        return GetStandingsAsync(competitionId, filters.ToArray(), cancellationToken);
+        return GetStandingsWithFiltersAsync(competitionId, filters.ToArray(), cancellationToken);
     }
 
-    private async Task<IReadOnlyCollection<Standing>> GetStandingsAsync(
+    private async Task<IReadOnlyCollection<Standing>> GetStandingsWithFiltersAsync(
         string competitionId, 
         string[] filters, 
         CancellationToken cancellationToken = default)

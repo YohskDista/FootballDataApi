@@ -16,7 +16,7 @@ public interface ICompetitionProvider
         CancellationToken cancellationToken = default);
 
     Task<IReadOnlyCollection<AvailableCompetition>> GetAvailableCompetitionsByAreaAsync(
-        IEnumerable<int> areaIds, 
+        IEnumerable<int> areas, 
         CancellationToken cancellationToken = default);
 
     Task<DetailedCompetition> GetCompetitionAsync(

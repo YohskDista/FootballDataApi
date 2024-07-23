@@ -21,7 +21,7 @@ internal sealed class MatchProvider : IMatchProvider
         int matchId, 
         CancellationToken cancellationToken = default)
     {
-        HttpHelpers.VerifyActionParameters(matchId, null, null);
+        ArgumentOutOfRangeException.ThrowIfLessThanOrEqual(matchId, 0);
 
         return _dataProvider.GetAsync<Match>($"matches/{matchId}", cancellationToken);
     }
