@@ -1,28 +1,5 @@
 ﻿namespace FootballDataApi.Models;
 
-public enum Venue
-{
-    Unknown = 0,
-    HOME,
-    AWAY
-}
-
-public enum Lineup
-{
-    Unknown = 0,
-    STARTING,
-    BENCH
-}
-
-public enum PlayerAction
-{
-    Unknown = 0,
-    GOAL,
-    ASSIST,
-    SUB_IN,
-    SUB_OUT
-}
-
 public enum Stage
 {
     Unknown = 0,
@@ -51,51 +28,4 @@ public enum Stage
     APERTURA,
     CHAMPIONSHIP_ROUND,
     RELEGATION_ROUND
-}
-
-public enum Group
-{
-    Unknown = 0,
-    GROUP_A,
-    GROUP_B,
-    GROUP_C,
-    GROUP_D,
-    GROUP_E,
-    GROUP_F,
-    GROUP_G,
-    GROUP_H,
-    GROUP_I,
-    GROUP_J,
-    GROUP_K,
-    GROUP_L
-}
-
-public enum Status
-{
-    Unknown = 0,
-    SCHEDULED,
-    TIMED,
-    IN_PLAY,
-    PAUSED,
-    FINISHED,
-    SUSPENDED,
-    POSTPONED,
-    CANCELLED,
-    AWARDED
-}
-
-public enum GoalType
-{
-    Unknown = 0,
-    REGULAR = 1,
-    PENALTY = 2,
-}
-
-public enum CompetitionType
-{
-    Unknown = 0,
-    LEAGUE = 1,
-    CUP = 2,
-    PLAYOFFS = 3,
-    LEAGUE_CUP = 4,
 }
