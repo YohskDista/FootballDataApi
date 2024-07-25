@@ -1,0 +1,52 @@
+{
+  {
+    "id": 2077,
+    "name": "Europe",
+    "code": "EUR",
+    "flag": "https://crests.football-data.org/EUR.svg",
+    "parentAreaId": 2267,
+    "parentArea": "World",
+    "childAreas": [
+      {
+        "id": 2002,
+        "name": "Albania",
+        "countryCode": "ALB",
+        "flag": null,
+        "parentAreaId": 2077,
+        "parentArea": "Europe"
+      },
+      {
+        "id": 2006,
+        "name": "Andorra",
+        "countryCode": "AND",
+        "flag": null,
+        "parentAreaId": 2077,
+        "parentArea": "Europe"
+      },
+      {
+        "id": 2012,
+        "name": "Armenia",
+        "countryCode": "ARM",
+        "flag": "https://crests.football-data.org/1970.svg",
+        "parentAreaId": 2077,
+        "parentArea": "Europe"
+      },
+      {
+        "id": 2016,
+        "name": "Austria",
+        "countryCode": "AUT",
+        "flag": "https://crests.football-data.org/816.svg",
+        "parentAreaId": 2077,
+        "parentArea": "Europe"
+      },
+      {
+        "id": 2264,
+        "name": "Wales",
+        "countryCode": "WAL",
+        "flag": "https://crests.football-data.org/833.svg",
+        "parentAreaId": 2077,
+        "parentArea": "Europe"
+      }
+    ]
+  }
+}

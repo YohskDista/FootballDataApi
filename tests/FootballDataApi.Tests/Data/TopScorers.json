@@ -1,0 +1,359 @@
+{
+  "count": 10,
+  "filters": {
+    "limit": 10
+  },
+  "competition": {
+    "id": 2019,
+    "name": "Serie A",
+    "code": "SA",
+    "type": "LEAGUE",
+    "emblem": "https://crests.football-data.org/SA.png"
+  },
+  "season": {
+    "id": 638,
+    "startDate": "2020-09-19",
+    "endDate": "2021-05-23",
+    "currentMatchday": 38,
+    "winner": {
+      "id": 108,
+      "name": "FC Internazionale Milano",
+      "shortName": "Inter",
+      "tla": "INT",
+      "crest": "https://crests.football-data.org/108.png",
+      "address": "Corso Vittorio Emanuele II 9 Milano 20122",
+      "phone": "+39 (02) 77151",
+      "website": "http://www.inter.it",
+      "email": "segreteriaccic@inter.it",
+      "founded": 1908,
+      "clubColors": "Blue / Black",
+      "venue": "Stadio Giuseppe Meazza",
+      "lastUpdated": "2021-11-24T14:55:58Z"
+    },
+    "stages": [
+      "REGULAR_SEASON"
+    ]
+  },
+  "scorers": [
+    {
+      "player": {
+        "id": 44,
+        "name": "Cristiano Ronaldo",
+        "firstName": "Cristiano Ronaldo",
+        "lastName": "dos Santos Aveiro",
+        "dateOfBirth": "1985-02-05",
+        "countryOfBirth": "Portugal",
+        "nationality": "Portugal",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2021-10-13T08:04:10Z"
+      },
+      "team": {
+        "id": 109,
+        "name": "Juventus FC",
+        "shortName": "Juventus",
+        "tla": "JUV",
+        "crest": "https://crests.football-data.org/109.svg",
+        "address": "Corso Galileo Ferraris, 32 Torino 10128",
+        "phone": "+39 (011) 65631",
+        "website": "http://www.juventus.com",
+        "email": "francesco.gianello@juventus.com",
+        "founded": 1897,
+        "clubColors": "White / Black",
+        "venue": "Allianz Stadium",
+        "lastUpdated": "2020-11-26T02:19:40Z"
+      },
+      "goals": 29,
+      "assists": 3,
+      "penalties": 6
+    },
+    {
+      "player": {
+        "id": 3662,
+        "name": "Romelu Lukaku",
+        "firstName": "Romelu",
+        "lastName": "Lukaku Menama",
+        "dateOfBirth": "1993-05-13",
+        "countryOfBirth": "Belgium",
+        "nationality": "Belgium",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2021-10-13T08:04:13Z"
+      },
+      "team": {
+        "id": 108,
+        "name": "FC Internazionale Milano",
+        "shortName": "Inter",
+        "tla": "INT",
+        "crest": "https://crests.football-data.org/108.png",
+        "address": "Corso Vittorio Emanuele II 9 Milano 20122",
+        "phone": "+39 (02) 77151",
+        "website": "http://www.inter.it",
+        "email": "segreteriaccic@inter.it",
+        "founded": 1908,
+        "clubColors": "Blue / Black",
+        "venue": "Stadio Giuseppe Meazza",
+        "lastUpdated": "2021-11-24T14:55:58Z"
+      },
+      "goals": 24,
+      "assists": 11,
+      "penalties": 6
+    },
+    {
+      "player": {
+        "id": 57,
+        "name": "Luis Muriel",
+        "firstName": "Luis Fernando",
+        "lastName": null,
+        "dateOfBirth": "1991-04-16",
+        "countryOfBirth": "Colombia",
+        "nationality": "Colombia",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:15Z"
+      },
+      "team": {
+        "id": 102,
+        "name": "Atalanta BC",
+        "shortName": "Atalanta",
+        "tla": "ATA",
+        "crest": "https://crests.football-data.org/102.svg",
+        "address": "Corso Europa, 46, Zingonia Ciserano 24040",
+        "phone": "+39 (035) 4186211",
+        "website": "http://www.atalanta.it",
+        "email": "info@atalanta.it",
+        "founded": 1904,
+        "clubColors": "Black / Blue",
+        "venue": "Stadio Atleti Azzurri d'Italia",
+        "lastUpdated": "2020-11-26T02:19:32Z"
+      },
+      "goals": 22,
+      "assists": 7,
+      "penalties": 2
+    },
+    {
+      "player": {
+        "id": 82002,
+        "name": "Dušan Vlahović",
+        "firstName": "Dušan",
+        "lastName": null,
+        "dateOfBirth": "2000-01-28",
+        "countryOfBirth": "Serbia",
+        "nationality": "Serbia",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:05Z"
+      },
+      "team": {
+        "id": 99,
+        "name": "ACF Fiorentina",
+        "shortName": "Fiorentina",
+        "tla": "FIO",
+        "crest": "https://crests.football-data.org/99.svg",
+        "address": "Viale Manfredo Fanti 4 Firenze 50137",
+        "phone": "+39 (055) 5030190",
+        "website": "http://www.acffiorentina.it",
+        "email": "segreteria@acffiorentina.it",
+        "founded": 1926,
+        "clubColors": "Purple / White",
+        "venue": "Stadio Artemio Franchi",
+        "lastUpdated": "2020-11-26T02:23:02Z"
+      },
+      "goals": 21,
+      "assists": 2,
+      "penalties": 6
+    },
+    {
+      "player": {
+        "id": 2076,
+        "name": "Ciro Immobile",
+        "firstName": "Ciro",
+        "lastName": "Immobile",
+        "dateOfBirth": "1990-02-20",
+        "countryOfBirth": "Italy",
+        "nationality": "Italy",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2021-10-13T08:03:51Z"
+      },
+      "team": {
+        "id": 110,
+        "name": "SS Lazio",
+        "shortName": "Lazio",
+        "tla": "LAZ",
+        "crest": "https://crests.football-data.org/110.svg",
+        "address": "Via di Santa Cornelia, 1000 Formello 00060",
+        "phone": "+39 (06) 976071",
+        "website": "http://www.sslazio.it",
+        "email": "segreteria.lazio@sslazio.it",
+        "founded": 1900,
+        "clubColors": "White / Sky Blue",
+        "venue": "Stadio Olimpico",
+        "lastUpdated": "2020-11-26T02:19:41Z"
+      },
+      "goals": 20,
+      "assists": 6,
+      "penalties": 4
+    },
+    {
+      "player": {
+        "id": 2236,
+        "name": "Simeon Nwankwo",
+        "firstName": "Simeon",
+        "lastName": null,
+        "dateOfBirth": "1992-05-07",
+        "countryOfBirth": "Nigeria",
+        "nationality": "Nigeria",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:48Z"
+      },
+      "team": {
+        "id": 472,
+        "name": "FC Crotone",
+        "shortName": "Crotone",
+        "tla": "CRO",
+        "crest": "https://crests.football-data.org/472.png",
+        "address": "Via Cutro Crotone 88900",
+        "phone": "+39 (0962) 28 919",
+        "website": "http://www.fccrotone.it",
+        "email": "info@fccrotone.it",
+        "founded": 1923,
+        "clubColors": "Blue / Red",
+        "venue": "Stadio Ezio Scida",
+        "lastUpdated": "2022-03-20T17:52:58Z"
+      },
+      "goals": 20,
+      "assists": 2,
+      "penalties": 8
+    },
+    {
+      "player": {
+        "id": 2092,
+        "name": "Lorenzo Insigne",
+        "firstName": "Lorenzo",
+        "lastName": "Insigne",
+        "dateOfBirth": "1991-06-04",
+        "countryOfBirth": "Italy",
+        "nationality": "Italy",
+        "position": "Midfielder",
+        "shirtNumber": null,
+        "lastUpdated": "2021-10-13T08:03:51Z"
+      },
+      "team": {
+        "id": 113,
+        "name": "SSC Napoli",
+        "shortName": "Napoli",
+        "tla": "NAP",
+        "crest": "https://crests.football-data.org/113.svg",
+        "address": "Centro Tecnico di Castel Volturno, Via S.S. Domitana, Km 35 Castel Volturno 81030",
+        "phone": "+39 (081) 5095344",
+        "website": "http://www.sscnapoli.it",
+        "email": "infocalcio@sscn.it",
+        "founded": 1904,
+        "clubColors": "Sky Blue / White",
+        "venue": "Stadio San Paolo",
+        "lastUpdated": "2020-11-26T02:19:45Z"
+      },
+      "goals": 19,
+      "assists": 8,
+      "penalties": 7
+    },
+    {
+      "player": {
+        "id": 3220,
+        "name": "Lautaro Martínez",
+        "firstName": "Lautaro Javier",
+        "lastName": null,
+        "dateOfBirth": "1997-08-22",
+        "countryOfBirth": "Argentina",
+        "nationality": "Argentina",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:27Z"
+      },
+      "team": {
+        "id": 108,
+        "name": "FC Internazionale Milano",
+        "shortName": "Inter",
+        "tla": "INT",
+        "crest": "https://crests.football-data.org/108.png",
+        "address": "Corso Vittorio Emanuele II 9 Milano 20122",
+        "phone": "+39 (02) 77151",
+        "website": "http://www.inter.it",
+        "email": "segreteriaccic@inter.it",
+        "founded": 1908,
+        "clubColors": "Blue / Black",
+        "venue": "Stadio Giuseppe Meazza",
+        "lastUpdated": "2021-11-24T14:55:58Z"
+      },
+      "goals": 17,
+      "assists": 5,
+      "penalties": 2
+    },
+    {
+      "player": {
+        "id": 2202,
+        "name": "Domenico Berardi",
+        "firstName": "Domenico",
+        "lastName": null,
+        "dateOfBirth": "1994-08-01",
+        "countryOfBirth": "Italy",
+        "nationality": "Italy",
+        "position": "Attacker",
+        "shirtNumber": null,
+        "lastUpdated": "2020-09-07T21:10:46Z"
+      },
+      "team": {
+        "id": 471,
+        "name": "US Sassuolo Calcio",
+        "shortName": "Sassuolo",
+        "tla": "SAS",
+        "crest": "https://crests.football-data.org/471.svg",
+        "address": "Piazza Risorgimento, 47 Sassuolo 41049",
+        "phone": "+39 (0536) 882645",
+        "website": "http://www.sassuolocalcio.it",
+        "email": "info@sassuolocalcio.it",
+        "founded": 1920,
+        "clubColors": "Green / Black",
+        "venue": "Mapei Stadium - Città del Tricolore",
+        "lastUpdated": "2021-04-12T13:07:30Z"
+      },
+      "goals": 17,
+      "assists": 7,
+      "penalties": 7
+    },
+    {
+      "player": {
+        "id": 1907,
+        "name": "João Pedro Galvão",
+        "firstName": "João Pedro Geraldino",
+        "lastName": null,
+        "dateOfBirth": "1992-03-09",
+        "countryOfBirth": "Brazil",
+        "nationality": "Italy",
+        "position": "Midfielder",
+        "shirtNumber": null,
+        "lastUpdated": "2022-01-25T07:53:22Z"
+      },
+      "team": {
+        "id": 104,
+        "name": "Cagliari Calcio",
+        "shortName": "Cagliari",
+        "tla": "CAG",
+        "crest": "https://crests.football-data.org/104.svg",
+        "address": "Viale la Plaia 15 Cagliari 09123",
+        "phone": "+39 (070) 604 201",
+        "website": "http://www.cagliaricalcio.net",
+        "email": "info@cagliaricalcio.net",
+        "founded": 1920,
+        "clubColors": "Red / Navy Blue / White",
+        "venue": "Sardegna Arena",
+        "lastUpdated": "2020-11-26T02:23:05Z"
+      },
+      "goals": 16,
+      "assists": 3,
+      "penalties": 4
+    }
+  ]
+}

@@ -1,0 +1,256 @@
+{
+  "area": {
+    "id": 2072,
+    "name": "England",
+    "code": "ENG",
+    "flag": "https://crests.football-data.org/770.svg"
+  },
+  "id": 2021,
+  "name": "Premier League",
+  "code": "PL",
+  "type": "LEAGUE",
+  "emblem": "https://crests.football-data.org/PL.png",
+  "currentSeason": {
+    "id": 733,
+    "startDate": "2021-08-13",
+    "endDate": "2022-05-22",
+    "currentMatchday": 37,
+    "winner": null,
+    "stages": [
+      "REGULAR_SEASON"
+    ]
+  },
+  "seasons": [
+    {
+      "id": 733,
+      "startDate": "2021-08-13",
+      "endDate": "2022-05-22",
+      "currentMatchday": 37,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 619,
+      "startDate": "2020-09-12",
+      "endDate": "2021-05-23",
+      "currentMatchday": 38,
+      "winner": {
+        "id": 65,
+        "name": "Manchester City FC",
+        "shortName": "Man City",
+        "tla": "MCI",
+        "crest": "https://crests.football-data.org/65.png",
+        "address": "SportCity Manchester M11 3FF",
+        "website": "https://www.mancity.com",
+        "founded": 1880,
+        "clubColors": "Sky Blue / White",
+        "venue": "Etihad Stadium",
+        "lastUpdated": "2022-02-10T19:48:37Z"
+      },
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 468,
+      "startDate": "2019-08-09",
+      "endDate": "2020-07-26",
+      "currentMatchday": 38,
+      "winner": {
+        "id": 64,
+        "name": "Liverpool FC",
+        "shortName": "Liverpool",
+        "tla": "LIV",
+        "crest": "https://crests.football-data.org/64.png",
+        "address": "Anfield Road Liverpool L4 0TH",
+        "website": "http://www.liverpoolfc.tv",
+        "founded": 1892,
+        "clubColors": "Red / White",
+        "venue": "Anfield",
+        "lastUpdated": "2022-02-10T19:30:22Z"
+      },
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 151,
+      "startDate": "2018-08-10",
+      "endDate": "2019-05-12",
+      "currentMatchday": 38,
+      "winner": {
+        "id": 65,
+        "name": "Manchester City FC",
+        "shortName": "Man City",
+        "tla": "MCI",
+        "crest": "https://crests.football-data.org/65.png",
+        "address": "SportCity Manchester M11 3FF",
+        "website": "https://www.mancity.com",
+        "founded": 1880,
+        "clubColors": "Sky Blue / White",
+        "venue": "Etihad Stadium",
+        "lastUpdated": "2022-02-10T19:48:37Z"
+      },
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 23,
+      "startDate": "2017-08-11",
+      "endDate": "2018-05-13",
+      "currentMatchday": 38,
+      "winner": {
+        "id": 65,
+        "name": "Manchester City FC",
+        "shortName": "Man City",
+        "tla": "MCI",
+        "crest": "https://crests.football-data.org/65.png",
+        "address": "SportCity Manchester M11 3FF",
+        "website": "https://www.mancity.com",
+        "founded": 1880,
+        "clubColors": "Sky Blue / White",
+        "venue": "Etihad Stadium",
+        "lastUpdated": "2022-02-10T19:48:37Z"
+      },
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 256,
+      "startDate": "2016-08-13",
+      "endDate": "2017-05-21",
+      "currentMatchday": null,
+      "winner": {
+        "id": 61,
+        "name": "Chelsea FC",
+        "shortName": "Chelsea",
+        "tla": "CHE",
+        "crest": "https://crests.football-data.org/61.png",
+        "address": "Fulham Road London SW6 1HS",
+        "website": "http://www.chelseafc.com",
+        "founded": 1905,
+        "clubColors": "Royal Blue / White",
+        "venue": "Stamford Bridge",
+        "lastUpdated": "2022-02-10T19:24:40Z"
+      },
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 973,
+      "startDate": "1898-08-30",
+      "endDate": "1899-04-27",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 983,
+      "startDate": "1897-08-30",
+      "endDate": "1898-04-28",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 984,
+      "startDate": "1896-08-30",
+      "endDate": "1897-04-24",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 975,
+      "startDate": "1895-08-31",
+      "endDate": "1896-04-27",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 976,
+      "startDate": "1894-08-30",
+      "endDate": "1895-04-22",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 981,
+      "startDate": "1893-08-31",
+      "endDate": "1894-04-21",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 979,
+      "startDate": "1892-09-01",
+      "endDate": "1893-04-15",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 985,
+      "startDate": "1891-09-03",
+      "endDate": "1892-04-28",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 977,
+      "startDate": "1890-09-04",
+      "endDate": "1891-04-16",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 978,
+      "startDate": "1889-09-05",
+      "endDate": "1890-03-29",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    },
+    {
+      "id": 1040,
+      "startDate": "1888-09-06",
+      "endDate": "1889-04-18",
+      "currentMatchday": null,
+      "winner": null,
+      "stages": [
+        "REGULAR_SEASON"
+      ]
+    }
+  ],
+  "lastUpdated": "2022-03-20T08:58:54Z"
+}
