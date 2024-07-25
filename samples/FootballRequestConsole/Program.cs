@@ -19,4 +19,7 @@ var matchProvider = host.Services.GetRequiredService<IMatchProvider>();
 var standingProvider = host.Services.GetRequiredService<IStandingProvider>();
 var teamProvider = host.Services.GetRequiredService<ITeamProvider>();
 
+var allAreas = await areaProvider.GetAreaByIdAsync(2002);
+var matches = await competitionProvider.GetCompetitionTeamsAsync("SA");
+
 await host.RunAsync();

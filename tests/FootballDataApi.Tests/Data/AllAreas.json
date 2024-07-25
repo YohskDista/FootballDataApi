@@ -1,0 +1,2182 @@
+{
+  "count": 272,
+  "filters": {},
+  "areas": [
+    {
+      "id": 2000,
+      "name": "Afghanistan",
+      "countryCode": "AFG",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2001,
+      "name": "Africa",
+      "countryCode": "AFR",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2002,
+      "name": "Albania",
+      "countryCode": "ALB",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2004,
+      "name": "Algeria",
+      "countryCode": "ALG",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2005,
+      "name": "American Samoa",
+      "countryCode": "ASM",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2006,
+      "name": "Andorra",
+      "countryCode": "AND",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2007,
+      "name": "Angola",
+      "countryCode": "ANG",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2008,
+      "name": "Anguilla",
+      "countryCode": "AIA",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2009,
+      "name": "Antigua and Barbuda",
+      "countryCode": "ATG",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2010,
+      "name": "Arameans Suryoye",
+      "countryCode": "ARS",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2011,
+      "name": "Argentina",
+      "countryCode": "ARG",
+      "flag": "https://crests.football-data.org/762.png",
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2012,
+      "name": "Armenia",
+      "countryCode": "ARM",
+      "flag": "https://crests.football-data.org/1970.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2013,
+      "name": "Aruba",
+      "countryCode": "ABW",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2014,
+      "name": "Asia",
+      "countryCode": "ASI",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2015,
+      "name": "Australia",
+      "countryCode": "AUS",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2016,
+      "name": "Austria",
+      "countryCode": "AUT",
+      "flag": "https://crests.football-data.org/816.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2017,
+      "name": "Azerbaijan",
+      "countryCode": "AZE",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2018,
+      "name": "Bahamas",
+      "countryCode": "BHS",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2019,
+      "name": "Bahrain",
+      "countryCode": "BHR",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2020,
+      "name": "Bangladesh",
+      "countryCode": "BAN",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2021,
+      "name": "Barbados",
+      "countryCode": "BRB",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2022,
+      "name": "Belarus",
+      "countryCode": "BLR",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2023,
+      "name": "Belgium",
+      "countryCode": "BEL",
+      "flag": "https://crests.football-data.org/805.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2024,
+      "name": "Belize",
+      "countryCode": "BLZ",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2025,
+      "name": "Benin",
+      "countryCode": "BEN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2026,
+      "name": "Bermuda",
+      "countryCode": "BMU",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2027,
+      "name": "Bhutan",
+      "countryCode": "BHU",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2028,
+      "name": "Bolivia",
+      "countryCode": "BOL",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2029,
+      "name": "Bonaire",
+      "countryCode": "BON",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2030,
+      "name": "Bosnia and Herzegovina",
+      "countryCode": "BIH",
+      "flag": "https://crests.football-data.org/bosnia.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2031,
+      "name": "Botswana",
+      "countryCode": "BOT",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2032,
+      "name": "Brazil",
+      "countryCode": "BRA",
+      "flag": "https://crests.football-data.org/764.svg",
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2033,
+      "name": "British Virgin Islands",
+      "countryCode": "BVI",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2034,
+      "name": "Brunei Darussalam",
+      "countryCode": "BRU",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2035,
+      "name": "Bulgaria",
+      "countryCode": "BGR",
+      "flag": "https://crests.football-data.org/817.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2036,
+      "name": "Burkina Faso",
+      "countryCode": "BFA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2037,
+      "name": "Burundi",
+      "countryCode": "BDI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2038,
+      "name": "Cambodia",
+      "countryCode": "CAM",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2039,
+      "name": "Cameroon",
+      "countryCode": "CMR",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2040,
+      "name": "Canada",
+      "countryCode": "CAN",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2041,
+      "name": "Cape Verde Islands",
+      "countryCode": "CPV",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2042,
+      "name": "Cayman Islands",
+      "countryCode": "CYM",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2043,
+      "name": "Central African Republic",
+      "countryCode": "CTA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2044,
+      "name": "Chad",
+      "countryCode": "CHA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2045,
+      "name": "Chile",
+      "countryCode": "CHL",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2046,
+      "name": "China PR",
+      "countryCode": "CHN",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2047,
+      "name": "Chinese Taipei",
+      "countryCode": "TPE",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2048,
+      "name": "CIS",
+      "countryCode": "CIS",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2049,
+      "name": "Colombia",
+      "countryCode": "COL",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2050,
+      "name": "Comoros",
+      "countryCode": "CMO",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2051,
+      "name": "Congo",
+      "countryCode": "CGO",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2052,
+      "name": "Congo DR",
+      "countryCode": "COD",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2053,
+      "name": "Cook Islands",
+      "countryCode": "COK",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2054,
+      "name": "Corsica",
+      "countryCode": "COR",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2055,
+      "name": "Costa Rica",
+      "countryCode": "CRI",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2056,
+      "name": "Côte d’Ivoire",
+      "countryCode": "CIV",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2057,
+      "name": "Crimea",
+      "countryCode": "ARC",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2058,
+      "name": "Croatia",
+      "countryCode": "HRV",
+      "flag": "https://crests.football-data.org/799.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2059,
+      "name": "Cuba",
+      "countryCode": "CUB",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2060,
+      "name": "Curaçao",
+      "countryCode": "ANT",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2061,
+      "name": "Cyprus",
+      "countryCode": "CYP",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2062,
+      "name": "Czech Republic",
+      "countryCode": "CZE",
+      "flag": "https://crests.football-data.org/798.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2063,
+      "name": "Czechoslovakia",
+      "countryCode": "CZS",
+      "flag": "https://crests.football-data.org/798.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2064,
+      "name": "Darfur",
+      "countryCode": "DAR",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2065,
+      "name": "Denmark",
+      "countryCode": "DNK",
+      "flag": "https://crests.football-data.org/782.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2066,
+      "name": "Djibouti",
+      "countryCode": "DJI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2067,
+      "name": "Dominica",
+      "countryCode": "DMA",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2068,
+      "name": "Dominican Republic",
+      "countryCode": "DOM",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2069,
+      "name": "Ecuador",
+      "countryCode": "ECU",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2070,
+      "name": "Egypt",
+      "countryCode": "EGY",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2071,
+      "name": "El Salvador",
+      "countryCode": "SLV",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2072,
+      "name": "England",
+      "countryCode": "ENG",
+      "flag": "https://crests.football-data.org/770.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2073,
+      "name": "Equatorial Guinea",
+      "countryCode": "EQG",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2074,
+      "name": "Eritrea",
+      "countryCode": "ERI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2075,
+      "name": "Estonia",
+      "countryCode": "EST",
+      "flag": "https://crests.football-data.org/estonia.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2076,
+      "name": "Ethiopia",
+      "countryCode": "ETH",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2077,
+      "name": "Europe",
+      "countryCode": "EUR",
+      "flag": "https://crests.football-data.org/EUR.svg",
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2078,
+      "name": "Faroe Islands",
+      "countryCode": "FRO",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2079,
+      "name": "Fiji",
+      "countryCode": "FJI",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2080,
+      "name": "Finland",
+      "countryCode": "FIN",
+      "flag": "https://crests.football-data.org/1976.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2081,
+      "name": "France",
+      "countryCode": "FRA",
+      "flag": "https://crests.football-data.org/773.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2082,
+      "name": "French Guiana",
+      "countryCode": "FGU",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2083,
+      "name": "FYR Macedonia",
+      "countryCode": "MKD",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2084,
+      "name": "Gabon",
+      "countryCode": "GAB",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2085,
+      "name": "Gambia",
+      "countryCode": "GAM",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2086,
+      "name": "GDR",
+      "countryCode": "GDR",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2087,
+      "name": "Georgia",
+      "countryCode": "GEO",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2088,
+      "name": "Germany",
+      "countryCode": "DEU",
+      "flag": "https://crests.football-data.org/759.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2089,
+      "name": "Ghana",
+      "countryCode": "GHA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2090,
+      "name": "Gibraltar",
+      "countryCode": "GIB",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2091,
+      "name": "Gozo",
+      "countryCode": "GOZ",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2092,
+      "name": "Great Britain",
+      "countryCode": "GBR",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2093,
+      "name": "Greece",
+      "countryCode": "GRC",
+      "flag": "https://crests.football-data.org/775.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2094,
+      "name": "Greenland",
+      "countryCode": "GEE",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2095,
+      "name": "Grenada",
+      "countryCode": "GRD",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2096,
+      "name": "Guadeloupe",
+      "countryCode": "GDL",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2097,
+      "name": "Guam",
+      "countryCode": "GUM",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2098,
+      "name": "Guatemala",
+      "countryCode": "GTM",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2099,
+      "name": "Guernsey",
+      "countryCode": "GGY",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2100,
+      "name": "Guinea",
+      "countryCode": "GUI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2101,
+      "name": "Guinea-Bissau",
+      "countryCode": "GNB",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2102,
+      "name": "Guyana",
+      "countryCode": "GUY",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2103,
+      "name": "Haiti",
+      "countryCode": "HTI",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2104,
+      "name": "Honduras",
+      "countryCode": "HND",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2105,
+      "name": "Hong Kong",
+      "countryCode": "HKG",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2106,
+      "name": "Hungary",
+      "countryCode": "HUN",
+      "flag": "https://crests.football-data.org/827.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2107,
+      "name": "Iceland",
+      "countryCode": "ISL",
+      "flag": "https://crests.football-data.org/iceland.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2108,
+      "name": "India",
+      "countryCode": "IND",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2109,
+      "name": "Indonesia",
+      "countryCode": "IDN",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2110,
+      "name": "Iran",
+      "countryCode": "IRN",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2111,
+      "name": "Iraq",
+      "countryCode": "IRQ",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2112,
+      "name": "Isle of Man",
+      "countryCode": "IOM",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2113,
+      "name": "Israel",
+      "countryCode": "ISR",
+      "flag": "https://crests.football-data.org/israel.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2114,
+      "name": "Italy",
+      "countryCode": "ITA",
+      "flag": "https://crests.football-data.org/784.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2115,
+      "name": "Jamaica",
+      "countryCode": "JAM",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2116,
+      "name": "Japan",
+      "countryCode": "JPN",
+      "flag": "https://crests.football-data.org/JAP.svg",
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2117,
+      "name": "Jersey",
+      "countryCode": "JER",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2118,
+      "name": "Jordan",
+      "countryCode": "JOR",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2119,
+      "name": "Kazakhstan",
+      "countryCode": "KAZ",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2120,
+      "name": "Kenya",
+      "countryCode": "KEN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2121,
+      "name": "Kiribati",
+      "countryCode": "KIR",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2122,
+      "name": "Korea DPR",
+      "countryCode": "PRK",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2123,
+      "name": "Korea Republic",
+      "countryCode": "KOR",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2124,
+      "name": "Kosovo",
+      "countryCode": "KSV",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2125,
+      "name": "Kurdistan",
+      "countryCode": "KUR",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2126,
+      "name": "Kuwait",
+      "countryCode": "KUW",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2127,
+      "name": "Kyrgyzstan",
+      "countryCode": "KGZ",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2128,
+      "name": "Laos",
+      "countryCode": "LAO",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2129,
+      "name": "Latvia",
+      "countryCode": "LVA",
+      "flag": "https://crests.football-data.org/latvia.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2130,
+      "name": "Lebanon",
+      "countryCode": "LIB",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2131,
+      "name": "Lesotho",
+      "countryCode": "LES",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2132,
+      "name": "Liberia",
+      "countryCode": "LBR",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2133,
+      "name": "Libya",
+      "countryCode": "LBY",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2134,
+      "name": "Liechtenstein",
+      "countryCode": "LIE",
+      "flag": "https://crests.football-data.org/1982.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2135,
+      "name": "Lithuania",
+      "countryCode": "LTU",
+      "flag": "https://crests.football-data.org/1983.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2136,
+      "name": "Luxembourg",
+      "countryCode": "LUX",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2137,
+      "name": "Macao",
+      "countryCode": "MAC",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2138,
+      "name": "Madagascar",
+      "countryCode": "MAD",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2139,
+      "name": "Malawi",
+      "countryCode": "MWI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2140,
+      "name": "Malaysia",
+      "countryCode": "MAS",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2141,
+      "name": "Maldives",
+      "countryCode": "MDV",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2142,
+      "name": "Mali",
+      "countryCode": "MLI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2143,
+      "name": "Malta",
+      "countryCode": "MLT",
+      "flag": "https://crests.football-data.org/malta.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2144,
+      "name": "Marshall Islands",
+      "countryCode": "MSI",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2145,
+      "name": "Martinique",
+      "countryCode": "MTQ",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2146,
+      "name": "Mauritania",
+      "countryCode": "MTN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2147,
+      "name": "Mauritius",
+      "countryCode": "MRI",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2148,
+      "name": "Mayotte",
+      "countryCode": "MYT",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2149,
+      "name": "Mexico",
+      "countryCode": "MEX",
+      "flag": "https://crests.football-data.org/mexico.svg",
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2150,
+      "name": "Micronesia",
+      "countryCode": "MIC",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2151,
+      "name": "Moldova",
+      "countryCode": "MHL",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2152,
+      "name": "Monaco",
+      "countryCode": "MCO",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2153,
+      "name": "Mongolia",
+      "countryCode": "MGL",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2154,
+      "name": "Montenegro",
+      "countryCode": "MNE",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2155,
+      "name": "Montserrat",
+      "countryCode": "MSR",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2156,
+      "name": "Morocco",
+      "countryCode": "MAR",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2157,
+      "name": "Mozambique",
+      "countryCode": "MOZ",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2158,
+      "name": "Myanmar",
+      "countryCode": "MYA",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2159,
+      "name": "N/C America",
+      "countryCode": "NCA",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2160,
+      "name": "Namibia",
+      "countryCode": "NAM",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2161,
+      "name": "Nauru",
+      "countryCode": "NAU",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2162,
+      "name": "Nepal",
+      "countryCode": "NEP",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2163,
+      "name": "Netherlands",
+      "countryCode": "NLD",
+      "flag": "https://crests.football-data.org/8601.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2164,
+      "name": "New Caledonia",
+      "countryCode": "NCL",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2165,
+      "name": "New Zealand",
+      "countryCode": "NZL",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2166,
+      "name": "NF-Board",
+      "countryCode": "NFB",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2167,
+      "name": "Nicaragua",
+      "countryCode": "NIC",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2168,
+      "name": "Niger",
+      "countryCode": "NIG",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2169,
+      "name": "Nigeria",
+      "countryCode": "NGA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2170,
+      "name": "Niue",
+      "countryCode": "NIU",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2171,
+      "name": "Northern Ireland",
+      "countryCode": "NIR",
+      "flag": "https://crests.football-data.org/829.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2172,
+      "name": "Northern Mariana Islands",
+      "countryCode": "NMI",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2173,
+      "name": "Norway",
+      "countryCode": "NOR",
+      "flag": "https://crests.football-data.org/813.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2174,
+      "name": "Occitania",
+      "countryCode": "OCC",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2175,
+      "name": "Oceania",
+      "countryCode": "OCE",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2176,
+      "name": "Oman",
+      "countryCode": "OMA",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2177,
+      "name": "Padania",
+      "countryCode": "PAD",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2178,
+      "name": "Pakistan",
+      "countryCode": "PAK",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2179,
+      "name": "Palau",
+      "countryCode": "PLA",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2180,
+      "name": "Palestine",
+      "countryCode": "PAL",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2181,
+      "name": "Panama",
+      "countryCode": "PAN",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2182,
+      "name": "Papua New Guinea",
+      "countryCode": "PNG",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2183,
+      "name": "Paraguay",
+      "countryCode": "PRY",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2184,
+      "name": "Peru",
+      "countryCode": "PER",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2185,
+      "name": "Philippines",
+      "countryCode": "PHI",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2186,
+      "name": "Poland",
+      "countryCode": "POL",
+      "flag": "https://crests.football-data.org/794.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2187,
+      "name": "Portugal",
+      "countryCode": "POR",
+      "flag": "https://crests.football-data.org/765.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2188,
+      "name": "Provence",
+      "countryCode": "PRO",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2189,
+      "name": "Puerto Rico",
+      "countryCode": "PRI",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2190,
+      "name": "Qatar",
+      "countryCode": "QAT",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2191,
+      "name": "Raetia",
+      "countryCode": "RAE",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2192,
+      "name": "Republic of Ireland",
+      "countryCode": "IRL",
+      "flag": "https://crests.football-data.org/806.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2193,
+      "name": "Reunion",
+      "countryCode": "REU",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2194,
+      "name": "Romania",
+      "countryCode": "ROU",
+      "flag": "https://crests.football-data.org/811.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2195,
+      "name": "Russia",
+      "countryCode": "RUS",
+      "flag": "https://crests.football-data.org/808.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2196,
+      "name": "Rwanda",
+      "countryCode": "RWA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2197,
+      "name": "Saint Martin",
+      "countryCode": "SMT",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2198,
+      "name": "Saint Pierre and Miquelon",
+      "countryCode": "SPM",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2199,
+      "name": "Samoa",
+      "countryCode": "WSM",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2200,
+      "name": "San Marino",
+      "countryCode": "SMR",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2201,
+      "name": "São Tomé e Príncipe",
+      "countryCode": "STP",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2202,
+      "name": "Sápmi",
+      "countryCode": "SAP",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2203,
+      "name": "Saudi Arabia",
+      "countryCode": "KSA",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2204,
+      "name": "Scotland",
+      "countryCode": "SCO",
+      "flag": "https://crests.football-data.org/814.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2205,
+      "name": "Senegal",
+      "countryCode": "SEN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2206,
+      "name": "Serbia",
+      "countryCode": "SER",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2207,
+      "name": "Serbia and Montenegro",
+      "countryCode": "SCG",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2208,
+      "name": "Seychelles",
+      "countryCode": "SEY",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2209,
+      "name": "Shetland",
+      "countryCode": "SHE",
+      "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Flag_of_Shetland.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2210,
+      "name": "Sierra Leone",
+      "countryCode": "SLE",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2211,
+      "name": "Singapore",
+      "countryCode": "SIN",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2212,
+      "name": "Sint Eustatius",
+      "countryCode": "SEU",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2213,
+      "name": "Sint Maarten",
+      "countryCode": "SMA",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2214,
+      "name": "Slovakia",
+      "countryCode": "SVK",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2215,
+      "name": "Slovenia",
+      "countryCode": "SVN",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2216,
+      "name": "Solomon Islands",
+      "countryCode": "SLB",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2217,
+      "name": "Somalia",
+      "countryCode": "SOM",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2218,
+      "name": "Somaliland",
+      "countryCode": "SOL",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2219,
+      "name": "South Africa",
+      "countryCode": "RSA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2220,
+      "name": "South America",
+      "countryCode": "SAM",
+      "flag": "https://crests.football-data.org/CLI.svg",
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2221,
+      "name": "South Sudan",
+      "countryCode": "SSD",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2222,
+      "name": "Southern Cameroon",
+      "countryCode": "SCM",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2223,
+      "name": "Soviet Union",
+      "countryCode": "SOV",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2224,
+      "name": "Spain",
+      "countryCode": "ESP",
+      "flag": "https://crests.football-data.org/760.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2225,
+      "name": "Sri Lanka",
+      "countryCode": "SRI",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2226,
+      "name": "St. Helena",
+      "countryCode": "STH",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2227,
+      "name": "St. Kitts and Nevis",
+      "countryCode": "SKN",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2228,
+      "name": "St. Lucia",
+      "countryCode": "STL",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2229,
+      "name": "St. Vincent and the Grenadines",
+      "countryCode": "SVG",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2230,
+      "name": "Sudan",
+      "countryCode": "SUD",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2231,
+      "name": "Suriname",
+      "countryCode": "SUR",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2232,
+      "name": "Swaziland",
+      "countryCode": "SWZ",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2233,
+      "name": "Sweden",
+      "countryCode": "SWE",
+      "flag": "https://crests.football-data.org/792.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2234,
+      "name": "Switzerland",
+      "countryCode": "CHE",
+      "flag": "https://crests.football-data.org/788.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2235,
+      "name": "Syria",
+      "countryCode": "SYR",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2236,
+      "name": "Tahiti",
+      "countryCode": "TAH",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2237,
+      "name": "Tajikistan",
+      "countryCode": "TJK",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2238,
+      "name": "Tamil Eelam",
+      "countryCode": "TEL",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2239,
+      "name": "Tanzania",
+      "countryCode": "TAN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2240,
+      "name": "Thailand",
+      "countryCode": "THA",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2241,
+      "name": "Timor-Leste",
+      "countryCode": "EAT",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2242,
+      "name": "Togo",
+      "countryCode": "TOG",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2243,
+      "name": "Tonga",
+      "countryCode": "TON",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2244,
+      "name": "TR Northern Cyprus",
+      "countryCode": "NCY",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2245,
+      "name": "Trinidad and Tobago",
+      "countryCode": "TTO",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2246,
+      "name": "Tunisia",
+      "countryCode": "TUN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2247,
+      "name": "Turkey",
+      "countryCode": "TUR",
+      "flag": "https://crests.football-data.org/803.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2248,
+      "name": "Turkmenistan",
+      "countryCode": "TKM",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2249,
+      "name": "Turks and Caicos Islands",
+      "countryCode": "TCA",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2250,
+      "name": "Tuvalu",
+      "countryCode": "TVL",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2251,
+      "name": "Two Sicilies",
+      "countryCode": "TSI",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2252,
+      "name": "Uganda",
+      "countryCode": "UGA",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2253,
+      "name": "Ukraine",
+      "countryCode": "UKR",
+      "flag": "https://crests.football-data.org/790.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2254,
+      "name": "United Arab Emirates",
+      "countryCode": "UAE",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2255,
+      "name": "United Kingdom",
+      "countryCode": "UK",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2256,
+      "name": "United States",
+      "countryCode": "USA",
+      "flag": "https://crests.football-data.org/usa.svg",
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2257,
+      "name": "Uruguay",
+      "countryCode": "URY",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2258,
+      "name": "US Virgin Islands",
+      "countryCode": "USV",
+      "flag": null,
+      "parentAreaId": 2159,
+      "parentArea": "N/C America"
+    },
+    {
+      "id": 2259,
+      "name": "Uzbekistan",
+      "countryCode": "UZB",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2260,
+      "name": "Vanuatu",
+      "countryCode": "VUT",
+      "flag": null,
+      "parentAreaId": 2175,
+      "parentArea": "Oceania"
+    },
+    {
+      "id": 2261,
+      "name": "Vatican City",
+      "countryCode": "VAC",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2262,
+      "name": "Venezuela",
+      "countryCode": "VEN",
+      "flag": null,
+      "parentAreaId": 2220,
+      "parentArea": "South America"
+    },
+    {
+      "id": 2263,
+      "name": "Vietnam",
+      "countryCode": "VIE",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2264,
+      "name": "Wales",
+      "countryCode": "WAL",
+      "flag": "https://crests.football-data.org/833.svg",
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2265,
+      "name": "West Indies",
+      "countryCode": "WIN",
+      "flag": null,
+      "parentAreaId": 2267,
+      "parentArea": "World"
+    },
+    {
+      "id": 2266,
+      "name": "Western Sahara",
+      "countryCode": "WSR",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2267,
+      "name": "World",
+      "countryCode": "INT",
+      "flag": null,
+      "parentAreaId": null,
+      "parentArea": null
+    },
+    {
+      "id": 2268,
+      "name": "Yemen",
+      "countryCode": "YEM",
+      "flag": null,
+      "parentAreaId": 2014,
+      "parentArea": "Asia"
+    },
+    {
+      "id": 2269,
+      "name": "Yugoslavia",
+      "countryCode": "YUG",
+      "flag": null,
+      "parentAreaId": 2077,
+      "parentArea": "Europe"
+    },
+    {
+      "id": 2270,
+      "name": "Zambia",
+      "countryCode": "ZAM",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2271,
+      "name": "Zanzibar",
+      "countryCode": "ZAN",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    },
+    {
+      "id": 2272,
+      "name": "Zimbabwe",
+      "countryCode": "ZIM",
+      "flag": null,
+      "parentAreaId": 2001,
+      "parentArea": "Africa"
+    }
+  ]
+}
