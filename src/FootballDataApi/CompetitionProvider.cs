@@ -7,6 +7,7 @@ using FootballDataApi.Models.Teams;
 using FootballDataApi.Services;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -70,6 +71,8 @@ internal sealed class CompetitionProvider : ICompetitionProvider
 
         if (season is not null)
         {
+            ArgumentOutOfRangeException.ThrowIfLessThan((int)season, 0);
+
             filters.AddRange([nameof(season), $"{season}"]);
         }
 
@@ -145,13 +148,11 @@ internal sealed class CompetitionProvider : ICompetitionProvider
         string competitionId, 
         DateTime dateFrom, 
         DateTime dateTo, 
-        int? season = null, 
-        int? matchDay = null, 
         Status? status = null, 
         Stage? stage = null, 
         Group? group = null, 
         CancellationToken cancellationToken = default)
-    {
+     {
         ArgumentException.ThrowIfNullOrWhiteSpace(competitionId);
 
         if (dateTo < dateFrom)
@@ -170,12 +171,10 @@ internal sealed class CompetitionProvider : ICompetitionProvider
         return GetMatchesWithFilters(
             competitionId,
             filters,
-            season, 
-            matchDay, 
-            status, 
-            stage, 
-            group, 
-            cancellationToken);
+            status: status, 
+            stage: stage, 
+            group: group,
+            cancellationToken: cancellationToken);
     }
 
     private async Task<IReadOnlyCollection<Match>> GetMatchesWithFilters(
@@ -192,21 +191,45 @@ internal sealed class CompetitionProvider : ICompetitionProvider
 
         if (season is not null)
         {
+            ArgumentOutOfRangeException.ThrowIfLessThan((int)season, 0);
+
             filters.AddRange([nameof(season), $"{season}"]);
         }
 
         if (matchDay is not null)
         {
+            ArgumentOutOfRangeException.ThrowIfLessThan((int)matchDay, 0);
+
             filters.AddRange([nameof(matchDay), $"{matchDay}"]);
+        }
+
+        if (status is not null)
+        {
+            if (!Enum.IsDefined((Status)status))
+            {
+                throw new InvalidEnumArgumentException(nameof(status), (int)status, typeof(Status));
+            }
+
+            filters.AddRange([nameof(stage), $"{stage}"]);
         }
 
         if (stage is not null)
         {
+            if (!Enum.IsDefined((Stage)stage))
+            {
+                throw new InvalidEnumArgumentException(nameof(stage), (int)stage, typeof(Stage));
+            }
+
             filters.AddRange([nameof(stage), $"{stage}"]);
         }
 
         if (group is not null)
         {
+            if (!Enum.IsDefined((Group)group))
+            {
+                throw new InvalidEnumArgumentException(nameof(group), (int)group, typeof(Group));
+            }
+
             filters.AddRange([nameof(group), $"{group}"]);
         }
 

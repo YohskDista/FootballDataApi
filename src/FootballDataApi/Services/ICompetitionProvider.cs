@@ -62,8 +62,6 @@ public interface ICompetitionProvider
         string competitionId,
         DateTime dateFrom,
         DateTime dateTo,
-        int? season = null,
-        int? matchDay = null,
         Status? status = null,
         Stage? stage = null,
         Group? group = null,
