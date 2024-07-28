@@ -96,11 +96,15 @@ internal sealed class CompetitionProvider : ICompetitionProvider
 
         if (season is not null)
         {
+            ArgumentOutOfRangeException.ThrowIfLessThan((int)season, 0);
+
             filters.AddRange([nameof(season), $"{season}"]);
         }
 
         if (matchDay is not null)
         {
+            ArgumentOutOfRangeException.ThrowIfLessThan((int)matchDay, 0);
+
             filters.AddRange([nameof(matchDay), $"{matchDay}"]);
         }
 

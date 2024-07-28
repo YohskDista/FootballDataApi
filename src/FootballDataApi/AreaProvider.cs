@@ -1,10 +1,8 @@
-﻿using FootballDataApi.Extensions;
-using FootballDataApi.Models;
+﻿using FootballDataApi.Models;
 using FootballDataApi.Models.Areas;
 using FootballDataApi.Services;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
